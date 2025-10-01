@@ -5,11 +5,13 @@ public class R3_3 {
     static void main() {
         Scanner sc = new Scanner(System.in);
 
-        String num = sc.next();
+        int num = sc.nextInt();
 
-        int numcar = num.length();
+        for (int i = 0; i > num ; i++){
 
-        System.out.println("En " + num + " su numero de caracteres es " + numcar);
+        }
+
+        System.out.println("En " + num + " su numero de caracteres es " + XXX);
 
     }
 }
