@@ -37,7 +37,7 @@ public class R3_2 {
 
         }
 
-        System.out.println("La potencia de " + base + "^" + expo + " = " + resu);
+        System.out.println("La potencia de " + base + " ^ " + expo + " = " + resu);
 
     }
 }
