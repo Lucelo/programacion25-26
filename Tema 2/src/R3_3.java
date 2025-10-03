@@ -7,15 +7,13 @@ public class R3_3 {
 
         System.out.print("Introduzca un numero: ");
 
-        int num = sc.nextInt();
+        int num = Math.abs(sc.nextInt());
 
         int cont = 0;
 
-        for (int i = 1; i <= num ; ) {
+        for (int i = 1; i <= num; cont++) {
 
             i = i * 10;
-
-            cont++;
 
         }
 

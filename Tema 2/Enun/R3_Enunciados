@@ -1,0 +1,54 @@
+Realizar un programa que solicite 3 números cualesquiera y los muestre por
+pantalla ordenados de menor a mayor.
+2. Realizar un programa que solicite dos números, base y exponente, enteros
+positivos (incluido el 0), y que calcule la potencia (base elevado a
+exponente) a través de productos. Si los datos son incorrectos deberán
+volverse a solicitar.
+3. Realizar un programa que solicite un número entero y determine el número
+de cifras que tiene dicho número.
+Ejemplo:
+Introduce un número: 124
+El número 124 tiene 3 cifras
+4. Se desea realizar un programa que implemente un juego que consiste en
+acertar un número secreto. El ordenador deberá generar aleatoriamente un
+número secreto entre 1 y 100 y el jugador tratará de acertarlo.
+Cada vez que el jugador introduzca un número, se comprobará si es el
+número secreto, en cuyo caso termina el juego. Si no lo es, se informará
+que el número introducido es mayor o menor que el número secreto. El
+programa termina cuando acierta el número (gana) o cuando agota el
+número de intentos ( en nuestro caso 5) sin acertar el número , en cuyo
+caso pierde.
+Si es número no estuviese en el rango de 1-100, debe mostrar un mensaje
+“El numero debe estar entre 1 y 100” y también debe contarse como un
+fallo.
+NOTA: Se proporciona la forma de crear un número secreto en Java
+5. Realizar un programa que solicite un número e informe de si es o no primo.
+Un número es primo si entre sus divisores sólo está él mismo y el número
+1.
+6. Realizar un programa que lea el número de alumnos que hay en una clase.
+A continuación debe leer la nota de cada uno de ellos en un examen y nos
+debe informar del número de suspensos y aprobados, así como los
+porcentajes.
+7. Realizar un programa que solicite dos números enteros mayores que 0, que
+calcule el máximo común divisor entre ellos mediante el algoritmo de
+Euclides y que muestre por pantalla el resultado.
+El algoritmo de Euclides se explica a continuación con un ejemplo:
+Supongamos que queremos calcular el m.c.d de 120 y 54
+120 : 54 = 2 y resto 12
+54 : 12 = 4 y resto 6
+12: 6 = 2 y resto 0
+El m.c.d. de 120 y 54 es 6
+8. Realizar un programa que calcule las soluciones de una ecuación de
+segundo grado. Deben pedirse los tres coeficientes A, B, C e informar de si
+la ecuación tiene dos soluciones, una solución, o ninguna solución.
+A*x2+ B*x+C= 0
+9. Realizar un programa que muestre todas las tablas de multiplicar (del 1 al
+10).
+Tabla del 0
+0 x 0=0
+….
+0x10=10
+Tabla del 1
+1 x 0=0
+….
+1x10=10
