@@ -8,11 +8,7 @@ public class R3_5 {
 
         int num = sc.nextInt();
 
-        if (){
 
-        } else if () {
-
-        }
 
 
     }
