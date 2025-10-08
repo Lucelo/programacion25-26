@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class RE_1 {
-    public void main() {
+    public static void main(String[] args) {
 
         System.out.println("Diga un numero: ");
         Scanner sc = new Scanner(System.in);

@@ -1,7 +1,9 @@
+import java.util.Scanner;
+
 public class RE_3 {
 
 
-    public void main() {
+    public static void main(String[] args) {
 
         final int I = 1;
         final int V = 5;
@@ -11,31 +13,105 @@ public class RE_3 {
         final int D = 500;
         final int M = 1000;
 
-        String numromano = "MMXIX";
+        Scanner sc = new Scanner(System.in);
+        String numRomano;
+        int acumulado = 0;
+        int temporal = 0;
 
-        int valoractual = 0;
-        int valorantiguo = 0;
-        int numfinal = 0;
+        int anterior = Integer.MAX_VALUE;
 
-        int cantnum = numromano.length();
+        System.out.print("Introduce el número romano: ");
 
-        for (int i = 0; i < cantnum; i++) {
+        numRomano = sc.nextLine();
 
-            valoractual = numromano.charAt(i);
+        for (int i = 0; i < numRomano.length(); i++) {
+            char letraActual = numRomano.charAt(i);
+            int valorDeLetra = 0;
 
-            if (valoractual < valorantiguo) {
-                numfinal += valoractual;
+            switch (letraActual) {
+                case 'M': {
+                    valorDeLetra = M;
+                    break;
+                }
+                case 'D': {
+                    valorDeLetra = D;
+                    break;
+                }
+                case 'C': {
+                    valorDeLetra = C;
+                    break;
+                }
+                case 'L': {
+                    valorDeLetra = L;
+
+                    break;
+                }
+                case 'X': {
+                    valorDeLetra = X;
+                    break;
+                }
+                case 'V': {
+                    valorDeLetra = V;
+                }
+                case 'I': {
+                    valorDeLetra = I;
+                }
+            }
+            if (valorDeLetra < anterior) {
+
+                if (temporal > 0) {
+
+                    acumulado += temporal;
+                }
+
+                temporal = valorDeLetra;
+            } else if (valorDeLetra == anterior) {
+
+                acumulado += temporal + valorDeLetra;
+
+                temporal = 0;
 
             } else {
-                numfinal -= valoractual;
+
+                acumulado += valorDeLetra - temporal;
+                temporal = 0;
+
             }
-            valorantiguo = valoractual;
+
+            anterior = valorDeLetra;
 
         }
 
-        System.out.println("Es " + numfinal);
+        if (temporal > 0) {
+            acumulado += temporal;
+        }
 
+        System.out.printf("El número %s en decimal es %d", numRomano, acumulado);
 
     }
 
 }
+
+/*String numromano = "MMXIX";
+
+int valoractual = 0;
+int valorantiguo = 0;
+int numfinal = 0;
+
+int cantnum = numromano.length();
+
+        for (int i = 0; i < cantnum; i++) {
+
+valoractual = numromano.charAt(i);
+
+            if (valoractual < valorantiguo) {
+numfinal += valoractual;
+
+            } else {
+numfinal -= valoractual;
+            }
+valorantiguo = valoractual;
+
+        }
+
+                System.out.println("Es " + numfinal);*/
