@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class RE_3 {
 
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
 
         final int I = 1;
         final int V = 5;
