@@ -1,6 +1,6 @@
 public class R1_2 {
 
-    static void main() {
+    public static void main(String[] args) {
         int[] numeros = {7, -3, 234, -56, 7, 2, 4, 6, 7, 2, -4, 62, 78, -225, 54, -32};
 
         int contarnegativos = 0;
