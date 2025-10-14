@@ -1,6 +1,7 @@
 
 public class R1_4 {
 
+
     public static final int cantNum = 6000;
     public static final int VALOR_MAX = 100;
     public static final int VALOR_MIN = 1;
@@ -74,6 +75,7 @@ public class R1_4 {
         double totalPorcentajes = 0;
 
         double porcentaje = 0;
+
         for (int i = 0; i < conteoDigitos.length; i++) {
 
             double sumaPorcentajes = 0;

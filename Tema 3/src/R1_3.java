@@ -5,23 +5,27 @@ public class R1_3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Cuantos numeros desea que tenga el array : ");
+        //La cantidad de espacios que deseamos que tenga el array
+        System.out.print("Cuantos numeros desea que tenga el array: ");
 
-        int sumadeArrays = 0;
+        int numElementos = sc.nextInt();
 
-        int numArrays = sc.nextInt();
 
-        if (numArrays <= 0) {
+        //Si pedimos un numero negativo lo trasforma en positivo
+        if (numElementos < 0) {
 
-            numArrays = -numArrays;
+            numElementos = -numElementos;
 
-            System.out.println("El numero no debe ser negativo el error se ha autocorrigido a " + numArrays);
+            System.out.println("El numero no debe ser negativo el error se ha autocorregido a " + numElementos);
 
         }
 
-        int[] numeros = new int[numArrays];
 
-        for (int i = 0; i < numArrays; i++) {
+        //El array que vamos a rellenar
+        int[] numeros = new int[numElementos];
+
+        //Esta parte se va a dedicar a rellenar el array
+        for (int i = 0; i < numElementos; i++) {
 
             System.out.print("Introduzca el numero " + (i + 1) + ": ");
 
@@ -29,10 +33,12 @@ public class R1_3 {
 
         }
 
+        //Busca el número más grande y pequeño
         int valorMayor = numeros[0];
+
         int valorMenor = numeros[0];
 
-        for (int a = 0; a < numArrays; a++) {
+        for (int a = 1; a < numElementos; a++) {
 
             if (numeros[a] > valorMayor) {
                 valorMayor = numeros[a];
@@ -43,6 +49,7 @@ public class R1_3 {
 
         }
 
+        //Cuenta cuantas veces en el array el número mayor y menor
         int contMayor = 0;
         int contMenor = 0;
 
@@ -58,13 +65,17 @@ public class R1_3 {
 
         }
 
+        //suma todos los numeros dentro del array
+        int sumadeArrays = 0;
 
         for (int numero : numeros) {
             sumadeArrays += numero;
         }
 
-        double media = (double) sumadeArrays / numArrays;
+        //Este se encarga de dar la media dentro del array
+        double media = (double) sumadeArrays / numElementos;
 
+        //Muestra los resultados
         System.out.println("El mayor número introducido es " + valorMayor);
 
         if (contMayor > 1) {
