@@ -10,13 +10,13 @@ public class R1_5 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Cuantos quieres hacer");
+        System.out.print("De cuanto desea que sea el tamaño: ");
 
         int tamano = sc.nextInt();
 
         int[] array = new int[tamano];
 
-        for (int i = 0; i < tamano; i++) {
+        for (int i = 0; i < array.length; i++) {
 
             int numeroAleatorio = (int) ((Math.random() * (VALOR_MAX - VALOR_MIN + 1)) + VALOR_MIN);
 
