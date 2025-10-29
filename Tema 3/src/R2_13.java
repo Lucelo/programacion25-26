@@ -1,4 +1,4 @@
-public class R2_12 {
+public class R2_13 {
 
     public static void reflejoDiagonal(int[][] matriz) {
         // 1. Comprobar que la matriz es cuadrada
@@ -15,7 +15,7 @@ public class R2_12 {
         // 3. Rellenar la nueva matriz con los elementos reflejados
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                matrizReflejada[i][j] = matriz[j][i];
+                matrizReflejada[i][j] = matriz[n -1 -j][n-1 -i];
             }
         }
 
@@ -48,13 +48,11 @@ public class R2_12 {
                 {0, 9, 8, 5, 4}
         };
 
-
-
-
         reflejoDiagonal(matriz);
 
 
+
+
+
     }
-
-
 }
