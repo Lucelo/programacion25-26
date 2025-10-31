@@ -1,0 +1,42 @@
+public class ExamendeArraysprueba {
+}
+/*
+ public static final int SEMILLA = 1;
+    public static void main(String[] args) {
+        int[][] jardin = {
+                {1, 0, 0, 0, 1, 0, 0, 0, 2, 1, 1, 0, 0, 5, 0},
+                {0, 2, 0, 5, 0, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0},
+                {3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 4},
+                {0, 0, 2, 0, 0, 0, 0, 0, 2, 1, 3, 0, 0, 0, 1},
+                {0, 0, 1, 0, 0, 0, 3, 0, 1, 0, 0, 0, 0, 0, 3},
+                {4, 3, 0, 0, 0, 2, 1, 0, 0, 0, 0, 5, 0, 0, 0},
+                {1, 2, 0, 5, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+                {3, 0, 0, 0, 0, 0, 2, 1, 4, 0, 0, 0, 1, 0, 0},
+                {2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0},
+                {0, 0, 5, 1, 0, 0, 0, 5, 0, 3, 0, 0, 1, 0, 0},
+                {1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 5, 2, 4, 0},
+                {0, 0, 1, 3, 0, 0, 1, 0, 0, 1, 0, 0, 1, 3, 0},
+                {0, 1, 2, 1, 0, 0, 0, 0, 0, 2, 3, 1, 0, 0, 1},
+                {1, 3, 4, 0, 0, 5, 0, 0, 1, 0, 0, 0, 0, 4, 2}
+
+        };
+    }
+
+    private static void calculaFloresFlorecientes(int[][] jardin){
+        for (int i = 0; i < jardin.length; i++) {
+            for (int j = 0; j < jardin[i].length; j++) {
+                if (jardin[i][j] != SEMILLA){
+                    continue;
+                }
+                if (florece(jardin, i, j)){
+                    System.out.printf("La flor de la posición %d,%d florecerá\n", i, j);
+                }
+            }
+        }
+    }
+
+    private static boolean florece(int[][] jardin, int i, int j){
+
+    }
+ */
