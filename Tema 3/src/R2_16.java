@@ -1,6 +1,6 @@
 import static java.util.Arrays.deepToString;
 
-public class R2_16 {
+/*public class R2_16 {
 
     static int[][] POSICIONES(int[][] matriz) {
 
