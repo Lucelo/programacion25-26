@@ -54,31 +54,11 @@ void main() {
         int columna2 = sc.nextInt();
 
 
-        //determina si se gana
-        int aciertos = 0;
 
-
-        for (int a = 0; a < matrizoculta.length; a++) {
-
-            for (int z = 0; z < matrizoculta.length; z++) {
-                if (!Objects.equals(matrizoculta[a][z], "?")) {
-                    aciertos++;
-                }
-            }
-        }
 
 
         //Analiza los factores dentro del bucle
-        if (aciertos == N * N) {
-            //Si se gano
-            System.out.println("uste a ganado");
-            ganar = true;
-        } else if (i == INTENTOS) {
-            //Si se perdio
-            System.out.println("Uste a perdido la matriz era");
-            System.out.println(Arrays.deepToString(matriz));
-            break;
-        } else if (fila1 == fila2 && columna1 == columna2) {
+        if (fila1 == fila2 && columna1 == columna2) {
             //Determina si se ha repetido
             matrizoculta[fila1][columna1] = "?";
 
@@ -97,6 +77,30 @@ void main() {
             i++;
 
             System.out.println("Se a consumido un intento te quedan " + (INTENTOS - i));
+
+        }
+
+        //determina si se gana
+        int aciertos = 0;
+
+
+        for (int a = 0; a < matrizoculta.length; a++) {
+
+            for (int z = 0; z < matrizoculta.length; z++) {
+                if (!Objects.equals(matrizoculta[a][z], "?")) {
+                    aciertos++;
+                }
+            }
+        }
+
+        if (aciertos == N * N) {
+            //Si se gano
+            System.out.println("uste a ganado");
+            ganar = true;
+        } else if (i == INTENTOS) {
+            //Si se perdio
+            System.out.println("Uste a perdido la matriz era");
+            System.out.println(Arrays.deepToString(matriz));
 
         }
 
