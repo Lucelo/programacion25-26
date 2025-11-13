@@ -37,29 +37,54 @@ void main() {
         System.out.println(Arrays.deepToString(matrizoculta));
 
         //Se introducen las filas y columnas que se usaran
-        System.out.println("Introduce la primera fila (del 1 al " + N + ")");
-        int fila1 = sc.nextInt();
 
-        System.out.println("Introduce la primera columna (del 1 al " + N + ")");
-        int columna1 = sc.nextInt();
+        boolean primero = false;
+        boolean segundo = false;
 
-        matrizoculta[fila1][columna1] = String.valueOf(matriz[fila1][columna1]);
-
-        System.out.println(Arrays.deepToString(matrizoculta));
-
-        System.out.println("Introduce la segunda fila (del 1 al " + N + ")");
-        int fila2 = sc.nextInt();
-
-        System.out.println("Introduce la segunda columna (del 1 al " + N + ")");
-        int columna2 = sc.nextInt();
+        int fila1 = 0;
+        int columna1 = 0;
+        int fila2 = 0;
+        int columna2 = 0;
 
 
+        while (!primero) {
+            System.out.println("Introduce la primera fila (del 1 al " + N + ")");
+            fila1 = sc.nextInt() + -1;
 
+            System.out.println("Introduce la primera columna (del 1 al " + N + ")");
+            columna1 = sc.nextInt() + -1;
+
+
+            if (Objects.equals(matrizoculta[fila1][columna1], "?")) {
+                matrizoculta[fila1][columna1] = String.valueOf(matriz[fila1][columna1]);
+
+                System.out.println(Arrays.deepToString(matrizoculta));
+
+                primero = true;
+            } else {
+                System.out.println("El numero ya esta descubierto");
+            }
+        }
+        while (!segundo) {
+            System.out.println("Introduce la segunda fila (del 1 al " + N + ")");
+            fila2 = sc.nextInt() + -1;
+
+            System.out.println("Introduce la segunda columna (del 1 al " + N + ")");
+            columna2 = sc.nextInt() + -1;
+
+
+            if (Objects.equals(matrizoculta[fila2][columna2], "?")) {
+                segundo = true;
+
+            } else {
+                System.out.println("El numero ya esta descubierto o ha salido de los valores");
+            }
+        }
 
 
         //Analiza los factores dentro del bucle
         if (fila1 == fila2 && columna1 == columna2) {
-            //Determina si se ha repetido
+            //Determina si se ha repetido el primero y el segundo
             matrizoculta[fila1][columna1] = "?";
 
             System.out.println("Por favor no repita números de ambas casillas");
