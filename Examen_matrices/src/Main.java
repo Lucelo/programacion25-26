@@ -2,7 +2,9 @@
 public static int N = 4;
 public static int INTENTOS = 6;
 
-Scanner sc = new Scanner(System.in);
+Scanner MiEntradaSalida;
+
+
 
 void main() {
 
@@ -49,10 +51,11 @@ void main() {
 
         while (!primero) {
             System.out.println("Introduce la primera fila (del 1 al " + N + ")");
-            fila1 = sc.nextInt() + -1;
+
+            fila1 = MiEntradaSalida.nextInt() + -1;
 
             System.out.println("Introduce la primera columna (del 1 al " + N + ")");
-            columna1 = sc.nextInt() + -1;
+            columna1 = MiEntradaSalida.nextInt() + -1;
 
 
             if (Objects.equals(matrizoculta[fila1][columna1], "?")) {
@@ -67,10 +70,10 @@ void main() {
         }
         while (!segundo) {
             System.out.println("Introduce la segunda fila (del 1 al " + N + ")");
-            fila2 = sc.nextInt() + -1;
+            fila2 = MiEntradaSalida.nextInt() + -1;
 
             System.out.println("Introduce la segunda columna (del 1 al " + N + ")");
-            columna2 = sc.nextInt() + -1;
+            columna2 = MiEntradaSalida.nextInt() + -1;
 
 
             if (Objects.equals(matrizoculta[fila2][columna2], "?")) {
@@ -135,4 +138,6 @@ void main() {
     System.out.println("El juego a terminado gracias por jugar");
 
 }
+
+private Object util;
 
