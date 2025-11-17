@@ -52,6 +52,7 @@ public class prueba {
                 {0, 9, 8, 5, 4}
         };
 
+
         System.out.print("Introduce el valor a buscar: ");
         int valor = sc.nextInt();
 
