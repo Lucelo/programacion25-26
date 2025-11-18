@@ -1,3 +1,5 @@
+package R1_1;
+
 public class R1_1 {
 
     private int ancho = 1;
