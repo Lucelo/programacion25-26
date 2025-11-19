@@ -18,6 +18,8 @@ public class R1_1 {
     }
 
     public class Rectangulo {
+        private int longitud;
+        private int ancho;
 
 
         //private int ancho;

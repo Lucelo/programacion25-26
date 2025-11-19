@@ -1,6 +1,7 @@
 package R1_2;
 import java.util.Scanner;
 
+
 public class Principal {
 
     static void main() {
@@ -15,9 +16,8 @@ public class Principal {
         while (salir){
 
             System.out.println("1. Hacer un reintegro, se pedirá la cantidad a retirar.");
-            System.out.println("2. Hacer un ingreso, se pedirá la cantidad a ingresar.\n");
-            System.out.println("3. Consultar el saldo y el número de reintegros e ingresos\n" +
-                    "realizados.");
+            System.out.println("2. Hacer un ingreso, se pedirá la cantidad a ingresar.");
+            System.out.println("3. Consultar el saldo y el número de reintegros e ingresos realizados.");
             System.out.println("4. Finalizar las operaciones. Debe confirmar si realmente desea\n" +
                     "salir e informar del saldo al final de todas las operaciones.");
 
@@ -25,9 +25,13 @@ public class Principal {
 
             if(elección == 1){
 
+
+
             } else if (elección == 2) {
 
             }else if(elección == 3){
+
+
 
             }else if (elección == 4){
                 System.out.println("Esta seguro de irse si/no");

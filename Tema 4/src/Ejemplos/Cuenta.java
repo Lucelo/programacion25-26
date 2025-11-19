@@ -17,4 +17,7 @@ public class Cuenta {
         System.out.println();
         return cantidad;
     }
+
+    public void sacarCantidad(int i) {
+    }
 }
