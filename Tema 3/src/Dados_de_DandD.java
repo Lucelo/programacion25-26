@@ -10,6 +10,9 @@ public class Dados_de_DandD {
         System.out.println("Cuantos dados desea tirar");
         int cantidaddedaddos = sc.nextByte();
 
+        System.out.println("Cuantos dados desea tirar");
+        int añadir = sc.nextByte();
+
         int[] dados = new int[cantidaddedaddos];
 
         System.out.println("Cuantas caras tiene el dado");
@@ -33,7 +36,7 @@ public class Dados_de_DandD {
             totaldados += dados[j];
         }
 
-        System.out.printf(" = " + String.valueOf(totaldados));
+        System.out.printf(" = " + String.valueOf(totaldados)+añadir);
 
     }
 
