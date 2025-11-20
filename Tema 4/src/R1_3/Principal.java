@@ -20,14 +20,20 @@ public class Principal {
 
         while (!salir) {
 
-            System.out.println("1. Cafe " +
-                    "2. leche " +
-                    "3.Cafe con leche " +
-                    "4. Estado " +
-                    "5. apagar "
-            );
+            System.out.println();
 
+            System.out.print("1.Cafe ");
+            System.out.print("2.leche ");
+            System.out.println("3.Cafe con leche ");
+            System.out.print("4.Estado ");
+            System.out.println("5.apagar ");
+
+            System.out.println();
+
+            System.out.print("-");
             int eleccion = sc.nextInt();
+
+            System.out.println();
 
             if (eleccion == 1) {
                 maquina.Servir_cafe();
