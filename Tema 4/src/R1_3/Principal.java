@@ -2,9 +2,6 @@ package R1_3;
 
 import java.util.Scanner;
 
-import R1_3.Maquina.*;
-import static R1_3.Maquina.*;
-
 
 public class Principal {
 
@@ -14,7 +11,7 @@ public class Principal {
 
         Scanner sc = new Scanner(System.in);
 
-        maquina.Llenar_depositos();
+        maquina.llenarDepositos();
 
         boolean salir = false;
 
@@ -36,13 +33,13 @@ public class Principal {
             System.out.println();
 
             if (eleccion == 1) {
-                maquina.Servir_cafe();
+                maquina.servirCafe();
             } else if (eleccion == 2) {
-                maquina.Servir_leche();
+                maquina.servirLeche();
             } else if (eleccion == 3) {
-                maquina.Servir_cafe_con_leche();
+                maquina.servirCafeConLeche();
             } else if (eleccion == 4) {
-                maquina.Estado_de_maquina();
+                maquina.estadoDeMaquina();
             } else if (eleccion == 5) {
                 salir = true;
             } else if (eleccion < 0 || eleccion > 5) {

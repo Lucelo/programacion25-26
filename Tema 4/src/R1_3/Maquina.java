@@ -8,8 +8,9 @@ public class Maquina {
 
     public static final int MAX_CAFE = 50;
     public static final int MAX_LECHE = 50;
-    public static final int MAX_VASOS = 80;
-    public static final double Dinero_inicial = 5;
+    public static final int MAX_CAFE_CON_LECHE = 80;
+
+    public static final double DINERO_INICIAL = 5;
 
     private int cafe;
     private int leche;
@@ -23,27 +24,27 @@ public class Maquina {
     public void Rellenar() {
         this.cafe = MAX_CAFE;
         this.leche = MAX_LECHE;
-        this.vasos = MAX_VASOS;
-        this.dinero= Dinero_inicial;
+        this.vasos = MAX_CAFE_CON_LECHE;
         System.out.println("Depósitos rellenados.");
     }
 
-    public void Llenar_depositos() {
+    public void llenarDepositos() {
+        this.dinero = DINERO_INICIAL;
         Rellenar();
     }
 
-    public void Ganancia() {
-        System.out.println("Las ganancias han sido: " + (dinero - 5));
+    public void ganancia() {
+        System.out.println("Las ganancias han sido: " + (dinero - DINERO_INICIAL));
     }
 
-    public void Estado_de_maquina() {
+    public void estadoDeMaquina() {
         System.out.println("Café: " + cafe);
         System.out.println("Leche: " + leche);
         System.out.println("Vasos: " + vasos);
         System.out.println("Dinero: " + dinero);
     }
 
-    public void Servir_cafe() {
+    public void servirCafe() {
         System.out.println("Introduzca el pago");
         double pago = sc.nextDouble();
         if (pago >= PRECIO_CAFE) {
@@ -70,7 +71,7 @@ public class Maquina {
 
     }
 
-    public void Servir_leche() {
+    public void servirLeche() {
         System.out.println("Introduzca el pago");
         double pago = sc.nextDouble();
         if (pago >= PRECIO_LECHE) {
@@ -96,7 +97,7 @@ public class Maquina {
         }
     }
 
-    public void Servir_cafe_con_leche() {
+    public void servirCafeConLeche() {
         System.out.println("Introduzca el pago");
         double pago = sc.nextDouble();
         if (pago >= PRECIO_CAFE_CON_LECHE) {
