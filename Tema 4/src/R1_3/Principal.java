@@ -45,11 +45,6 @@ public class Principal {
             } else if (eleccion < 0 || eleccion > 5) {
                 System.out.println("El numero es incorrecto");
             }
-
-
         }
-
     }
-
-
 }

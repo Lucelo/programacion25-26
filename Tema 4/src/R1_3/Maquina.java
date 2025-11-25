@@ -19,7 +19,7 @@ public class Maquina {
 
     public static final double PRECIO_CAFE = 1;
     public static final double PRECIO_LECHE = 0.80;
-    public static final double PRECIO_CAFE_CON_LECHE = 1.5;
+    public static final double PRECIO_CAFE_CON_LECHE = 1.50;
 
     public void Rellenar() {
         this.cafe = MAX_CAFE;
@@ -31,6 +31,10 @@ public class Maquina {
     public void llenarDepositos() {
         this.dinero = DINERO_INICIAL;
         Rellenar();
+    }
+
+    public void mostrar() {
+        System.out.println("El dinero actual es " + dinero + " euros");
     }
 
     public void ganancia() {
@@ -45,6 +49,11 @@ public class Maquina {
     }
 
     public void servirCafe() {
+
+        mostrar();
+        System.out.println("El cafe cuesta " + PRECIO_CAFE + " euros");
+
+
         System.out.println("Introduzca el pago");
         double pago = sc.nextDouble();
         if (pago >= PRECIO_CAFE) {
@@ -55,9 +64,9 @@ public class Maquina {
                     cafe--;
                     vasos--;
                     dinero += PRECIO_CAFE;
-                    dinero -= cambio;
 
-                    System.out.println("Has servido un vaso de cafe.");
+
+                    System.out.println("Se ha servido un vaso de cafe.");
                     System.out.println("Recoge tu cambio de " + cambio + " euros");
                 } else {
                     System.out.println("No hay suficientes recursos.");
@@ -72,6 +81,11 @@ public class Maquina {
     }
 
     public void servirLeche() {
+
+        mostrar();
+        System.out.println("La leche cuesta " + PRECIO_LECHE + " euros");
+
+
         System.out.println("Introduzca el pago");
         double pago = sc.nextDouble();
         if (pago >= PRECIO_LECHE) {
@@ -82,9 +96,9 @@ public class Maquina {
                     leche--;
                     vasos--;
                     dinero += PRECIO_LECHE;
-                    dinero -= cambio;
 
-                    System.out.println("Has servido un vaso de leche.");
+
+                    System.out.println("Se a servido un vaso de leche.");
                     System.out.println("Recoge tu cambio de " + cambio + " euros");
                 } else {
                     System.out.println("No hay suficientes recursos.");
@@ -98,6 +112,11 @@ public class Maquina {
     }
 
     public void servirCafeConLeche() {
+
+        mostrar();
+        System.out.println("Un cafe con leche cuesta " + PRECIO_CAFE_CON_LECHE + " euros");
+
+
         System.out.println("Introduzca el pago");
         double pago = sc.nextDouble();
         if (pago >= PRECIO_CAFE_CON_LECHE) {
@@ -109,9 +128,9 @@ public class Maquina {
                     leche--;
                     vasos--;
                     dinero += PRECIO_CAFE_CON_LECHE;
-                    dinero -= cambio;
 
-                    System.out.println("Has servido un vaso de cafe con leche.");
+
+                    System.out.println("Se a servido un vaso de cafe con leche.");
                     System.out.println("Recoge tu cambio de " + cambio + " euros");
                 } else {
                     System.out.println("No hay suficientes recursos.");
