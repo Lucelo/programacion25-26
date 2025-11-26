@@ -1,4 +1,4 @@
-package R1_3;
+package src.R1_3;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        Maquina maquina = new Maquina();
+        R1_3.Maquina maquina = new R1_3.Maquina();
 
         Scanner sc = new Scanner(System.in);
 

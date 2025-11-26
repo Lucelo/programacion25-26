@@ -6,7 +6,7 @@ public class disco_duro {
    public String Tipo;
    public int Capacidad;
 
-   disco_duro (String marca,String Tipo, int Capacidad){
+   public disco_duro(String marca, String Tipo, int Capacidad){
        this.marca=marca;
        this.Tipo=Tipo;
        this.Capacidad=Capacidad;
