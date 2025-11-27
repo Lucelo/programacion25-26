@@ -1,25 +1,21 @@
-package src.R2_6;
+package R2_6;
 
 public class Producto {
 
+    public static int codigo=1;
+
     public int identifica;
-    public String descripción;
+    public String descripcion;
     public double sinIVA;
 
+    private double IVA = 0.2;
 
-    private static double IVA = 0.2;
-
-    Producto(int identifica, String descripción, double sinIVA) {
-        this.identifica = identifica;
-        this.descripción = descripción;
+    Producto(String descripcion, double sinIVA) {
+        this.identifica = codigo++;
+        this.descripcion = descripcion;
         this.sinIVA = sinIVA;
-
-
     }
 
-    public double getCoste() {
-        return sinIVA + (sinIVA * IVA);
-    }
 
 
 }

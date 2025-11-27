@@ -1,4 +1,4 @@
-package src.R2_5;
+package R2_5;
 
 public class Main {
 

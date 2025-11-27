@@ -1,4 +1,4 @@
-package src.R2_3;
+package R2_3;
 
 public class videojuego {
 
