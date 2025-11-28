@@ -2,6 +2,9 @@ package R2_6;
 
 import java.util.Scanner;
 
+import static R2_6.Producto.Venta;
+import static R2_6.Producto.consulta;
+
 public class principal {
 
     public static void main(String[] args) {
@@ -28,10 +31,12 @@ switch (menu){
         consulta(p2);
         consulta(p3);
 
-
     }case "modificación"->{
 
     } case "precio de venta"->{
+        Venta(p1);
+        Venta(p2);
+        Venta(p3);
 
     }
 }
@@ -39,12 +44,7 @@ switch (menu){
 
     }
 
-    public static void consulta(Producto Producto) {
 
-        System.out.println("Descripción: " + Producto.descripcion);
-        System.out.println("Código: " + Producto.identifica);
-        System.out.println("Precio sin IVA: " + Producto.sinIVA );
-    }
 
 
 }

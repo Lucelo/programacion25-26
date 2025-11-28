@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class principal {
 
-
-    static void main() {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         Jarra A = new Jarra(0);
-        A.Limite(7);
+        A.setLimite(7);
+
         Jarra B = new Jarra(0);
-        B.Limite(4);
+        B.setLimite(4);
 
         System.out.println(
                 "a. Llenar jarra: \n" +
@@ -30,42 +30,79 @@ public class principal {
 
         while (!salir) {
 
-            String menu = sc.nextLine();
+            String menu = sc.nextLine().trim().toUpperCase();
 
             switch (menu) {
                 case "A" -> {
-
-                    String llenar = sc.nextLine();
+                    System.out.println("¿Qué jarra quieres llenar? (A/B)");
+                    String llenar = sc.nextLine().trim().toUpperCase();
                     switch (llenar) {
                         case "A" -> {
-
+                            A.capacidad = A.limite;
+                            System.out.println("La jarra A tiene " + A.capacidad + " litros");
                         }
                         case "B" -> {
-
+                            B.capacidad = B.limite;
+                            System.out.println("La jarra B tiene " + B.capacidad + " litros");
                         }
 
                     }
 
                 }
                 case "B" -> {
-                    String Vaciar = sc.nextLine();
+                    System.out.println("¿Qué jarra quieres vaciar? (A/B)");
+                    String Vaciar = sc.nextLine().trim().toUpperCase();
                     switch (Vaciar) {
                         case "A" -> {
-
+                            A.capacidad = 0;
+                            System.out.println("La jarra A ahora tiene " + A.capacidad + " litros");
                         }
                         case "B" -> {
-
+                            B.capacidad = 0;
+                            System.out.println("La jarra B ahora tiene " + B.capacidad + " litros");
                         }
                     }
                 }
                 case "C" -> {
+                    // Volcar A en B
+                    int espacio = B.limite - B.capacidad;
+
+                    if (A.capacidad <= espacio) {
+                        B.capacidad += A.capacidad;
+                        A.capacidad = 0;
+                    } else {
+                        A.capacidad -= espacio;
+                        B.capacidad = B.limite;
+                    }
+                    System.out.println("La jarra B ahora tiene " + B.capacidad + " litros");
                 }
+
                 case "D" -> {
+                    // Volcar B en A
+                    int espacio = A.limite - A.capacidad;
+
+                    if (B.capacidad <= espacio) {
+                        A.capacidad += B.capacidad;
+                        B.capacidad = 0;
+                    } else {
+                        B.capacidad -= espacio;
+                        A.capacidad = A.limite;
+                    }
+                    System.out.println("La jarra A tiene " + A.capacidad + " litros");
                 }
                 case "E" -> {
+                    System.out.println("La jarra A tiene " + A.capacidad + " litros");
+
+                    System.out.println("La jarra B tiene " + B.capacidad + " litros");
                 }
                 case "F" -> salir = true;
+
+                default -> System.out.println("Opción no válida");
+
             }
+
+
         }
+        sc.close();
     }
 }

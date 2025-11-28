@@ -1,0 +1,136 @@
+Perfecto.
+Aquí tienes **una guía paso a paso**, muy clara, con **lo mínimo necesario** para que puedas implementar tú mismo todo **a tu manera**, sin darte el código hecho.
+
+---
+
+# ✅ **LO QUE TIENES QUE CREAR (lista clara)**
+
+## **1. Clase Equipo**
+
+Debe tener:
+
+* **Atributo `nombre`** (String)
+* **Atributo `partidosGanados`** (int)
+* **Constructor con el nombre**
+* **Método `sumarVictoria()`** → incrementa partidosGanados
+* **Método `toString()`** → devuelve algo como:
+
+  ```
+  Equipo Real Madrid, partidos ganados: 5
+  ```
+
+---
+
+## **2. Clase Partido**
+
+### **Atributos obligatorios**
+
+* `int jornada` → **no modificable**
+* `Equipo local` → **no modificable**
+* `Equipo visitante` → **no modificable**
+* `Integer golesLocal` → empieza como **null**
+* `Integer golesVisitante` → empieza como **null**
+* `Character quiniela` → empieza como **null**
+
+### **Constructor**
+
+Debe comprobar:
+
+* jornada entre 1 y 38
+* local y visitante **diferentes** (por nombre)
+* Si falla → lanzar excepción
+
+---
+
+## **3. Método `ponerResultado(String resultado)`**
+
+Entrada ejemplo: `"2-1"`
+
+Debe:
+
+1. **Comprobar si ya tenía resultado** → si sí, lanzar excepción
+2. **Verificar formato correcto: número-guion-número**
+3. Extraer goles local y visitante
+4. Guardarlos
+5. Calcular la quiniela:
+
+   * local > visitante → `'1'`
+   * local == visitante → `'X'`
+   * local < visitante → `'2'`
+6. Actualizar partidos ganados del equipo correspondiente
+7. Si el formato es incorrecto → lanzar excepción
+
+---
+
+## **4. Método `toString()`**
+
+### Si el partido NO se ha jugado:
+
+```
+Partido entre equipo local ___ y equipo visitante ___ todavía no se ha jugado
+```
+
+### Si el partido ya tiene resultado:
+
+```
+Partido entre equipo local ___ y el equipo visitante ___ jugado en el estadio ___
+de la ciudad ___ ha finalizado con X goles de equipo local y Y goles de equipo visitante.
+Resultado quiniela = Z
+```
+
+*(El estadio y ciudad puedes poner textos fijos o atributos extra si quieres.)*
+
+---
+
+# ✅ **5. Programa principal**
+
+### Debe hacer lo siguiente paso a paso:
+
+### **(1) Crear dos equipos**
+
+Por ejemplo:
+
+* Equipo A
+* Equipo B
+
+### **(2) Crear un partido entre esos equipos**
+
+* Jornada cualquiera válida
+* Intentar poner resultado `"2-1"`
+
+Si falla:
+→ capturas el error y sigues
+
+---
+
+### **(3) Crear OTROS DOS partidos**
+
+Con los resultados:
+
+* `"0-0"`
+* `"1-2"`
+
+**Importante:**
+Si hay cualquier error al crearlos o al poner los resultados:
+
+* vuelves a intentarlo
+* hasta que funcione
+
+(puedes usar un bucle `while(true)` + try/catch)
+
+---
+
+### **(4) Mostrar resultados**
+
+Imprime:
+
+* Los dos partidos creados correctamente (sus `toString()`)
+* Los equipos (sus partidos ganados)
+
+---
+
+# 🎓 **CON ESTO TIENES TODO LO NECESARIO**
+
+Es el esquema exacto para que tú puedas implementarlo a tu estilo, sin que te dé el código completo ya hecho.
+
+Si quieres, puedo revisarte lo que vayas haciendo paso por paso.
