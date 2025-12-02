@@ -9,7 +9,7 @@ public class principal {
         Equipo equipoD = new Equipo("Girafas",0);
     }
 
-    Equipo.sumarVictoria(equipoA)
+    //Equipo.sumarVictoria(equipoA)
 
 
 }

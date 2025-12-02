@@ -17,7 +17,7 @@ public class Equipo {
     }
 
   public String toString(){
-        System.out.println("El equipo"+ Equipo.Nombre+", ha ganado: "+ Equipo.partidosGanados);
+       // System.out.println("El equipo"+ Equipo.Nombre+", ha ganado: "+ Equipo.partidosGanados);
       return null;
   }
 
