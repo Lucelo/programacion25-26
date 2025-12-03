@@ -1,10 +1,10 @@
-package src.R2_1;
+package R2_1;
 
 public class main {
 
     static void main() {
 
-        Persona persona = new Persona();
+        R2_1.Persona persona = new R2_1.Persona();
 
         persona.rellenar();
 

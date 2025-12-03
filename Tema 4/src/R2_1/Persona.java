@@ -1,4 +1,4 @@
-package src.R2_1;
+package R2_1;
 
 import java.time.LocalDate;
 
