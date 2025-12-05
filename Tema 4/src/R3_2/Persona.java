@@ -8,23 +8,26 @@ public class Persona {
 
     private int recibidosCount = 0;
     private int enviadosCount = 0;
-    Persona(String nombre){
-        this.nombre= nombre;
+
+    Persona(String nombre) {
+        this.nombre = nombre;
         this.mensajesRecibidos = new Mensaje[5];
         this.mensajesEnviados = new Mensaje[5];
     }
 
 
-    public void recibirMensaje(Mensaje m){
+    public void recibirMensaje(Mensaje m) {
         if (recibidosCount < 5) {
             mensajesRecibidos[recibidosCount++] = m;
         }
+
     }
 
-    public void enviarMensaje(Mensaje m){
+    public void enviarMensaje(Mensaje m) {
         if (enviadosCount < 5) {
             mensajesEnviados[enviadosCount++] = m;
         }
+
     }
 
 }

@@ -2,7 +2,6 @@ package R3_2;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Principal {
@@ -40,6 +39,7 @@ public class Principal {
 
 
             switch (opc) {
+
                 case 1 -> {
                     //Enviar mensaje
 
@@ -56,6 +56,7 @@ public class Principal {
                     enviarMensaje(p1, p2);
 
                 }
+
                 case 2 -> {
                     //Ver mensajes enviados
                     mostrarPersonas(personas);
@@ -65,10 +66,13 @@ public class Principal {
 
                     System.out.println("Mensajes enviados:");
                     for (Mensaje m : p1.mensajesEnviados) {
-                        if (m != null){System.out.println(m);}
+                        if (m != null) {
+                            System.out.println(m);
+                        }
                     }
 
                 }
+
                 case 3 -> {
                     //Ver mensajes recibidos
                     mostrarPersonas(personas);
@@ -78,7 +82,9 @@ public class Principal {
 
                     System.out.println("Mensajes recibidos:");
                     for (Mensaje m : p1.mensajesRecibidos) {
-                        if (m != null){System.out.println(m);}
+                        if (m != null) {
+                            System.out.println(m);
+                        }
                     }
 
                 }
@@ -105,10 +111,8 @@ public class Principal {
 
                 }
 
-                case 6 -> {
-                    //salir
-                    salir = true;
-                }
+                //salir
+                case 6 -> salir = true;
 
                 default -> throw new IllegalStateException("La opción no es valida: " + opc);
             }
@@ -125,7 +129,6 @@ public class Principal {
         String cuerpo = sc.nextLine();
 
         System.out.println("Fecha (dd/MM/yy): ");
-
         LocalDate fechaEnvio = LocalDate.parse(sc.nextLine(), formatter);
 
         Mensaje mensaje = new Mensaje(
@@ -143,7 +146,7 @@ public class Principal {
 
     }
 
-    void mostrarPersonas(Persona[] personas) {
+    public void mostrarPersonas(Persona[] personas) {
         for (int i = 0; i < personas.length; i++) {
             System.out.println((i + 1) + " - " + personas[i].nombre);
         }

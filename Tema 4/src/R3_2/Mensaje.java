@@ -18,7 +18,6 @@ public class Mensaje {
         this.fechaEnvio = fechaEnvio;
         this.remitente = remitente;
         this.destinatario = destinatario;
-
     }
 
     public String toString() {
@@ -29,4 +28,5 @@ public class Mensaje {
                 ", fecha=" + fechaEnvio +
                 '}';
     }
+
 }
