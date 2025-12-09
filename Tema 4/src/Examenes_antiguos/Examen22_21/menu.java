@@ -43,12 +43,10 @@ public class menu {
 
 
                 }
+
                 //
-                case 2 -> {
+                case 2 -> mostrarBiblioteca();
 
-                    mostrarBiblioteca();
-
-                }
                 //
                 case 3 -> {
 
@@ -66,6 +64,7 @@ public class menu {
                     }
 
                 }
+
                 //
                 case 4 -> {
                     System.out.print("Nombre de la pelicula: ");
@@ -78,6 +77,7 @@ public class menu {
                     }
 
                 }
+
                 //
                 case 5 -> {
 
@@ -95,6 +95,7 @@ public class menu {
 
 
                 }
+
                 //
                 case 6 -> salir = true;
 
