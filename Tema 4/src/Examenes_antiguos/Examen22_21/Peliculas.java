@@ -18,20 +18,20 @@ public class Peliculas {
 
     public double valoracion;
 
-    Peliculas(String título,
+    Peliculas(String titulo,
               String director,
-              int añoDeEstreno,
+              int anoDeEstreno,
               double Presupuesto,
-              double Recaudación,
+              double Recaudacion,
               String sinopsis,
               StringBuilder etiquetas
     ) {
 
-        this.titulo = título;
+        this.titulo = titulo;
         this.director=director;
-        this.anoDeEstreno = añoDeEstreno;
+        this.anoDeEstreno = anoDeEstreno;
         this.presupuesto = Presupuesto;
-        this.recaudacion = Recaudación;
+        this.recaudacion = Recaudacion;
         this.sinopsis = sinopsis;
         this.etiquetas = etiquetas;
 
