@@ -1,6 +1,6 @@
 package Examen22_21;
 
-public class Películas {
+public class Peliculas {
 
     public String titulo;
 
@@ -18,7 +18,7 @@ public class Películas {
 
     public double valoracion;
 
-    Películas(String título,
+    Peliculas(String título,
               String director,
               int añoDeEstreno,
               double Presupuesto,

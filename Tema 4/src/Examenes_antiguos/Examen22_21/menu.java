@@ -2,9 +2,9 @@ package Examen22_21;
 
 import java.util.Scanner;
 
-public class Menú {
+public class menu {
 
-    Películas[] biblioteca = new Películas[20];
+    Peliculas[] biblioteca = new Peliculas[20];
     int numpelis = 0;
 
     Scanner sc = new Scanner(System.in);
@@ -20,7 +20,7 @@ public class Menú {
 
         boolean salir = false;
 
-        pelisbasicas();
+        pelisBasicas();
 
         while (!salir) {
             System.out.print("elecion: ");
@@ -35,7 +35,7 @@ public class Menú {
 
 
                     if (numpelis < biblioteca.length) {
-                        añadirpeli();
+                        anadirPelis();
                         System.out.println("Película añadida añadida.");
                     } else {
                         System.out.println("No se pueden añadir más (máximo 20).");
@@ -144,8 +144,8 @@ public class Menú {
 
     }
 
-    void pelisbasicas() {
-        biblioteca[numpelis++] = new Películas(
+    void pelisBasicas() {
+        biblioteca[numpelis++] = new Peliculas(
                 "El Viaje Estelar",
                 "Juan",
                 2014,
@@ -155,7 +155,7 @@ public class Menú {
                 new StringBuilder("ciencia ficción, espacio, aventura")
         );
 
-        biblioteca[numpelis++] = new Películas(
+        biblioteca[numpelis++] = new Peliculas(
                 "Sombras en la Ciudad",
                 "Juan",
                 2020,
@@ -165,7 +165,7 @@ public class Menú {
                 new StringBuilder("thriller, crimen, misterio")
         );
 
-        biblioteca[numpelis++] = new Películas(
+        biblioteca[numpelis++] = new Peliculas(
                 "El Reino Perdido",
                 "Juan",
                 2018,
@@ -175,7 +175,7 @@ public class Menú {
                 new StringBuilder("fantasía, acción, épica")
         );
 
-        biblioteca[numpelis++] = new Películas(
+        biblioteca[numpelis++] = new Peliculas(
                 "Corazones de Invierno",
                 "Juan",
                 2012,
@@ -185,7 +185,7 @@ public class Menú {
                 new StringBuilder("romance, drama")
         );
 
-        biblioteca[numpelis++] = new Películas(
+        biblioteca[numpelis++] = new Peliculas(
                 "El Último Hacker",
                 "Juan",
                 2023,
@@ -197,7 +197,7 @@ public class Menú {
 
     }
 
-    void añadirpeli() {
+    void anadirPelis() {
         sc.nextLine();
 
         System.out.println("titulo:");
@@ -237,7 +237,7 @@ public class Menú {
 
         }
 
-        biblioteca[numpelis] = new Películas(titulo, director, anoDeEstreno, presupuesto, recaudacion, sinopsis, etiquetas);
+        biblioteca[numpelis] = new Peliculas(titulo, director, anoDeEstreno, presupuesto, recaudacion, sinopsis, etiquetas);
 
         numpelis++;
 
