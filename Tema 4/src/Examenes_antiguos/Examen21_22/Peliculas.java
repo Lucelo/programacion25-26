@@ -1,4 +1,4 @@
-package Examen22_21;
+package Examen21_22;
 
 public class Peliculas {
 
@@ -28,29 +28,34 @@ public class Peliculas {
     ) {
 
         this.titulo = titulo;
-        this.director=director;
+        this.director = director;
         this.anoDeEstreno = anoDeEstreno;
         this.presupuesto = Presupuesto;
         this.recaudacion = Recaudacion;
         this.sinopsis = sinopsis;
         this.etiquetas = etiquetas;
+        this.valoracion = valoracion();
 
     }
 
 
     double valoracion() {
 
+        double valor;
+
         if (presupuesto < recaudacion) {
-            return valoracion = 10;
+            valor = valoracion = 10;
 
         } else if (presupuesto > recaudacion) {
 
-            return valoracion = 0;
+            valor = valoracion = 0;
 
         } else {
-            return valoracion = 5;
+            valor = valoracion = 5;
 
         }
+
+        return valor;
 
     }
 

@@ -1,15 +1,20 @@
-package Examen22_21;
+package Examen21_22;
 
 import java.util.Scanner;
 
-public class menu {
+public class principal {
 
     Peliculas[] biblioteca = new Peliculas[20];
     int numpelis = 0;
 
     Scanner sc = new Scanner(System.in);
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
+        principal m = new principal();
+        m.iniciar();
+    }
+
+    public void iniciar() {
 
         System.out.println("1. Añadir una nueva película");
         System.out.println("2. Consultar la biblioteca");
@@ -18,10 +23,15 @@ public class menu {
         System.out.println("5. Buscar películas con presupuesto máximo");
         System.out.println("6. Salir");
 
-        boolean salir = false;
-
         pelisBasicas();
 
+        menu();
+
+    }
+
+    //
+    public void menu() {
+        boolean salir = false;
         while (!salir) {
             System.out.print("elecion: ");
 
@@ -31,70 +41,19 @@ public class menu {
 
             switch (elec) {
                 //
-                case 1 -> {
-
-
-                    if (numpelis < biblioteca.length) {
-                        anadirPelis();
-                        System.out.println("Película añadida añadida.");
-                    } else {
-                        System.out.println("No se pueden añadir más (máximo 20).");
-                    }
-
-
-                }
+                case 1 -> nuevaPelicula();
 
                 //
                 case 2 -> mostrarBiblioteca();
 
                 //
-                case 3 -> {
-
-                    etiquetas();
-
-                    System.out.print("Por que etiqueta desea buscar: ");
-                    String busq = sc.nextLine();
-
-                    for (int i = 0; i < numpelis; i++) {
-                        if (biblioteca[i].etiquetas.indexOf(busq) != -1) {
-                            System.out.println(biblioteca[i].titulo);
-
-                        }
-
-                    }
-
-                }
+                case 3 -> buscarPorEtiquetas();
 
                 //
-                case 4 -> {
-                    System.out.print("Nombre de la pelicula: ");
-                    String busq = sc.nextLine();
-
-                    for (int i = 0; i < numpelis; i++) {
-                        if (biblioteca[i].titulo.contains(busq)) {
-                            datos(i);
-                        }
-                    }
-
-                }
+                case 4 -> buscarPorNombre();
 
                 //
-                case 5 -> {
-
-                    double max = sc.nextDouble();
-
-                    for (int i = 0; i < numpelis; i++) {
-                        if (biblioteca[i].presupuesto < max) {
-
-                            System.out.println(biblioteca[i].titulo);
-
-                        }
-
-
-                    }
-
-
-                }
+                case 5 -> buscarPorPresupuesto();
 
                 //
                 case 6 -> salir = true;
@@ -104,51 +63,14 @@ public class menu {
             }
 
         }
-
     }
 
-    private void datos(int i) {
-        System.out.println("Su nombre es " + biblioteca[i].titulo + " se estreno en " + biblioteca[i].anoDeEstreno + " bajo el mando de " + biblioteca[i].director);
-        System.out.println("Tuvo un presupuesto de " + biblioteca[i].presupuesto + " y una recaudacion de " + biblioteca[i].recaudacion);
-        System.out.println("Su sinopsis es " + biblioteca[i].sinopsis + " bajo las etiquetas de " + biblioteca[i].etiquetas);
-    }
+    //
+    public void pelisBasicas() {
 
-    private void etiquetas() {
-        int salto = 0;
-
-        System.out.println("Etiquetas");
-
-        for (int i = 0; i < numpelis; i++) {
-
-            if (biblioteca[i] != null) {
-
-
-                System.out.print(biblioteca[i].etiquetas + ", ");
-
-                if (salto == 2) {
-
-                    System.out.println();
-
-                    salto = 0;
-
-                } else {
-
-
-                    salto++;
-                }
-
-            }
-
-        }
-
-        System.out.println();
-
-    }
-
-    void pelisBasicas() {
         biblioteca[numpelis++] = new Peliculas(
                 "El Viaje Estelar",
-                "Juan",
+                "Christopher Nolan",
                 2014,
                 120000000,
                 700000000,
@@ -158,7 +80,7 @@ public class menu {
 
         biblioteca[numpelis++] = new Peliculas(
                 "Sombras en la Ciudad",
-                "Juan",
+                "David Fincher",
                 2020,
                 20000000,
                 85000000,
@@ -168,7 +90,7 @@ public class menu {
 
         biblioteca[numpelis++] = new Peliculas(
                 "El Reino Perdido",
-                "Juan",
+                "Peter Jackson",
                 2018,
                 200000000,
                 950000000,
@@ -178,7 +100,7 @@ public class menu {
 
         biblioteca[numpelis++] = new Peliculas(
                 "Corazones de Invierno",
-                "Juan",
+                "Greta Gerwig",
                 2012,
                 15000000,
                 40000000,
@@ -188,7 +110,7 @@ public class menu {
 
         biblioteca[numpelis++] = new Peliculas(
                 "El Último Hacker",
-                "Juan",
+                "Denis Villeneuve",
                 2023,
                 8000000,
                 50000000,
@@ -198,7 +120,20 @@ public class menu {
 
     }
 
-    void anadirPelis() {
+    //
+    public void nuevaPelicula() {
+        if (numpelis < biblioteca.length) {
+            anadirPelis();
+            System.out.println("Película añadida añadida.");
+
+        } else {
+            System.out.println("No se pueden añadir más (máximo 20).");
+
+        }
+    }
+
+    //
+    public void anadirPelis() {
         sc.nextLine();
 
         System.out.println("titulo:");
@@ -244,17 +179,104 @@ public class menu {
 
     }
 
+    //
+    public void buscarPorPresupuesto() {
+        double max = sc.nextDouble();
+
+        for (int i = 0; i < numpelis; i++) {
+
+            if (biblioteca[i].presupuesto < max) {
+
+                System.out.println(biblioteca[i].titulo);
+
+            }
+
+        }
+    }
+
+    //
+    public void buscarPorNombre() {
+        System.out.print("Nombre de la pelicula: ");
+        String busq = sc.nextLine();
+
+        for (int i = 0; i < numpelis; i++) {
+
+            if (biblioteca[i].titulo.contains(busq)) {
+                datos(i);
+            }
+
+        }
+    }
+
+    //
+    public void buscarPorEtiquetas() {
+        etiquetas();
+
+        System.out.print("Por que etiqueta desea buscar: ");
+        String busq = sc.nextLine();
+
+        for (int i = 0; i < numpelis; i++) {
+
+            if (biblioteca[i].etiquetas.indexOf(busq) != -1) {
+                System.out.println(biblioteca[i].titulo);
+
+            }
+
+        }
+    }
+
+    //
+    public void etiquetas() {
+        int salto = 0;
+
+        System.out.println("Etiquetas");
+
+        for (int i = 0; i < numpelis; i++) {
+
+            if (biblioteca[i] != null) {
+
+
+                System.out.print(biblioteca[i].etiquetas + ", ");
+
+                if (salto == 2) {
+
+                    System.out.println();
+
+                    salto = 0;
+
+                } else {
+
+
+                    salto++;
+                }
+
+            }
+
+        }
+
+        System.out.println();
+
+    }
+
+    //
+    public void datos(int i) {
+        System.out.println("Su nombre es " + biblioteca[i].titulo + " se estreno en " + biblioteca[i].anoDeEstreno + " bajo el mando de " + biblioteca[i].director);
+        System.out.println("Tuvo un presupuesto de " + biblioteca[i].presupuesto + " y una recaudacion de " + biblioteca[i].recaudacion);
+        System.out.println("Su sinopsis es " + biblioteca[i].sinopsis + " bajo las etiquetas de " + biblioteca[i].etiquetas);
+        System.out.println("Su valoracion es de " + biblioteca[i].valoracion);
+    }
+
+    //
     public void mostrarBiblioteca() {
         for (int i = 0; i < biblioteca.length; i++) {
             if (biblioteca[i] != null) {
 
                 System.out.println((i + 1));
                 datos(i);
-                System.out.println("Su valoracion es de " + biblioteca[i].valoracion());
+                System.out.println("Su valoracion es de " + biblioteca[i].valoracion);
 
             }
         }
     }
-
 
 }
