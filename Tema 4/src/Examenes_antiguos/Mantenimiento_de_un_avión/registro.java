@@ -5,21 +5,15 @@ import java.time.format.DateTimeFormatter;
 
 public class registro {
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     LocalDate fecha;
     boolean estado;
     LocalDate periodoValido;
 
-    registro(
-            String  fecha,
-            boolean estado,
-            String  periodoValido
-    ){
-        this.fecha = LocalDate.parse(fecha,formatter);
-        this.estado=estado;
-        this.periodoValido=LocalDate.parse(periodoValido,formatter);
-
-
+    public registro(String fecha, boolean estado, String periodoValido) {
+        this.fecha = LocalDate.parse(fecha, formatter);
+        this.estado = estado;
+        this.periodoValido = LocalDate.parse(periodoValido, formatter);
     }
 }
