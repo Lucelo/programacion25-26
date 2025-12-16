@@ -17,15 +17,7 @@ public class Principal {
 
         while (!salir) {
 
-            System.out.println();
-
-            System.out.print("1.Cafe ");
-            System.out.print("2.leche ");
-            System.out.println("3.Cafe con leche ");
-            System.out.print("4.Estado ");
-            System.out.println("5.apagar ");
-
-            System.out.println();
+            datos();
 
             System.out.print("-");
             int eleccion = sc.nextInt();
@@ -46,5 +38,17 @@ public class Principal {
                 System.out.println("El numero es incorrecto");
             }
         }
+    }
+
+    private static void datos() {
+        System.out.println();
+
+        System.out.print("1.Cafe ");
+        System.out.print("2.leche ");
+        System.out.println("3.Cafe con leche ");
+        System.out.print("4.Estado ");
+        System.out.println("5.apagar ");
+
+        System.out.println();
     }
 }
