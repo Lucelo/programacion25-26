@@ -2,9 +2,8 @@ package R1_1;
 
 public class CuentaCredito extends Cuenta {
     private static final double SALDO_INICIAL = 0;
-    private static final double CREDITO_INICIAL = 100;
+    private static double CREDITO_INICIAL = 100;
     private static final double CREDITO_MAX = 300;
-    private final double CREDITO_INICIAL;
 
     private double credito;
 
@@ -56,6 +55,8 @@ public class CuentaCredito extends Cuenta {
                 credito -= cantidadRestante;
             } else throw new CuentaException("No tienes suficiente crédito para hacer esta operación");
         } else super.reintegro(dineroASacar);
+
+
 
     }
 
