@@ -12,7 +12,7 @@ public class Menu_de_juego {
     Personaje[] personajes = new Personaje[100];
     Personaje[] listaordenada = new Personaje[100];
 
-    public void main(String[] args) {
+    void main(String[] args) {
 
         Menu();
 
@@ -103,21 +103,19 @@ public class Menu_de_juego {
 
                     String enemigo = sc.nextLine();
 
-                    for (int i = 0; i < personajes.length; i++) {
-                        if (Objects.equals(NM, personajes[i].Nombre)) {
-                            if (personajes[i] instanceof Magos) {
-                                for (int j = 0; j < personajes.length; j++) {
+                    for (Personaje personaje : personajes) {
+                        if (Objects.equals(NM, personaje.Nombre)) {
+                            if (personaje instanceof Magos) for (Personaje value : personajes) {
 
-                                    if (Objects.equals(enemigo, personajes[j].Nombre)) {
-                                        ((Magos) personajes[i]).lanzaHechizo(personajes[j]);
+                                if (Objects.equals(enemigo, value.Nombre)) {
+                                    ((Magos) personaje).lanzaHechizo(value);
 
-                                    } else {
-                                        System.out.println("No se ha encontrado al enemigo");
-                                    }
-
+                                } else {
+                                    System.out.println("No se ha encontrado al enemigo");
                                 }
 
-                            } else {
+                            }
+                            else {
                                 System.out.println("No es un mago");
                             }
 
@@ -136,13 +134,13 @@ public class Menu_de_juego {
 
                     String aliado = sc.nextLine();
 
-                    for (int i = 0; i < personajes.length; i++) {
-                        if (Objects.equals(NC, personajes[i].Nombre)) {
-                            if (personajes[i] instanceof Clerigos) {
-                                for (int j = 0; j < personajes.length; j++) {
+                    for (Personaje personaje : personajes) {
+                        if (Objects.equals(NC, personaje.Nombre)) {
+                            if (personaje instanceof Clerigos) {
+                                for (Personaje value : personajes) {
 
-                                    if (Objects.equals(aliado, personajes[j].Nombre)) {
-                                        ((Clerigos) personajes[i]).curar(personajes[j]);
+                                    if (Objects.equals(aliado, value.Nombre)) {
+                                        ((Clerigos) personaje).curar(value);
 
                                     } else {
                                         System.out.println("No se ha encontrado al aliado");
@@ -166,10 +164,10 @@ public class Menu_de_juego {
 
                 case 5 -> {
 
-                    for (int i = 0; i < personajes.length; i++) {
+                    for (Personaje personaje : personajes) {
 
-                        if (personajes[i] != null) {
-                            System.out.println(personajes[i].toString());
+                        if (personaje != null) {
+                            System.out.println(personaje);
 
                         }
 
@@ -185,12 +183,7 @@ public class Menu_de_juego {
 
                             listaordenada = personajes.clone();
 
-                            Arrays.sort(listaordenada, new Comparator<Personaje>() {
-                                @Override
-                                public int compare(Personaje p1, Personaje p2) {
-                                    return Integer.compare(p1.Vida_act,p2.Vida_act);
-                                }
-                            });
+                            Arrays.sort(listaordenada, Comparator.comparingInt(p -> p.Vida_act));
 
 
 
@@ -203,9 +196,7 @@ public class Menu_de_juego {
 
                 }
 
-                case 7 -> {
-                    salir = true;
-                }
+                case 7 -> salir = true;
 
 
                 default -> throw new IllegalStateException("Unexpected value: " + opc);
