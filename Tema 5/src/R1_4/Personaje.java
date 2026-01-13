@@ -14,7 +14,6 @@ public abstract class Personaje {
     public int Vida_max;
     public int Vida_act;
 
-    public String Clase;
 
 
 
@@ -28,7 +27,7 @@ public abstract class Personaje {
         this.Inteligencia = setInteligencia(inteligencia);
         this.Vida_max = vida_max;
         this.Vida_act = vida_max;
-        this.Clase = "";
+
 
         PersonajesCreados++;
 

@@ -18,7 +18,7 @@ public class Magos extends Personaje {
         super(nombre, raza, fuerza, inteligencia, vida_max);
         this.Hechizos  =  new String[4];
 
-        this.Clase="Mago";
+
 
     }
 

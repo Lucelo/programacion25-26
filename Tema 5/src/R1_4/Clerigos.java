@@ -8,7 +8,7 @@ public class Clerigos extends Personaje {
         super(nombre, raza, fuerza, inteligencia, vida_max);
         Nombre_dios = nombre_dios;
 
-        this.Clase="Clerigo";
+
     }
 
     @Override
