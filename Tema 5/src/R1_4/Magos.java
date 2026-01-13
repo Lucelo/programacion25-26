@@ -1,18 +1,24 @@
-package R1_3;
+package R1_4;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Magos extends Personajes {
+public class Magos extends Personaje {
+
+    public String Clase;
 
     public String[] Hechizos;
 
     public int cantidadDeHechizos;
 
 
+
     public Magos(String nombre, String raza, int fuerza, int inteligencia,
                  int vida_max) {
         super(nombre, raza, fuerza, inteligencia, vida_max);
         this.Hechizos  =  new String[4];
+
+        this.Clase="Mago";
 
     }
 
@@ -41,8 +47,6 @@ public class Magos extends Personajes {
     public void aprendeHechizo(String hechizo) {
         if (cantidadDeHechizos < 4) {
 
-
-
             Hechizos[cantidadDeHechizos] = hechizo;
 
             cantidadDeHechizos++;
@@ -56,7 +60,7 @@ public class Magos extends Personajes {
 
     }
 
-    public void lanzaHechizo(Personajes enemigo) {
+    public void lanzaHechizo(Personaje enemigo) {
 
         if (cantidadDeHechizos >= 1) {
 

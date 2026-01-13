@@ -1,6 +1,6 @@
 package R1_3;
 
-public abstract class personajes {
+public abstract class Personajes {
 
     public String Nombre;
 
@@ -12,7 +12,7 @@ public abstract class personajes {
     public int Vida_max;
     public int Vida_act;
 
-    public personajes(String nombre, String raza, int fuerza, int inteligencia, int vida_max) {
+    public Personajes(String nombre, String raza, int fuerza, int inteligencia, int vida_max) {
         this.Nombre = nombre;
         this.Raza = setRaza(raza);
         this.Fuerza = setFuerza(fuerza);

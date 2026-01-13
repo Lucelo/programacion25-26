@@ -1,11 +1,14 @@
-package R1_3;
+package R1_4;
 
-public class Clerigos extends Personajes {
+public class Clerigos extends Personaje {
     public String Nombre_dios;
 
-    public Clerigos(String nombre, String raza, int fuerza, int inteligencia, int vida_max, String nombre_dios) {
+    public Clerigos(String nombre, String raza, int fuerza,
+                    int inteligencia, int vida_max, String nombre_dios) {
         super(nombre, raza, fuerza, inteligencia, vida_max);
         Nombre_dios = nombre_dios;
+
+        this.Clase="Clerigo";
     }
 
     @Override
@@ -28,7 +31,7 @@ public class Clerigos extends Personajes {
         return 16;
     }
 
-    public void curar(Personajes aliado) {
+    public void curar(Personaje aliado) {
 
         aliado.Vida_act += 10;
 
