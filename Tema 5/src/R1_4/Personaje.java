@@ -1,115 +1,114 @@
-package R1_4;
 
-import R1_3.Personajes;
+package R1_4;
 
 public abstract class Personaje {
 
-    public String Nombre;
+    public String nombre;
 
-    private String Raza;
+    private String raza;
 
-    private int Fuerza;
-    private int Inteligencia;
+    private int fuerza;
+    private int inteligencia;
 
-    public int Vida_max;
-    public int Vida_act;
-
-
-
+    public int vidaMax;
+    public int vidaAct;
 
     public static int PersonajesCreados;
 
 
-    public Personaje(String nombre, String raza, int fuerza, int inteligencia, int vida_max) {
-        this.Nombre = nombre;
-        this.Raza = setRaza(raza);
-        this.Fuerza = setFuerza(fuerza);
-        this.Inteligencia = setInteligencia(inteligencia);
-        this.Vida_max = vida_max;
-        this.Vida_act = vida_max;
-
+    public Personaje(String nombre, String raza, int fuerza, int inteligencia, int vidaMax) {
+        this.nombre = nombre;
+        setRaza(raza);
+        setFuerza(fuerza);
+        setInteligencia(inteligencia);
+        setVidaMax(vidaMax);
+        this.vidaAct = setVidaMax(vidaMax);
 
         PersonajesCreados++;
 
-
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
-    }
-
-    public String setRaza(String raza) {
+    public void setRaza(String raza) {
 
         if (raza.equals("Humano") ||
                 raza.equals("Orco") ||
                 raza.equals("Elfo") ||
                 raza.equals("Enano")) {
 
-            Raza = raza;
+            this.raza = raza;
 
         } else {
-            System.out.println("La raza de " + Nombre + " es inválida. Se asigna 'Humano' por defecto.");
-            this.Raza = "Humano";
-        }
 
-        return raza;
+            System.out.println("La raza de " + nombre + " es inválida. Se asigna 'Humano' por defecto.");
+
+            this.raza = "Humano";
+
+        }
 
     }
 
-    public int setFuerza(int fuerza) {
+    public void setFuerza(int fuerza) {
 
         if (fuerza >= getFuerzaMin() && fuerza <= getFuerzaMax()) {
 
-            Fuerza = fuerza;
+            this.fuerza = fuerza;
 
         } else {
             throw new IllegalArgumentException("La fuerza no es correcta");
         }
 
-        return fuerza;
     }
 
     public abstract int getFuerzaMin();
 
     public abstract int getFuerzaMax();
 
-    public int setInteligencia(int inteligencia) {
+    public void setInteligencia(int inteligencia) {
 
         if (inteligencia >= getInteligenciaMin() && inteligencia <= getInteligenciaMax()) {
 
-            Inteligencia = inteligencia;
+            this.inteligencia = inteligencia;
 
         } else {
             throw new IllegalArgumentException("La inteligencia no es correcta");
         }
 
-        return inteligencia;
     }
 
     public abstract int getInteligenciaMin();
 
     public abstract int getInteligenciaMax();
 
-    public String getRaza() {
-        return Raza;
+    public int setVidaMax(int vida_max) {
+        if (vida_max > getVida_maxMin() && vida_max <= getVida_maxMax()) {
+
+            vidaMax = vida_max;
+
+        } else {
+            throw new IllegalArgumentException("La Vida maxima no es correcta");
+        }
+
+        return vida_max;
+
     }
 
-    public int getFuerza() {
-        return Fuerza;
+    public int getVida_maxMin() {
+        return 0;
     }
 
-    public int getInteligencia() {
-        return Inteligencia;
+    public int getVida_maxMax() {
+        return 100;
     }
+
 
     @Override
     public String toString() {
         return
-                "Nombre='" + Nombre + '\'' +
-                        ", Raza='" + Raza + '\'' +
-                        ", Fuerza=" + Fuerza +
-                        ", Inteligencia=" + Inteligencia +
-                        ", Vida_max=" + Vida_max +
-                        ", Vida_act=" + Vida_act;
+                "Nombre='" + nombre + '\'' +
+                        ", Raza='" + raza + '\'' +
+                        ", Fuerza=" + fuerza +
+                        ", Inteligencia=" + inteligencia +
+                        ", Vida_max=" + vidaMax +
+                        ", Vida_act=" + vidaAct;
     }
 }

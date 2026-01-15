@@ -13,9 +13,7 @@ public class Menu_de_juego {
     Personaje[] listaordenada = new Personaje[100];
 
     void main(String[] args) {
-
         Menu();
-
     }
 
     private void Menu() {
@@ -23,15 +21,15 @@ public class Menu_de_juego {
 
         boolean salir = false;
 
-        personajes[PersonajesCreados] = new Magos("Gandalf", "Humano", 10, 20, 56);
+        personajesBase();
 
-        personajes[PersonajesCreados] = new Magos("Saruman", "Humano", 15, 17, 74);
-
-        personajes[PersonajesCreados] = new Clerigos("Lancelot", "Humano", 18, 12, 76, "Dios");
-
-
-
-
+        System.out.println("1.crear");
+        System.out.println("2.aprender magia");
+        System.out.println("3.lanzar magia");
+        System.out.println("4.curar");
+        System.out.println("5.lista de personajes");
+        System.out.println("6.lista de personajes ordenado por vida actual");
+        System.out.println("7.salir");
 
         while (!salir) {
 
@@ -40,7 +38,7 @@ public class Menu_de_juego {
 
             switch (opc) {
 
-                case 1 -> CrearPersonaje(sc);
+                case 1 -> crearPersonaje(sc);
 
                 case 2 -> aprenderMagia(sc);
 
@@ -50,13 +48,23 @@ public class Menu_de_juego {
 
                 case 5 -> lista();
 
-                case 6 -> listaordenada();
+                case 6 -> listaOrdenada();
 
                 case 7 -> salir = true;
 
-                default -> throw new IllegalStateException("Unexpected value: " + opc);
+                default -> throw new IllegalStateException("La opcion " + opc + " no es valida");
             }
         }
+    }
+
+    private void personajesBase() {
+
+        personajes[PersonajesCreados] = new Magos("Saruman", "Humano", 15, 17, 74);
+
+        personajes[PersonajesCreados] = new Magos("Gandalf", "Humano", 10, 20, 56);
+
+        personajes[PersonajesCreados] = new Clerigos("Lancelot", "Humano", 18, 12, 76, "Dios");
+
     }
 
     private void lista() {
@@ -71,146 +79,210 @@ public class Menu_de_juego {
         }
     }
 
-    private void listaordenada() {
-        for (int i = 0; i < personajes.length; i++) {
+    private void listaOrdenada() {
 
-            if (personajes[i] != null) {
+        listaordenada = Arrays.stream(personajes)
+                .filter(Objects::nonNull)
+                .sorted(Comparator.comparingInt(p -> p.vidaAct))
+                .toArray(Personaje[]::new);
 
-                listaordenada = personajes.clone();
-
-                Arrays.sort(listaordenada, Comparator.comparingInt(p -> p.Vida_act));
-
-
-                System.out.println(listaordenada[i].toString());
-
-            }
-
-
+        for (Personaje p : listaordenada) {
+            System.out.println(p);
         }
+
     }
 
     private void curar(Scanner sc) {
+        System.out.println("Nombre del clérigo");
         String NC = sc.nextLine();
 
+        System.out.println("Nombre del aliado");
         String aliado = sc.nextLine();
 
+        boolean PE = false;
+        boolean CE = false;
+        boolean AE = false;
+
         for (Personaje personaje : personajes) {
-            if (Objects.equals(NC, personaje.Nombre)) {
-                if (personaje instanceof Clerigos) {
-                    for (Personaje value : personajes) {
+            if (personaje != null){
+                if (Objects.equals(NC, personaje.nombre)) {
+                    PE = true;
+                    if (personaje instanceof Clerigos) {
+                        CE = true;
+                        for (Personaje value : personajes) {
 
-                        if (Objects.equals(aliado, value.Nombre)) {
-                            ((Clerigos) personaje).curar(value);
+                            if (Objects.equals(aliado, value.nombre)) {
+                                AE = true;
+                                ((Clerigos) personaje).curar(value);
 
-                        } else {
-                            System.out.println("No se ha encontrado al aliado");
+                            }
+
                         }
 
                     }
 
-                } else {
-                    System.out.println("No es un clerigo");
                 }
-
-            } else {
-                System.out.println("No se a encontrado");
             }
 
 
+
         }
+
+        if (!PE) {
+            System.out.println("No se a encontrado al personaje");
+        } else if (!CE) {
+            System.out.println("No era un clerigo");
+        } else if (!AE) {
+            System.out.println("No se a encontrado al aliado");
+        }
+
     }
 
     private void lanzarMagia(Scanner sc) {
+
+        System.out.println("Nombre del mago");
         String NM = sc.nextLine();
 
+        System.out.println("Nombre del enemigo");
         String enemigo = sc.nextLine();
 
+        boolean ME = false;
+        boolean PE = false;
+        boolean EE = false;
+
         for (Personaje personaje : personajes) {
-            if (Objects.equals(NM, personaje.Nombre)) {
-                if (personaje instanceof Magos) for (Personaje value : personajes) {
+            if (personaje != null){
+                if (Objects.equals(personaje.nombre, NM)) {
 
-                    if (Objects.equals(enemigo, value.Nombre)) {
-                        ((Magos) personaje).lanzaHechizo(value);
+                    PE = true;
 
-                    } else {
-                        System.out.println("No se ha encontrado al enemigo");
+                    if (personaje instanceof Magos) {
+
+                        ME = true;
+
+                        for (Personaje value : personajes) {
+
+                            if (Objects.equals(enemigo, value.nombre)) {
+                                EE = true;
+
+                                ((Magos) personaje).lanzaHechizo(value);
+
+                            }
+
+
+                        }
+
+
                     }
 
                 }
-                else {
-                    System.out.println("No es un mago");
-                }
-
-            } else {
-                System.out.println("No se a encontrado");
             }
 
-
         }
+
+        if (!PE) {
+            System.out.println("No se a encontrado al personaje");
+        } else if (!ME) {
+            System.out.println("No hera un mago");
+        } else if (!EE) {
+            System.out.println("No se a encontrado al enemigo");
+        }
+
     }
 
     private void aprenderMagia(Scanner sc) {
+        System.out.println("Nombre del mago");
         String NM = sc.nextLine();
 
+        System.out.println("Nombre del hechizo");
         String hechizo = sc.nextLine();
 
+        boolean ME = false;
+        boolean PE = false;
 
         for (Personaje personaje : personajes) {
+            if (personaje != null){
+                if (NM.equals(personaje.nombre)) {
 
-            if (Objects.equals(NM, personaje.Nombre)) {
+                    PE = true;
 
-                if (personaje instanceof Magos) {
-                    ((Magos) personaje).aprendeHechizo(hechizo);
-                } else {
-                    System.out.println("No es un mago");
+                    if (personaje instanceof Magos) {
+                        ME = true;
+
+                        ((Magos) personaje).aprendeHechizo(hechizo);
+                    }
+
                 }
 
-            } else {
-                System.out.println("No se a encontrado");
             }
 
-
         }
+
+        if (!PE) {
+            System.out.println("No se a encontrado al personaje");
+
+        } else if (!ME) {
+            System.out.println("No hera un mago");
+        }
+
+
     }
 
-    private void CrearPersonaje(Scanner sc) {
-        System.out.println("Que se desea crear un mago o un clerigo");
+    private void crearPersonaje(Scanner sc) {
+        System.out.println("Que se desea crear un mago o un clérigo");
 
         String opc2 = sc.nextLine();
 
         switch (opc2) {
 
-
             case "mago" -> {
 
+                System.out.println("Nombre del mago");
                 String NombreM = sc.nextLine();
-                String RazaM = sc.nextLine();
-                int FuerzaM = sc.nextInt();
-                int InteligenciaM = sc.nextInt();
-                int vida_maxM = sc.nextInt();
 
+                System.out.println("Raza del mago");
+                String RazaM = sc.nextLine();
+
+                System.out.println("Fuerza del mago");
+                int FuerzaM = sc.nextInt();
+
+                System.out.println("Inteligencia del mago");
+                int InteligenciaM = sc.nextInt();
+
+                System.out.println("vida maxima del mago");
+                int vida_maxM = sc.nextInt();
+                sc.nextLine();
 
                 personajes[PersonajesCreados] = new Magos(NombreM, RazaM, FuerzaM, InteligenciaM, vida_maxM);
 
-
             }
-            case "clerigo" -> {
+            case "clérigo" -> {
 
+                System.out.println("Nombre del clérigo");
                 String NombreC = sc.nextLine();
+
+                System.out.println("Raza del clérigo");
                 String RazaC = sc.nextLine();
+
+                System.out.println("Fuerza del clérigo");
                 int FuerzaC = sc.nextInt();
+
+                System.out.println("Inteligencia del clérigo");
                 int InteligenciaC = sc.nextInt();
+
+                System.out.println("vida maxima del clérigo");
                 int vida_maxC = sc.nextInt();
+                sc.nextLine();
+
+                System.out.println("Dios del clérigo");
                 String DiosC = sc.nextLine();
 
                 personajes[PersonajesCreados] = new Clerigos(NombreC, RazaC, FuerzaC, InteligenciaC, vida_maxC, DiosC);
 
-
             }
-            default -> System.out.println("Ocpion invalida");
+
+            default -> System.out.println("La opción es invalida diga solo mago o clérigo");
 
         }
     }
-
-
 }

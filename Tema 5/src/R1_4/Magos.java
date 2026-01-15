@@ -1,60 +1,57 @@
+
 package R1_4;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Magos extends Personaje {
 
-    public String Clase;
+    public int iMin=17;
+    public int iMax=20;
+    public int fMin=0;
+    public int fMax=15;
 
-    public String[] Hechizos;
+    public String[] hechizos;
 
     public int cantidadDeHechizos;
-
-
 
     public Magos(String nombre, String raza, int fuerza, int inteligencia,
                  int vida_max) {
         super(nombre, raza, fuerza, inteligencia, vida_max);
-        this.Hechizos  =  new String[4];
-
+        this.hechizos = new String[4];
 
 
     }
 
-
-
     @Override
     public int getInteligenciaMin() {
-        return 17;
+        return iMin;
     }
 
     @Override
     public int getInteligenciaMax() {
-        return 20;
+        return iMax;
     }
 
     @Override
     public int getFuerzaMin() {
-        return 0;
+        return fMin;
     }
 
     @Override
     public int getFuerzaMax() {
-        return 15;
+        return fMax;
     }
 
     public void aprendeHechizo(String hechizo) {
         if (cantidadDeHechizos < 4) {
 
-            Hechizos[cantidadDeHechizos] = hechizo;
+            hechizos[cantidadDeHechizos] = hechizo;
 
             cantidadDeHechizos++;
 
         } else {
 
             System.out.println("Ya no hay mas espacio");
-
 
         }
 
@@ -65,13 +62,13 @@ public class Magos extends Personaje {
         if (cantidadDeHechizos >= 1) {
 
             for (int i = 0; i < cantidadDeHechizos - 1; i++) {
-                Hechizos[i] = Hechizos[i + 1];
+                hechizos[i] = hechizos[i + 1];
             }
 
-            Hechizos[cantidadDeHechizos - 1] = null;
+            hechizos[cantidadDeHechizos - 1] = null;
             cantidadDeHechizos--;
 
-            enemigo.Vida_act -= 10;
+            enemigo.vidaAct -= 10;
         } else {
             System.out.println("No hay hechizos en el repertorio");
 
@@ -84,7 +81,7 @@ public class Magos extends Personaje {
 
 
         return super.toString() +
-                ", hechizos=" + Arrays.toString(Hechizos) +
+                ", hechizos=" + Arrays.toString(hechizos) +
                 ", cantidadDeHechizos=" + cantidadDeHechizos;
 
 

@@ -1,13 +1,12 @@
+
 package R1_4;
 
 public class Clerigos extends Personaje {
-    public String Nombre_dios;
+    public String nombreDios;
 
-    public Clerigos(String nombre, String raza, int fuerza,
-                    int inteligencia, int vida_max, String nombre_dios) {
+    public Clerigos(String nombre, String raza, int fuerza, int inteligencia, int vida_max, String nombreDios) {
         super(nombre, raza, fuerza, inteligencia, vida_max);
-        Nombre_dios = nombre_dios;
-
+        this.nombreDios = nombreDios;
 
     }
 
@@ -33,13 +32,22 @@ public class Clerigos extends Personaje {
 
     public void curar(Personaje aliado) {
 
-        aliado.Vida_act += 10;
+        if (aliado.vidaAct + 10 <= aliado.vidaMax) {
+            aliado.vidaAct += 10;
+        } else {
+            System.out.println("Se ha curado toda la vida posible");
+            System.out.println("Siendo " + (aliado.vidaAct - aliado.vidaMax));
+
+            aliado.vidaAct = aliado.vidaMax;
+
+        }
 
     }
 
     @Override
     public String toString() {
         return super.toString() +
-                ", Nombre_dios='" + Nombre_dios + '\'' ;
+                ", Nombre_dios='" + nombreDios + '\'';
     }
+
 }
