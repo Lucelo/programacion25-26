@@ -12,6 +12,7 @@ public abstract class Pokemon {
 
     public String tipo;
 
+    public int id;
     public static int criaturasCreadas;
 
     public Pokemon(String nombre, int vida_max, int ataque, int defensa) {
@@ -21,6 +22,8 @@ public abstract class Pokemon {
         setAtaque(ataque);
         setDefensa(defensa);
         this.tipo = getTipo();
+
+        id = criaturasCreadas;
 
         criaturasCreadas++;
 
@@ -92,13 +95,12 @@ public abstract class Pokemon {
 
     @Override
     public String toString() {
-        return "Pokemon{" +
-                "Nombre='" + Nombre + '\'' +
-                ", Vida_max=" + Vida_max +
-                ", Vida_act=" + Vida_act +
-                ", Ataque=" + Ataque +
-                ", Defensa=" + Defensa +
-                ", tipo='" + tipo + '\'' +
-                '}';
+        return "Pokemon " + id +
+                " " + Nombre +
+                ", PS " + Vida_max +
+                "/ " + Vida_act +
+                ", Ata=" + Ataque +
+                ", Def=" + Defensa +
+                ", tipo=" + tipo;
     }
 }
