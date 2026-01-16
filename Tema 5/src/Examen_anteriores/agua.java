@@ -1,6 +1,6 @@
 package Examen_anteriores;
 
-public class agua extends pokemon {
+public class agua extends Pokemon {
 
     public int hidratación;
 

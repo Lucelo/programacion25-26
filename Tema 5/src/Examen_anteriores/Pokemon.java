@@ -1,6 +1,6 @@
 package Examen_anteriores;
 
-public abstract class pokemon {
+public abstract class Pokemon {
 
     public String Nombre;
 
@@ -12,13 +12,18 @@ public abstract class pokemon {
 
     public String tipo;
 
-    public pokemon(String nombre, int vida_max, int ataque, int defensa) {
+    public static int criaturasCreadas;
+
+    public Pokemon(String nombre, int vida_max, int ataque, int defensa) {
         Nombre = nombre;
         setVida_max(vida_max);
         Vida_act = Vida_max;
         setAtaque(ataque);
         setDefensa(defensa);
         this.tipo = getTipo();
+
+        criaturasCreadas++;
+
     }
 
     public void setVida_max(int vida_max) {
@@ -85,4 +90,15 @@ public abstract class pokemon {
     public abstract String getTipo();
 
 
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "Nombre='" + Nombre + '\'' +
+                ", Vida_max=" + Vida_max +
+                ", Vida_act=" + Vida_act +
+                ", Ataque=" + Ataque +
+                ", Defensa=" + Defensa +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
 }

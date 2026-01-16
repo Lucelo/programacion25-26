@@ -1,11 +1,13 @@
 package Examen_anteriores;
 
-public class tierra extends pokemon {
+public class tierra extends Pokemon {
 
     public int resistenciaEléctrica;
 
-    public tierra(String nombre, int vida_max, int ataque, int defensa) {
+    public tierra(String nombre, int vida_max, int ataque, int defensa, int resistenciaEléctrica) {
         super(nombre, vida_max, ataque, defensa);
+
+        setResistenciaEléctrica(resistenciaEléctrica);
     }
 
     public void setResistenciaEléctrica(int resistenciaEléctrica) {

@@ -1,6 +1,6 @@
 package Examen_anteriores;
 
-public class eléctrico extends pokemon{
+public class eléctrico extends Pokemon {
 
     public int resistenciaDeLluvia;
 
