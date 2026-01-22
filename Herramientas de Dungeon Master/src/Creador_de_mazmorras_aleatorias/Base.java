@@ -7,52 +7,96 @@ public class Base {
     //ZONA INICIAL
     int zonaInicial = (int) (Math.random() * (10 - 1 + 1)) + 1;
 
+    String[ ] decripcionZonaInicial = new String[]{};
+
     //PASILLOS
     int pasillos = (int) (Math.random() * (20 - 1 + 1)) + 1;
     int anchoDelPasillo = (int) (Math.random() * (20 - 1 + 1)) + 1;
+
+    String[ ] decripcionpasillos = new String[]{};
+    String[ ] decripcionanchoDelPasillo = new String[]{};
 
 
     //SALIDAS
     int salidasDeLaSala = (int) (Math.random() * (10 - 1 + 1)) + 1;
     int ubicaciónDeLaSalida = (int) (Math.random() * (10 - 1 + 1)) + 1;
 
+    String[ ] decripcionsalidasDeLaSala = new String[]{};
+    String[ ] decripcionubicaciónDeLaSalida = new String[]{};
+
 
     //PUERTAS
-    String[] tipoDePuerta = new String[]{};
-    String[] trasLaPuerta = new String[]{};
+    int tipoDePuerta = (int) (Math.random() * (10 - 1 + 1)) + 1;
+    int trasLaPuerta = (int) (Math.random() * (10 - 1 + 1)) + 1;
+
+    String[] decripciontipoDePuerta = new String[]{};
+    String[] decripciontrasLaPuerta = new String[]{};
+
 
 
     //ESCALERAS
-    String[] escaleras = new String[]{};
+    int escaleras = (int) (Math.random() * (10 - 1 + 1)) + 1;
+
+    String[] decripcionescaleras = new String[]{};
+
 
 
     //SALAS
-    String[] salas = new String[]{};
-    String[] tipoDeSalida = new String[]{};
+    int salas = (int) (Math.random() * (10 - 1 + 1)) + 1;
+    int tipoDeSalida = (int) (Math.random() * (10 - 1 + 1)) + 1;
+
+
+    String[] decripcionsalas = new String[]{};
+    String[] decripciontipoDeSalida = new String[]{};
+
 
 
     //ESTADO ACTUAL DE LA SALA
-    String[] ESTADO_ACTUAL_DE_LA_SALA = new String[]{};
+    int ESTADO_ACTUAL_DE_LA_SALA = (int) (Math.random() * (10 - 1 + 1)) + 1;
+
+    String[] decripcionESTADO_ACTUAL_DE_LA_SALA = new String[]{};
+
 
 
     //CONTENIDOS DE UNA SALA
-    String[] contenidosDeUnaSala = new String[]{};
+
+    int contenidosDeUnaSala = (int) (Math.random() * (10 - 1 + 1)) + 1;
+
+    String[] decripcioncontenidosDeUnaSala = new String[]{};
+
 
 
     //OBSTÁCULOS ALEATORIOS
-    String[] obstáculos = new String[]{};
+    int obstáculos = (int) (Math.random() * (10 - 1 + 1)) + 1;
+    String[] decripcionobstáculos = new String[]{};
+
 
 
     //TRAMPAS ALEATORIAS
-    String[] activadorDeUnaTrampa = new String[]{};
-    String[] gravedadDelDañoDeUnaTrampa = new String[]{};
-    String[] efectoDeUnaTrampa = new String[]{};
+
+    int activadorDeUnaTrampa = (int) (Math.random() * (10 - 1 + 1)) + 1;
+    int gravedadDelDañoDeUnaTrampa = (int) (Math.random() * (10 - 1 + 1)) + 1;
+    int efectoDeUnaTrampa = (int) (Math.random() * (10 - 1 + 1)) + 1;
+
+
+    String[] decripcionactivadorDeUnaTrampa = new String[]{};
+    String[] decripciongravedadDelDañoDeUnaTrampa = new String[]{};
+    String[] decripcionefectoDeUnaTrampa = new String[]{};
+
+
 
     //DETALLES DE UNA MAZMORRA
-    String[] RUIDOS = new String[]{};
-    String[] AIRE = new String[]{};
-    String[] AROMAS = new String[]{};
-    String[] DETALLES_GENERALES = new String[]{};
+
+    int RUIDOS = (int) (Math.random() * (10 - 1 + 1)) + 1;
+    int AIRE = (int) (Math.random() * (10 - 1 + 1)) + 1;
+    int AROMAS = (int) (Math.random() * (10 - 1 + 1)) + 1;
+    int DETALLES_GENERALES = (int) (Math.random() * (10 - 1 + 1)) + 1;
+
+    String[] decripcionRUIDOS = new String[]{};
+    String[] decripcionAIRE = new String[]{};
+    String[] decripcionAROMAS = new String[]{};
+    String[] decripcionDETALLES_GENERALES = new String[]{};
+
 
 
 }
