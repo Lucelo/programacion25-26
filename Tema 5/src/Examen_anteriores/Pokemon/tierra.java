@@ -1,4 +1,4 @@
-package Examen_anteriores;
+package Examen_anteriores.Pokemon;
 
 public class tierra extends Pokemon {
 
