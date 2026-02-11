@@ -1,8 +1,10 @@
-package Examen_anteriores;
+package Examen_anteriores.Pokemon;
 
 
 
-import static Examen_anteriores.Pokemon.criaturasCreadas;
+import eléctrico;
+
+import static Examen_anteriores.Pokemon.Pokemon.criaturasCreadas;
 import static java.util.Arrays.compare;
 import static java.util.Arrays.sort;
 

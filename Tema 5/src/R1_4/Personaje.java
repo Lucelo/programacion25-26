@@ -23,7 +23,7 @@ public abstract class Personaje {
         setVidaMax(vidaMax);
         this.vidaAct = setVidaMax(vidaMax);
 
-        PersonajesCreados++;
+
 
     }
 
