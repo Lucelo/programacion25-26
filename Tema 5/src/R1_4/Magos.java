@@ -1,14 +1,8 @@
-
 package R1_4;
 
 import java.util.Arrays;
 
 public class Magos extends Personaje {
-
-    public int iMin=17;
-    public int iMax=20;
-    public int fMin=0;
-    public int fMax=15;
 
     public String[] hechizos;
 
@@ -24,22 +18,22 @@ public class Magos extends Personaje {
 
     @Override
     public int getInteligenciaMin() {
-        return iMin;
+        return 17;
     }
 
     @Override
     public int getInteligenciaMax() {
-        return iMax;
+        return 20;
     }
 
     @Override
     public int getFuerzaMin() {
-        return fMin;
+        return 0;
     }
 
     @Override
     public int getFuerzaMax() {
-        return fMax;
+        return 15;
     }
 
     public void aprendeHechizo(String hechizo) {

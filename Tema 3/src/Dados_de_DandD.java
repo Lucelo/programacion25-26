@@ -8,17 +8,17 @@ public class Dados_de_DandD {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Cuantos dados desea tirar");
-        int cantidaddedaddos = sc.nextByte();
+        int numdados = sc.nextByte();
 
         System.out.println("Cuantos dados desea tirar");
         int añadir = sc.nextByte();
 
-        int[] dados = new int[cantidaddedaddos];
+        int[] dados = new int[numdados];
 
         System.out.println("Cuantas caras tiene el dado");
         int tamañomax = sc.nextByte();
 
-        for (int i = 0; i < cantidaddedaddos; i++) {
+        for (int i = 0; i < numdados; i++) {
 
             int numeroAleatorio = (int) ((Math.random() * (tamañomax - VALOR_MIN + 1)) + VALOR_MIN);
 
@@ -32,7 +32,7 @@ public class Dados_de_DandD {
         System.out.printf(Arrays.toString(dados));
         int totaldados = 0;
 
-        for (int j = 0; j < cantidaddedaddos; j++) {
+        for (int j = 0; j < numdados; j++) {
             totaldados += dados[j];
         }
 

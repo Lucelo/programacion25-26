@@ -1,4 +1,3 @@
-
 package R1_4;
 
 public abstract class Personaje {

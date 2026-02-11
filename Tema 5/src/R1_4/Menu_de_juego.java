@@ -12,11 +12,16 @@ public class Menu_de_juego {
     Personaje[] personajes = new Personaje[100];
     Personaje[] listaordenada = new Personaje[100];
 
-    void main(String[] args) {
+
+    public static void main(String[] args) {
+        new Menu_de_juego();
+    }
+
+    public Menu_de_juego() {
         Menu();
     }
 
-    private void Menu() {
+    public void Menu() {
         Scanner sc = new Scanner(System.in);
 
         boolean salir = false;
@@ -81,10 +86,8 @@ public class Menu_de_juego {
 
     private void listaOrdenada() {
 
-        listaordenada = Arrays.stream(personajes)
-                .filter(Objects::nonNull)
-                .sorted(Comparator.comparingInt(p -> p.vidaAct))
-                .toArray(Personaje[]::new);
+        listaordenada = Arrays.stream(personajes).filter(Objects::nonNull)
+                .sorted(Comparator.comparingInt(p -> p.vidaAct)).toArray(Personaje[]::new);
 
         for (Personaje p : listaordenada) {
             System.out.println(p);
@@ -104,7 +107,7 @@ public class Menu_de_juego {
         boolean AE = false;
 
         for (Personaje personaje : personajes) {
-            if (personaje != null){
+            if (personaje != null) {
                 if (Objects.equals(NC, personaje.nombre)) {
                     PE = true;
                     if (personaje instanceof Clerigos) {
@@ -123,7 +126,6 @@ public class Menu_de_juego {
 
                 }
             }
-
 
 
         }
@@ -151,7 +153,7 @@ public class Menu_de_juego {
         boolean EE = false;
 
         for (Personaje personaje : personajes) {
-            if (personaje != null){
+            if (personaje != null) {
                 if (Objects.equals(personaje.nombre, NM)) {
 
                     PE = true;
@@ -201,7 +203,7 @@ public class Menu_de_juego {
         boolean PE = false;
 
         for (Personaje personaje : personajes) {
-            if (personaje != null){
+            if (personaje != null) {
                 if (NM.equals(personaje.nombre)) {
 
                     PE = true;

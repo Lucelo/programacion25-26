@@ -30,8 +30,16 @@ public class Clerigos extends Personajes {
 
     public void curar(Personajes aliado) {
 
-        aliado.Vida_act += 10;
 
+        if (aliado.vidaAct + 10 <= aliado.vidaMax) {
+            aliado.vidaAct += 10;
+        } else {
+            System.out.println("Se ha curado toda la vida posible");
+            System.out.println("Siendo " + (aliado.vidaAct - aliado.vidaMax));
+
+            aliado.vidaAct = aliado.vidaMax;
+
+        }
     }
 
     @Override

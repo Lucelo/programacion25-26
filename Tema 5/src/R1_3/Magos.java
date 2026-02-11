@@ -41,8 +41,6 @@ public class Magos extends Personajes {
     public void aprendeHechizo(String hechizo) {
         if (cantidadDeHechizos < 4) {
 
-
-
             Hechizos[cantidadDeHechizos] = hechizo;
 
             cantidadDeHechizos++;
@@ -50,7 +48,6 @@ public class Magos extends Personajes {
         } else {
 
             System.out.println("Ya no hay mas espacio");
-
 
         }
 
@@ -67,7 +64,7 @@ public class Magos extends Personajes {
             Hechizos[cantidadDeHechizos - 1] = null;
             cantidadDeHechizos--;
 
-            enemigo.Vida_act -= 10;
+            enemigo.vidaAct -= 10;
         } else {
             System.out.println("No hay hechizos en el repertorio");
 

@@ -1,6 +1,5 @@
 package Mantenimiento_de_un_avión;
 
-import java.time.LocalDate;
 
 public class avión {
 
@@ -9,8 +8,13 @@ public class avión {
     private int consumo; // litros por km
     private int capacidadMaxima;
     private int capacidadActual;
+    String marca;
+    String modelo;
+    int consumo; // litros por km
+    int capacidadMaxima;
+    int capacidadActual;
 
-    registro[] registroDeRevisiones;
+        registro[] registroDeRevisiones;
 
     public avión(String marca, String modelo, int consumo, int capacidadMaxima) {
         this.marca = marca;
@@ -81,6 +85,25 @@ public class avión {
         if (ultima == null) return false;
         if (!ultima.estado) return false;
         if (LocalDate.now().isAfter(ultima.periodoValido)) return false;
+    public avión(String marca, String modelo, int consumo, int capacidadMaxima) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.consumo = consumo;
+        this.capacidadMaxima = capacidadMaxima;
+    }
+
+    public void capacidadActual(int capacidadActual) {
+        this.capacidadActual = capacidadActual;
+    }
+
+    public boolean estaListo() {
+        if (registroDeRevisiones == null || registroDeRevisiones.length == 0) return false;
+
+        registro ultima = registroDeRevisiones[registroDeRevisiones.length - 1];
+
+        if (ultima == null) return false;
+        if (!ultima.estado) return false;
+        if (LocalDate.now().isAfter(ultima.periodoValido)) return false;
 
         return capacidadActual > 0;
     }
@@ -96,6 +119,14 @@ public class avión {
                 "\nModelo: " + modelo +
                 "\nCapacidad: " + capacidadMaxima +
                 "\ncantidad actual: " + capacidadActual +
+                "\nListo para viajar: " + (estaListo() ? "Sí" : "No");
+    }
+    @Override
+    public String toString() {
+        return "Marca: " + marca +
+                "\nModelo: " + modelo +
+                "\nConsumo (l/km): " + consumo +
+                "\nCombustible: " + capacidadActual + "/" + capacidadMaxima +
                 "\nListo para viajar: " + (estaListo() ? "Sí" : "No");
     }
 }
