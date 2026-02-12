@@ -4,9 +4,23 @@ public class Familiar extends Invitado implements regaladores{
 
     public Familiar(String nombre, int hambre, int aburrimiento) {
         super(nombre, hambre, aburrimiento);
+        setregalo();
     }
 
+    setregalo(tiposDeRegalos){
 
+      int regalo = (int) (Math.random() * (7 - 1) + 1);
+
+       if (regalo ==1   ){
+
+       } if (regalo==2){
+
+        }
+
+
+       return ;
+
+    };
 
     public void reaccionar(Evento eventoActual, Invitado invitado) {
 
