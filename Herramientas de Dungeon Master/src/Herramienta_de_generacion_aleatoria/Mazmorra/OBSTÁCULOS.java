@@ -1,4 +1,4 @@
-package Creador_de_mazmorras_aleatorias.interior;
+package Herramienta_de_generacion_aleatoria.Mazmorra;
 
 public class OBSTÁCULOS {
 

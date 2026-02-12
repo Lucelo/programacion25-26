@@ -1,6 +1,6 @@
-package Creador_de_mazmorras_aleatorias.exterior;
+package Herramienta_de_generacion_aleatoria.Mazmorra;
 
-import static Creador_de_mazmorras_aleatorias.exterior.LanzamientoDeDado.d;
+import static Herramienta_de_generacion_aleatoria.PartesCompartidas.LanzamientoDeDado.d;
 
 public class ZonaInicial extends Nodo {
 
@@ -28,7 +28,7 @@ public class ZonaInicial extends Nodo {
 
     public String Inicial(){
 
-        return DescripcionzonaInicial[d(10)-1];
+        return DescripcionzonaInicial[d(10)];
 
     }
 

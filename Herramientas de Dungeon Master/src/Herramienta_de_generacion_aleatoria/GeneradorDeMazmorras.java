@@ -1,22 +1,22 @@
-package Creador_de_mazmorras_aleatorias;
+package Herramienta_de_generacion_aleatoria;
 
-import Creador_de_mazmorras_aleatorias.exterior.Nodo;
-import Creador_de_mazmorras_aleatorias.exterior.ZonaInicial;
-import Creador_de_mazmorras_aleatorias.exterior.sala;
+import Herramienta_de_generacion_aleatoria.Mazmorra.Nodo;
+import Herramienta_de_generacion_aleatoria.Mazmorra.ZonaInicial;
+import Herramienta_de_generacion_aleatoria.Mazmorra.sala;
 
 import java.util.Scanner;
 
-public class Generador {
+public class GeneradorDeMazmorras {
 
     private int totalNodos = 0;
 
     public static void main(String[] args) {
 
-         new Generador();
+         new GeneradorDeMazmorras();
 
     }
 
-    public Generador() {
+    public GeneradorDeMazmorras() {
         System.out.println("Cuantas habitaciones deseas");
         Scanner sc =new Scanner(System.in);
 
@@ -44,18 +44,28 @@ public class Generador {
 
 
         if (totalNodos >= maxNodos) return;
+
         if (profundidad >= 5) return; // recomendable añadirlo
 
         int numeroSalidas;
 
         if (nodo instanceof ZonaInicial) {
-            numeroSalidas = 2 + (int) (Math.random() * 2);
-            // 2-3 salidas para empezar fuerte
-        } else if (nodo instanceof sala sala) {
-            numeroSalidas = sala.getNumeroSalidas();
+
+            numeroSalidas = 2 + (int)(Math.random()*2);
+
         } else {
-            return;
+
+            numeroSalidas = (int)(Math.random()*4);
+
+            // menos salidas cuando te alejas
+            if(profundidad >= 3)
+                numeroSalidas = Math.min(numeroSalidas, 2);
+
+            // posibilidad de dead end
+            if(profundidad > 2 && Math.random() < 0.25)
+                numeroSalidas = 0;
         }
+
 
         for (int i = 1; i <= numeroSalidas; i++) {
 

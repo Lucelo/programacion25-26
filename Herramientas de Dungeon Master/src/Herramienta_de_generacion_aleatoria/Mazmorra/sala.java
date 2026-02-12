@@ -1,17 +1,31 @@
-package Creador_de_mazmorras_aleatorias.exterior;
+package Herramienta_de_generacion_aleatoria.Mazmorra;
 
-import static Creador_de_mazmorras_aleatorias.exterior.LanzamientoDeDado.d;
+import static Herramienta_de_generacion_aleatoria.PartesCompartidas.LanzamientoDeDado.d;
 
 public class sala extends Nodo {
 
     private String forma;
     private int numeroSalidas;
 
+    private Pasillos pasillo;
+    private puertas puerta;
+
+    public static int Contador=2;
+    public int Nsala;
+
+
     public sala(String id, Nodo padre) {
         super(id, padre);
-        this.forma = sala();
-        this.numeroSalidas = salidas();
+
+        this.Nsala=Contador++;
+
+        this.forma = salas[d(salas.length)];
+        this.numeroSalidas = 0; // se decide fuera
+
+        this.pasillo = new Pasillos();
+        this.puerta = new puertas();
     }
+
 
     public int getNumeroSalidas() {
         return numeroSalidas;
@@ -45,23 +59,17 @@ public class sala extends Nodo {
             "Trapezoidal, 40 x 60 pies aproximadamente"
     };
 
-
-    public String sala() {
-
-        return salas[d(12) - 1];
-
-    }
-
     public int salidas() {
         //Las salas pueden tener de 0 a 4 salidas
-        return d(5)-1;
+        return d(4);
     }
 
     @Override
     public String toString() {
-        return "sala{" +
-                "forma= '" + forma + '\'' +
-                ", numeroSalidas= " + numeroSalidas +
-                '}';
+        return "Puerta " + puerta +
+                ", pasillo=" + pasillo +
+                ", sala nº " + Nsala +
+                ", estilo='" + forma + '\'';
     }
+
 }

@@ -1,6 +1,7 @@
-package Creador_de_mazmorras_aleatorias.exterior;
+package Herramienta_de_generacion_aleatoria.Mazmorra;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
   public class Nodo {
@@ -32,12 +33,9 @@ import java.util.List;
       }
 
       public List<Nodo> getConexiones() {
-          return conexiones;
+          return Collections.unmodifiableList(conexiones);
       }
 
-      public void setConexiones(List<Nodo> conexiones) {
-          this.conexiones = conexiones;
-      }
 
       public static String generarId(Nodo padre, int numeroHijo){
 
