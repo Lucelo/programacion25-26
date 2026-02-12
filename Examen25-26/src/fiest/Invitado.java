@@ -32,7 +32,7 @@ public abstract class Invitado {
 
     public  int getAburrimientoMax(){return 50;};
 
-    public abstract void reaccionar(Evento eventoActual, Invitado[] invitado);
+    public abstract void reaccionar(Evento eventoActual, Invitado invitado);
 
 
 }
