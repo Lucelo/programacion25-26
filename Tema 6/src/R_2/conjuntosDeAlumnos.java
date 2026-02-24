@@ -1,4 +1,4 @@
-package R_1;
+package R_2;
 
 public class conjuntosDeAlumnos {
 

@@ -1,21 +1,39 @@
 package R_1;
 
+import java.util.HashSet;
+
 public class Equipo {
 
-    public String equipo;
+    private String equipo;
 
-    public Alumno[] conjuntoDeAlumnos;
+    private HashSet<Alumno> conjuntoAlumnos;
 
 
     public Equipo(String equipo) {
+        getEquipo(equipo);
+        conjuntoAlumnos = new HashSet<Alumno>();
+    }
+
+    public String getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(String equipo) {
         this.equipo = equipo;
-        Alumno[] conjuntoDeAlumnos =new Alumno[10] ;
+    }
+
+    public HashSet<Alumno> getConjuntoAlumnos() {
+        return conjuntoAlumnos;
+    }
+
+    public void setConjuntoAlumnos(HashSet<Alumno> conjuntoAlumnos) {
+        this.conjuntoAlumnos = conjuntoAlumnos;
     }
 
     public void insertarAlumno(Alumno nuevoAlumno) {
-        for (int i = 0; i < conjuntoDeAlumnos.length; i++) {
-            if (conjuntoDeAlumnos[i]==null){
-                conjuntoDeAlumnos[i]=nuevoAlumno;
+        for (int i = 0; i < conjuntoAlumnos; i++) {
+            if (conjuntoAlumnos[i] == null) {
+                conjuntoAlumnos[i] = nuevoAlumno;
             }
         }
 
@@ -23,18 +41,24 @@ public class Equipo {
 
     public void borrarAlumno(Alumno cualquiera) {
 
-        for (int i = 0; i < conjuntoDeAlumnos.length; i++) {
-            if (conjuntoDeAlumnos[i]==cualquiera){
-                conjuntoDeAlumnos[i]=null;
+        for (int i = 0; i < conjuntoAlumnos.length; i++) {
+            if (conjuntoAlumnos[i] == cualquiera) {
+                conjuntoAlumnos[i] = null;
             }
         }
 
     }
 
     public Equipo fusionDeEquipos(Equipo equipo2, String s) {
+
+
+        return equipo2;
     }
 
     public Equipo intersecionDeEquipos(Equipo equipo2, String s) {
+
+
+        return equipo2;
     }
 
 }
