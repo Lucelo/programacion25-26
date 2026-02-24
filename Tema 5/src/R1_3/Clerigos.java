@@ -45,6 +45,6 @@ public class Clerigos extends Personajes {
     @Override
     public String toString() {
         return super.toString() +
-                ", Nombre_dios='" + Nombre_dios + '\'' ;
+                ", Nombre_dios='" + Nombre_dios + '\'';
     }
 }

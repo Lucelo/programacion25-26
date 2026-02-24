@@ -28,11 +28,11 @@ public class R2_6 {
 
             if (numB < 0) {
 
-                numC = - numC;
+                numC = -numC;
 
             }
 
-            numC = - numC;
+            numC = -numC;
 
 
         } else {

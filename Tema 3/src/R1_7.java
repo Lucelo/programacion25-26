@@ -52,7 +52,8 @@ public class R1_7 {
 
             }
 
-        } if (!encontrado) {
+        }
+        if (!encontrado) {
 
             System.out.println("El número no está en el array.");
 

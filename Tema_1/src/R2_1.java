@@ -1,4 +1,3 @@
-
 public class R2_1 {
 
     static void main() {

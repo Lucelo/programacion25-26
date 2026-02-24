@@ -11,12 +11,9 @@ public class Cuenta {
         Saldoinicial = saldoinicial;
     }
 
-    public static double Saldoinicial=23.45;
-        int reintegro=0;
-        int ingreso=0;
-
-
-
+    public static double Saldoinicial = 23.45;
+    int reintegro = 0;
+    int ingreso = 0;
 
 
 }

@@ -13,8 +13,8 @@ public class Partido {
 
     public Character quiniela;
 
-    Partido(int Jornada, String equipoLocal, String equipoVisitante, Integer golesLocal,Integer golesVisitante, Character quiniela) {
-        this.Jornada=++Jornada;
+    Partido(int Jornada, String equipoLocal, String equipoVisitante, Integer golesLocal, Integer golesVisitante, Character quiniela) {
+        this.Jornada = ++Jornada;
 
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;

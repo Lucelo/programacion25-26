@@ -25,7 +25,6 @@ public class R2_9 {
         };
 
 
-
         System.out.println("La matriz es simetrica " + SIMETRIA(num));
 
     }

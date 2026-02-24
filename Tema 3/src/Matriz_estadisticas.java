@@ -17,7 +17,7 @@ public class Matriz_estadisticas {
                 sumaTotal += anInt;
 
             }
-            System.out.println(" = "+sumaTotal);
+            System.out.println(" = " + sumaTotal);
         }
     }
 

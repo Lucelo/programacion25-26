@@ -17,12 +17,12 @@ public class Mientradasalida {
 
     }
 
-    public static int leerEnteropositivo (String mensaje) {
+    public static int leerEnteropositivo(String mensaje) {
         System.out.println(mensaje);
 
         int a = sc.nextInt();
 
-        while (a <= 0){
+        while (a <= 0) {
 
             System.out.println("El numero tiene que ser positivo");
 

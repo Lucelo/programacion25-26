@@ -4,7 +4,6 @@ import Examen_anteriores.juguetes.plástico;
 import Examen_anteriores.juguetes.tipoDePlástico;
 
 
-
 public class VehiculoPlastico extends plástico {
 
     int númeroDeRuedas;

@@ -1,7 +1,6 @@
 public class R2_9 {
 
-    static void main (){
-
+    static void main() {
 
 
     }

@@ -1,4 +1,3 @@
-
 //IMPORTS
 //TODO: Incluir los ficheros necesarios si están en otro paquete
 
@@ -33,7 +32,6 @@ public class main {
         addJuguete(j5);
         addJuguete(j6);
         addJuguete(j7);
-
 
 
         do {
@@ -81,9 +79,9 @@ public class main {
 
                     //TODO: Completar
 
-                    Juguete juguete= new PiezaLego(nombre_c4,marca_c4,color_c4,unidades_c4);
+                    Juguete juguete = new PiezaLego(nombre_c4, marca_c4, color_c4, unidades_c4);
 
-                    addJuguete( juguete);
+                    addJuguete(juguete);
 
                     break;
 
@@ -100,7 +98,6 @@ public class main {
                     Juguete j2_c5 = juguetes[opcion2_c5 - 1];
 
                     //TODO: hacer el resto
-
 
 
                     break;
@@ -120,8 +117,8 @@ public class main {
 
     private static void addJuguete(Juguete juguete) {
 
-        juguetes[numJuguetes]=juguete;
-                numJuguetes++;
+        juguetes[numJuguetes] = juguete;
+        numJuguetes++;
     }
 
     private static void mostrarJuguetes() {

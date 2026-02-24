@@ -36,7 +36,7 @@ public class Dados_de_DandD {
             totaldados += dados[j];
         }
 
-        System.out.printf(" = " + String.valueOf(totaldados)+añadir);
+        System.out.printf(" = " + String.valueOf(totaldados) + añadir);
 
     }
 

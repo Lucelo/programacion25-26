@@ -28,7 +28,7 @@ public class R2_10 {
 
         boolean res = SIMETRIA(num);
 
-        if (res){
+        if (res) {
             System.out.println("La matriz es simetrica");
 
         } else {

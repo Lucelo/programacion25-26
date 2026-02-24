@@ -1,12 +1,9 @@
 package Examen_anteriores.Pokemon;
 
 
-
 import eléctrico;
 
 import static Examen_anteriores.Pokemon.Pokemon.criaturasCreadas;
-import static java.util.Arrays.compare;
-import static java.util.Arrays.sort;
 
 public class CombatePokemon {
 
@@ -40,8 +37,7 @@ public class CombatePokemon {
 
         for (Pokemon pokemon : pokemons) {
 
-            if (pokemon != null){
-
+            if (pokemon != null) {
 
 
                 String string = pokemon.toString();
@@ -87,14 +83,14 @@ public class CombatePokemon {
                 "Snubbull", "Granbull", "Ralts", "Kirlia", "Gardevoir",
                 "Sylveon", "Mawile", "Whimsicott", "Flabebe", "Xerneas"
         };
-        String nombre = pokemonHada[x1-1];
+        String nombre = pokemonHada[x1 - 1];
 
         int x2 = (int) (Math.random() * (100 - 1 + 1)) + 1;
         int x3 = (int) (Math.random() * (15 - 5 + 1)) + 5;
         int x4 = (int) (Math.random() * (25 - 5 + 1)) + 5;
 
 
-        pokemons[criaturasCreadas]=new divino(nombre,x2,x3,x4);
+        pokemons[criaturasCreadas] = new divino(nombre, x2, x3, x4);
     }
 
     private static void tierra(Pokemon[] pokemons) {
@@ -106,7 +102,7 @@ public class CombatePokemon {
                 "Rhyhorn", "Rhydon", "Wooper", "Quagsire", "Phanpy",
                 "Donphan", "Trapinch", "Vibrava", "Flygon", "Hippopotas"
         };
-        String nombre = pokemonTierra[x1-1];
+        String nombre = pokemonTierra[x1 - 1];
 
         int x2 = (int) (Math.random() * (100 - 1 + 1)) + 1;
         int x3 = (int) (Math.random() * (15 - 5 + 1)) + 5;
@@ -114,7 +110,7 @@ public class CombatePokemon {
         int x5 = (int) (Math.random() * (9 - 1 + 1)) + 1;
 
 
-        pokemons[criaturasCreadas]=new tierra(nombre,x2,x3,x4,x5);
+        pokemons[criaturasCreadas] = new tierra(nombre, x2, x3, x4, x5);
     }
 
     private static void eléctrico(Pokemon[] pokemons) {
@@ -126,14 +122,14 @@ public class CombatePokemon {
                 "Lanturn", "Mareep", "Flaaffy", "Ampharos", "Elekid",
                 "Raikou", "Plusle", "Minun", "Shinx", "Luxray"
         };
-        String nombre = pokemonRayo[x1-1];
+        String nombre = pokemonRayo[x1 - 1];
 
         int x2 = (int) (Math.random() * (100 - 1 + 1)) + 1;
         int x3 = (int) (Math.random() * (15 - 5 + 1)) + 5;
         int x4 = (int) (Math.random() * (25 - 5 + 1)) + 5;
         int x5 = (int) (Math.random() * (15 - 10 + 1)) + 10;
 
-        pokemons[criaturasCreadas]=new eléctrico(nombre,x2,x3,x4,x5);
+        pokemons[criaturasCreadas] = new eléctrico(nombre, x2, x3, x4, x5);
     }
 
     private static void fuego(Pokemon[] pokemons) {
@@ -145,28 +141,28 @@ public class CombatePokemon {
                 "Flareon", "Cyndaquil", "Quilava", "Typhlosion", "Torchic",
                 "Combusken", "Blaziken", "Torkoal", "Chimchar", "Infernape"
         };
-        String nombre = pokemonFuego[x1-1];
+        String nombre = pokemonFuego[x1 - 1];
 
         int x2 = (int) (Math.random() * (100 - 1 + 1)) + 1;
         int x3 = (int) (Math.random() * (15 - 5 + 1)) + 5;
         int x4 = (int) (Math.random() * (25 - 5 + 1)) + 5;
         int x5 = (int) (Math.random() * (10 - 5 + 1)) + 5;
 
-        pokemons[criaturasCreadas]=new fuego(nombre,x2,x3,x4,x5);
+        pokemons[criaturasCreadas] = new fuego(nombre, x2, x3, x4, x5);
     }
 
     private static void Agua(Pokemon[] pokemons) {
 
-            int x1 = (int) (Math.random() * (20 - 1 + 1)) + 1;
+        int x1 = (int) (Math.random() * (20 - 1 + 1)) + 1;
 
-            String[] pokemonAgua = {
-                    "Squirtle", "Wartortle", "Blastoise", "Psyduck", "Golduck",
-                    "Poliwag", "Poliwhirl", "Poliwrath", "Tentacool", "Tentacruel",
-                    "Slowpoke", "Slowbro", "Seel", "Dewgong", "Magikarp",
-                    "Gyarados", "Lapras", "Vaporeon", "Totodile", "Feraligatr"
-            };
+        String[] pokemonAgua = {
+                "Squirtle", "Wartortle", "Blastoise", "Psyduck", "Golduck",
+                "Poliwag", "Poliwhirl", "Poliwrath", "Tentacool", "Tentacruel",
+                "Slowpoke", "Slowbro", "Seel", "Dewgong", "Magikarp",
+                "Gyarados", "Lapras", "Vaporeon", "Totodile", "Feraligatr"
+        };
 
-        String nombre = pokemonAgua[x1-1];
+        String nombre = pokemonAgua[x1 - 1];
 
         int x2 = (int) (Math.random() * (100 - 1 + 1)) + 1;
         int x3 = (int) (Math.random() * (15 - 5 + 1)) + 5;

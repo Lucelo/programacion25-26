@@ -10,7 +10,7 @@ public class CuentaCredito extends Cuenta {
     public CuentaCredito(double saldoInicial, double credito) throws CuentaException {
         super(saldoInicial);
 
-        CREDITO_INICIAL= credito;
+        CREDITO_INICIAL = credito;
 
         setCredito(credito);
     }
@@ -55,7 +55,6 @@ public class CuentaCredito extends Cuenta {
                 credito -= cantidadRestante;
             } else throw new CuentaException("No tienes suficiente crédito para hacer esta operación");
         } else super.reintegro(dineroASacar);
-
 
 
     }

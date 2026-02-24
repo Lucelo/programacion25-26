@@ -12,7 +12,7 @@ public class Juego {
         Carta Diamante = new Carta("Diamante");
         Carta Picas = new Carta("Picas");
         Carta Corazones = new Carta("Corazones");
-        Carta Trebol  = new Carta("Trebol");
+        Carta Trebol = new Carta("Trebol");
 
         juego.crearBaraja(Diamante, Picas, Corazones, Trebol);
 

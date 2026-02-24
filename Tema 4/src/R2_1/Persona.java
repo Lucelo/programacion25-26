@@ -1,12 +1,11 @@
 package R2_1;
 
 import java.time.LocalDate;
-
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Persona {
-    Scanner sc =new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     public String nombre;
 
@@ -16,7 +15,7 @@ public class Persona {
 
     public char letraDni;
 
-    public String letraDelDNI= "TRWAGMYFPDXBNJZSQVHLCKE";
+    public String letraDelDNI = "TRWAGMYFPDXBNJZSQVHLCKE";
 
     public char sexo;
 
@@ -26,23 +25,23 @@ public class Persona {
 
     public float peso;
 
-    public void rellenar(){
+    public void rellenar() {
 
         System.out.println("¿Cual es su nombre?");
         this.nombre = sc.nextLine();
 
         System.out.println("Por favor use este formato dd/MM/yy para declarar cuando nació");
-        DateTimeFormatter formatter =  DateTimeFormatter.ofPattern("dd/MM/yy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
         String dateString = sc.next();
         this.fechaDeNacimiento = LocalDate.parse(dateString, formatter);
 
         System.out.println("Diga su DNI sin la letra");
-        this.dni =sc.nextInt();
+        this.dni = sc.nextInt();
 
         this.letraDni = getLetraDni();
 
         System.out.println("Escriba su caracter Hombre(H), Mujer(M) o No Especifico(N)");
-        this.sexo =sc.next().charAt(0);
+        this.sexo = sc.next().charAt(0);
 
         System.out.println("Diga su altura");
         this.altura = sc.nextFloat();
@@ -52,14 +51,14 @@ public class Persona {
 
     }
 
-    public char getLetraDni(){
+    public char getLetraDni() {
         int resto = dni % 23;
 
         return letraDelDNI.charAt(resto);
     }
 
-   public double getIMC(){
+    public double getIMC() {
 
-       return (peso /(altura * altura));
+        return (peso / (altura * altura));
     }
 }

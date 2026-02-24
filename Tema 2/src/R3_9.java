@@ -1,4 +1,3 @@
-
 public class R3_9 {
 
     public static void main(String[] args) {

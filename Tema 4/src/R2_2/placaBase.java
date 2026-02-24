@@ -7,10 +7,10 @@ public class placaBase {
     public String chipset;
     public String socket;
 
-    public placaBase (String marca,String chipset, String socket){
-        this.marca=marca;
-        this.chipset=chipset;
-        this.socket=socket;
+    public placaBase(String marca, String chipset, String socket) {
+        this.marca = marca;
+        this.chipset = chipset;
+        this.socket = socket;
     }
 
 }

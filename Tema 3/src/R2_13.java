@@ -15,7 +15,7 @@ public class R2_13 {
         // 3. Rellenar la nueva matriz con los elementos reflejados
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                matrizReflejada[i][j] = matriz[n -1 -j][n -1 -i];
+                matrizReflejada[i][j] = matriz[n - 1 - j][n - 1 - i];
             }
         }
 
@@ -39,6 +39,7 @@ public class R2_13 {
             System.out.println();
         }
     }
+
     static void main() {
         int[][] matriz = {
                 {1, 2, 3, 4, 5},
@@ -49,9 +50,6 @@ public class R2_13 {
         };
 
         reflejoDiagonal(matriz);
-
-
-
 
 
     }

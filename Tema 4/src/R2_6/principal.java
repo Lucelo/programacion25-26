@@ -24,27 +24,27 @@ public class principal {
 
 
 //luego lo relleno solo has consulta
-switch (menu){
-    case "consulta"->{
+        switch (menu) {
+            case "consulta" -> {
 
-        consulta(p1);
-        consulta(p2);
-        consulta(p3);
+                consulta(p1);
+                consulta(p2);
+                consulta(p3);
 
-    }case "modificación"->{
+            }
+            case "modificación" -> {
 
-    } case "precio de venta"->{
-        Venta(p1);
-        Venta(p2);
-        Venta(p3);
+            }
+            case "precio de venta" -> {
+                Venta(p1);
+                Venta(p2);
+                Venta(p3);
+
+            }
+        }
+
 
     }
-}
-
-
-    }
-
-
 
 
 }

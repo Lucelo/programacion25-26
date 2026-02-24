@@ -12,10 +12,9 @@ public class Magos extends Personajes {
     public Magos(String nombre, String raza, int fuerza, int inteligencia,
                  int vida_max) {
         super(nombre, raza, fuerza, inteligencia, vida_max);
-        this.Hechizos  =  new String[4];
+        this.Hechizos = new String[4];
 
     }
-
 
 
     @Override

@@ -24,7 +24,6 @@ public abstract class Personaje {
         this.vidaAct = setVidaMax(vidaMax);
 
 
-
     }
 
     public void setRaza(String raza) {

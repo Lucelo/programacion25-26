@@ -59,7 +59,7 @@ public class prueba {
         System.out.print("Introduce el rango de búsqueda: ");
         int rango = sc.nextInt();
 
-        System.out.printf("La cantidad de pares "+ contador(matriz, valor, rango));
+        System.out.printf("La cantidad de pares " + contador(matriz, valor, rango));
 
     }
 }

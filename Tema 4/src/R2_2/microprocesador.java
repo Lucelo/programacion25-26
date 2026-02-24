@@ -8,12 +8,12 @@ public class microprocesador {
     public float velocidadBase;
     public String socket;
 
-    public microprocesador(String marca,String modelo,int númeroDeNúcleos,float velocidadBase, String socket) {
-    this.marca=marca;
-    this.modelo=modelo;
-    this.númeroDeNúcleos=númeroDeNúcleos;
-    this.velocidadBase=velocidadBase;
-    this.socket=socket;
+    public microprocesador(String marca, String modelo, int númeroDeNúcleos, float velocidadBase, String socket) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.númeroDeNúcleos = númeroDeNúcleos;
+        this.velocidadBase = velocidadBase;
+        this.socket = socket;
 
     }
 }

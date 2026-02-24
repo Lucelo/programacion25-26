@@ -39,7 +39,6 @@ public class Main {
         ejecutar(ordenadorC, videojuego3);
 
 
-
     }
 
     // Tiene que ver los requisitos de estos juegos y compararlos con cada ordenador

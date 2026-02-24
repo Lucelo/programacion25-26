@@ -5,6 +5,7 @@ public abstract class Juguete {
     String nombre;
     String marca;
     String Tipo;
+
     public Juguete(String nombre, String marca) {
         this.nombre = nombre;
         this.marca = marca;

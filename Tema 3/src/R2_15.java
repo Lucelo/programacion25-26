@@ -2,18 +2,18 @@ import java.util.Scanner;
 
 public class R2_15 {
 
-    static String BUSQUEDA (int[][] matriz){
+    static String BUSQUEDA(int[][] matriz) {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Dame los valores desde donde calcular: ");
         System.out.print("Fila: ");
-        int a =(sc.nextByte());
+        int a = (sc.nextByte());
         System.out.print("Columna: ");
-        int b =(sc.nextByte());
+        int b = (sc.nextByte());
 
 
-        return String.valueOf(matriz [a][b]);
+        return String.valueOf(matriz[a][b]);
     }
 
     static void main() {
@@ -27,8 +27,7 @@ public class R2_15 {
         };
 
 
-
-        System.out.println("El valor que se encontró seria " +  BUSQUEDA(matriz));
+        System.out.println("El valor que se encontró seria " + BUSQUEDA(matriz));
 
 
     }

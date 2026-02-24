@@ -1,5 +1,3 @@
-import static java.util.Arrays.deepToString;
-
 public class R2_16 {
 
     public static void main(String[] args) {  //Ejemplo de uso que imprime la matriz resultado

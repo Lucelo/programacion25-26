@@ -54,7 +54,7 @@ public class R1_9 {
 
                 System.out.println(Arrays.toString(numeros));
 
-            } else if (resp.equals("descendiente")){
+            } else if (resp.equals("descendiente")) {
 
                 ORDENINVERTIDO(numeros);
 

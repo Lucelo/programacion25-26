@@ -10,6 +10,7 @@ public class UserDataCollector {
     /**
      * Muestra un mensaje por pantalla y solicita un entero. Repite la operación
      * hasta que se introduce un número entero válido
+     *
      * @param mensaje El mensaje que se mostrará
      * @return el número introducido por el cliente
      */
@@ -23,8 +24,7 @@ public class UserDataCollector {
             try {
                 entero = Integer.parseInt(sc.nextLine());
                 ok = true;
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.print("Error. Introduce un número entero: ");
             }
         }
@@ -35,9 +35,10 @@ public class UserDataCollector {
     /**
      * Muestra un mensaje por pantalla y solicita un entero comprendido entre min y max.
      * Repite la operación hasta que se introduce un número entero comprendido entre min y max.
+     *
      * @param mensaje El mensaje que se mostrará
-     * @param min El mínimo entero aceptado
-     * @param max El máximo entero aceptado
+     * @param min     El mínimo entero aceptado
+     * @param max     El máximo entero aceptado
      * @return el número introducido por el cliente
      */
     public static int getEnteroMinMax(String mensaje, int min, int max) {
@@ -53,6 +54,7 @@ public class UserDataCollector {
     /**
      * Muestra un mensaje por pantalla y solicita una cadena.
      * Repite la operación hasta que se introduce una cadena válida.
+     *
      * @param mensaje El mensaje que se mostrará
      * @return La cadena introducida por el usuario
      */
@@ -71,7 +73,8 @@ public class UserDataCollector {
      * Muestra un mensaje por pantalla y solicita una cadena que debe
      * estar comprendida entre una serie de opciones válidas
      * Repite la operación hasta que se introduce una cadena válida.
-     * @param mensaje El mensaje que se mostrará
+     *
+     * @param mensaje  El mensaje que se mostrará
      * @param opciones Las opciones aceptadas
      * @return La cadena introducida por el usuario
      */
@@ -96,6 +99,7 @@ public class UserDataCollector {
 
     /**
      * Método que muestra un mensaje y simplemente espera que el usuario pulse enter
+     *
      * @param mensaje El mensaje que se mostrará
      */
     public static void getTecla(String mensaje) {

@@ -42,6 +42,7 @@ public class R2_14 {
             System.out.println();
         }
     }
+
     static void main() {
         int[][] matriz = {
                 {1, 2, 3, 4, 5},
@@ -50,8 +51,6 @@ public class R2_14 {
                 {9, 5, 8, 6, 7},
                 {0, 9, 8, 5, 4}
         };
-
-
 
 
         reflejoDiagonal(matriz);

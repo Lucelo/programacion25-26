@@ -10,13 +10,11 @@ public class Combate {
     }
 
 
-
     public Combate() {
 
         Magos Gandalf = new Magos("Gandalf", "Humano", 10, 20, 56);
 
         Magos Saruman = new Magos("Saruman", "Humano", 15, 17, 74);
-
 
 
         Clerigos Lancelot = new Clerigos("Lancelot", "Humano", 18, 12, 76, "Dios");
@@ -30,7 +28,6 @@ public class Combate {
         System.out.println(Saruman);
 
         System.out.println(Gandalf);
-
 
 
         Gandalf.lanzaHechizo(Saruman);

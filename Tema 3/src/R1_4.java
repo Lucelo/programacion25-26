@@ -1,4 +1,3 @@
-
 public class R1_4 {
 
 
@@ -94,7 +93,7 @@ public class R1_4 {
 
         double mediaPorcentajes = totalPorcentajes / porcentaje;
 
-        System.out.println("La suma de todos los porcentajes es equivalente al " + totalPorcentajes+ " %");
+        System.out.println("La suma de todos los porcentajes es equivalente al " + totalPorcentajes + " %");
 
         System.out.printf("La media de los porcentajes es %s%n", mediaPorcentajes);
 

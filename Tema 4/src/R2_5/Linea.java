@@ -4,10 +4,10 @@ public class Linea {
 
     public double PuntoA;
     public double PuntoB;
-    public double Punto=0.0;
+    public double Punto = 0.0;
 
 
-    public Linea(double PuntoA,double PuntoB,double Punto) {
+    public Linea(double PuntoA, double PuntoB, double Punto) {
         this.PuntoA = 0.0;
         this.PuntoB = 0.0;
 
@@ -36,7 +36,7 @@ public class Linea {
         return 0;
     }
 
-    public void mostrarlinea(){
+    public void mostrarlinea() {
 
     }
 

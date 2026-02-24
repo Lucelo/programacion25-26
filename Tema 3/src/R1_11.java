@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.function.IntPredicate;
 /*
 public class R1_11 {
 
