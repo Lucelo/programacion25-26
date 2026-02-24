@@ -10,14 +10,14 @@ public class sala extends Nodo {
     private Pasillos pasillo;
     private puertas puerta;
 
-    public static int Contador=2;
+    public static int Contador = 2;
     public int Nsala;
 
 
     public sala(String id, Nodo padre) {
         super(id, padre);
 
-        this.Nsala=Contador++;
+        this.Nsala = Contador++;
 
         this.forma = salas[d(salas.length)];
         this.numeroSalidas = 0; // se decide fuera

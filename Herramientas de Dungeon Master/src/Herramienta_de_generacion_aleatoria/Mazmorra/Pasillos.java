@@ -10,8 +10,8 @@ public class Pasillos {
     public String anchoDelPasillo;
 
     public Pasillos() {
-         pasillos = descripcionPasillos[d(descripcionPasillos.length)];
-         anchoDelPasillo = descripcionanchoDelPasillo[d(descripcionanchoDelPasillo.length)];
+        pasillos = descripcionPasillos[d(descripcionPasillos.length)];
+        anchoDelPasillo = descripcionanchoDelPasillo[d(descripcionanchoDelPasillo.length)];
 
     }
 
@@ -27,7 +27,6 @@ public class Pasillos {
             "Sigue recto 20 pies, después gira a la derecha y sigue recto otros 10 pies ",
             "Sala (tira en la tabla \"salas\")",
             "Escaleras* (tira en la tabla \"escaleras\") "
-
 
 
     };
@@ -56,6 +55,6 @@ public class Pasillos {
 
     @Override
     public String toString() {
-        return  pasillos + ", ancho Del Pasillo='" + anchoDelPasillo ;
+        return pasillos + ", ancho Del Pasillo='" + anchoDelPasillo;
     }
 }

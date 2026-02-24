@@ -12,17 +12,16 @@ public class GeneradorDeMazmorras {
 
     public static void main(String[] args) {
 
-         new GeneradorDeMazmorras();
+        new GeneradorDeMazmorras();
 
     }
 
     public GeneradorDeMazmorras() {
         System.out.println("Cuantas habitaciones deseas");
-        Scanner sc =new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         int maxNodos = sc.nextInt();
         generarDungeon(maxNodos).imprimir("");
-
 
 
     }
@@ -51,18 +50,18 @@ public class GeneradorDeMazmorras {
 
         if (nodo instanceof ZonaInicial) {
 
-            numeroSalidas = 2 + (int)(Math.random()*2);
+            numeroSalidas = 2 + (int) (Math.random() * 2);
 
         } else {
 
-            numeroSalidas = (int)(Math.random()*4);
+            numeroSalidas = (int) (Math.random() * 4);
 
             // menos salidas cuando te alejas
-            if(profundidad >= 3)
+            if (profundidad >= 3)
                 numeroSalidas = Math.min(numeroSalidas, 2);
 
             // posibilidad de dead end
-            if(profundidad > 2 && Math.random() < 0.25)
+            if (profundidad > 2 && Math.random() < 0.25)
                 numeroSalidas = 0;
         }
 

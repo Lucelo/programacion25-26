@@ -36,7 +36,7 @@ public class puertas {
 
     @Override
     public String toString() {
-        return  Puerta;
+        return Puerta;
 
     }
 }

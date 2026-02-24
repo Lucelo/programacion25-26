@@ -26,7 +26,7 @@ public class ZonaInicial extends Nodo {
             "Pasillos, 10 pies de ancho; intersección de cuatro pasillos"
     };
 
-    public String Inicial(){
+    public String Inicial() {
 
         return DescripcionzonaInicial[d(10)];
 
