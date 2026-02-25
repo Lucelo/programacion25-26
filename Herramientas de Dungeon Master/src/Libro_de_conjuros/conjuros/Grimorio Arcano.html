@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grimorio</title>
+</head>
+<body>
+
+<h1>Grimorio Arcano</h1>
+
+<input list="listaConjuros" id="hechizo" placeholder="Nombre del conjuro">
+<datalist id="listaConjuros"></datalist>
+
+<button onclick="buscar()">Buscar</button>
+
+<div id="resultado"></div>
+
+<script>
+
+    // Cargar nombres al iniciar
+    fetch("/api/nombres")
+        .then(response => response.json())
+        .then(data => {
+            let datalist = document.getElementById("listaConjuros");
+            data.forEach(nombre => {
+                let option = document.createElement("option");
+                option.value = nombre;
+                datalist.appendChild(option);
+            });
+        });
+
+    function buscar() {
+        let nombre = document.getElementById("hechizo").value;
+
+        fetch("/api/buscar?nombre=" + nombre)
+            .then(response => response.json())
+            .then(data => {
+                if (!data) {
+                    document.getElementById("resultado").innerHTML = "Conjuro no encontrado.";
+                    return;
+                }
+
+                document.getElementById("resultado").innerHTML =
+                    "<h2>" + data.nombre + "</h2>" +
+                    "<p>Nivel: " + data.nivel + "</p>" +
+                    "<p>Escuela: " + data.escuela + "</p>" +
+                    "<p>Alcance: " + data.alcance + "</p>" +
+                    "<p>Componentes: " + data.componentes + "</p>" +
+                    "<p>" + data.descripcion + "</p>";
+            });
+    }
+
+</script>
+
+</body>
+</html>

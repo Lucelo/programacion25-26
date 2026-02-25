@@ -1,8 +1,4 @@
-package Herramienta_de_generacion_aleatoria;
-
-import Herramienta_de_generacion_aleatoria.Mazmorra.Nodo;
-import Herramienta_de_generacion_aleatoria.Mazmorra.ZonaInicial;
-import Herramienta_de_generacion_aleatoria.Mazmorra.sala;
+package Herramienta_de_generacion_aleatoria.Mazmorra;
 
 import java.util.Scanner;
 

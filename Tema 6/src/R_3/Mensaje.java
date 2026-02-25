@@ -28,12 +28,12 @@ public class Mensaje {
     public LocalDateTime getHora() {
         return hora;
     }
-
+/*
     @Override
     public String toString() {
         DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-uuuu hh:mm");
-        return "Mensaje De: " + remitente.getNombre(nombre) + " Texto: " + texto + ", Fecha " + df.format(hora);
+        return "Mensaje De: " + remitente.getNombre(remitente) + " Texto: " + texto + ", Fecha " + df.format(hora);
     }
 
-
+*/
 }
