@@ -1,4 +1,4 @@
-package R_8;
+package R_8.vehiculos;
 
 public class Furgoneta extends Vehiculo {
     private int pma;
@@ -36,6 +36,10 @@ public class Furgoneta extends Vehiculo {
     @Override
     public String toString() {
         return "Furgoneta " + super.toString() + " PMA =" + pma;
+    }
+
+    public int compareTo(Furgoneta otra) {
+        return Integer.compare(this.getPma(), otra.getPma());
     }
 
 

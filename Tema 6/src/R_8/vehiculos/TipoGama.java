@@ -1,4 +1,4 @@
-package R_8;
+package R_8.vehiculos;
 
 public enum TipoGama {
 

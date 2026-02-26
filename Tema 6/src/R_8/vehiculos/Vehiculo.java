@@ -1,6 +1,6 @@
-package R_8;
+package R_8.vehiculos;
 
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Comparable<Vehiculo> {
 
     private String matricula;
     private TipoGama gama;
@@ -50,5 +50,36 @@ public abstract class Vehiculo {
     public String toString() {
         return " Matricula=" + matricula + ", gama=" + gama + "]";
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Vehiculo other = (Vehiculo) obj;
+        if (matricula == null) {
+            if (other.matricula != null)
+                return false;
+        } else if (!matricula.equals(other.matricula))
+            return false;
+        return true;
+    }
+
+    public int compareTo(Vehiculo otro) {
+
+        return this.getMatricula().compareTo(otro.getMatricula());
+    }
+
 
 }

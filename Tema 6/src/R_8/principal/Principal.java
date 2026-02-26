@@ -1,4 +1,6 @@
-package R_8;
+package R_8.principal;
+
+import com.monroy.vehiculos.*;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -57,10 +59,12 @@ public class Principal {
                 }
 
                 case 4: { // consulta de todos las furgonetas ordenadas por pma
+                    System.out.println(flotaVehiculos.listadoFurgonetasPorPMA()); //javi
                     break;
                 }
 
                 case 5: { // consulta de todos los vehículos ordenados por gama{
+                    System.out.println(flotaVehiculos.listadoVehiculosOrdenadosPorGama());
                     break;
                 }
             }
@@ -199,8 +203,9 @@ public class Principal {
             System.out.println("1.-Alta vehículo");
             System.out.println("2.-Precio Alquiler");
             System.out.println("3.-Consultar Vehiculos ordenados por matrícula ");
-            System.out.println("3.-Consultar furgonetas ordenados por PMA");
-            System.out.println("4.-Consultar vehiculos ordenados por gama");
+            System.out.println("4.-Consultar furgonetas ordenados por PMA");
+            System.out.println("5.-Consultar vehiculos ordenados por gama");
+            System.out.println("6.-Salir");
             try {
                 op = Integer.parseInt(teclado.nextLine());
             } catch (NumberFormatException e) {

@@ -1,7 +1,6 @@
 package R_3;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Mensaje {
     private Persona remitente;

@@ -1,7 +1,10 @@
-package R_6;
+package R_6.principal;
 
+import com.monroy.cajas.CajaException;
+import com.monroy.cajas.GranAlmacen;
 
 import java.util.Scanner;
+
 
 public class Principal {
 

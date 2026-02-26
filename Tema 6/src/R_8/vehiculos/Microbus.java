@@ -1,4 +1,4 @@
-package R_8;
+package R_8.vehiculos;
 
 public class Microbus extends Vehiculo {
     private int numPlazas;

@@ -1,7 +1,7 @@
-package R_6;
-
+package R_6.com.monroy.cajas;
 
 import java.util.LinkedList;
+
 
 public class Caja {
 
@@ -31,23 +31,20 @@ public class Caja {
     public void abrirCaja() throws CajaException {
 
         if (estaAbierta) {
-            throw new CajaException("La caja " + numeroCaja + " ya está abierta");
+            throw new CajaException("La caja ya est� abierta");
         }
-
-        setEstaAbierta(true);
+        estaAbierta = true;
     }
 
     public void cerrarCaja() throws CajaException {
 
         if (!estaAbierta) {
-            throw new CajaException("La caja " + numeroCaja + " ya está cerrada");
+            throw new CajaException("La caja ya est� cerrada");
         }
-
-        if (!colaCliente.isEmpty()) {
-            throw new CajaException("No se puede cerrar la caja " + numeroCaja + " porque tiene clientes");
+        if (colaCliente.size() > 0) {
+            throw new CajaException("No se puede cerrar esta caja porque tiene clientes");
         }
-
-        setEstaAbierta(false);
+        estaAbierta = false;
     }
 
     public int tamannoColaCliente() {
@@ -57,31 +54,43 @@ public class Caja {
 
     public void agregarNuevoClienteCaja(Integer cliente) throws CajaException {
 
+        //Si la caja est� cerrada no se puede
         if (!estaAbierta) {
-            throw new CajaException("La caja " + numeroCaja + " está cerrada");
+            throw new CajaException("No se puede agregar el cliente porque la caja est� cerrada");
         }
-
+        //Lo a�ade al final
         colaCliente.add(cliente);
     }
 
+    /**
+     * Borra de la cola el cliente que se atiende
+     *
+     * @return El n�mero de cliente que se atiende
+     * @throws CajaException
+     */
     public Integer atenderCliente() throws CajaException {
 
+        Integer cliente;
         if (!estaAbierta) {
-            throw new CajaException("La caja " + numeroCaja + " está cerrada");
+            throw new CajaException("No se puede atender porque la est� vac�a");
         }
-
         if (colaCliente.isEmpty()) {
-            throw new CajaException("No hay clientes en la caja " + numeroCaja);
+            throw new CajaException("No se puede atender porque no hay clientes");
         }
 
-        return colaCliente.removeFirst();
+        cliente = colaCliente.get(0); // getFist
+        colaCliente.remove(0); //removeFist
+
+
+//		//Tambi�n valdr�a int clienteAtendido = colaCliente.remove();
+
+        return cliente;
+
     }
 
+    @Override
     public String toString() {
-
-        return "Caja " + numeroCaja +
-                " | Abierta: " + estaAbierta +
-                " | Clientes en cola: " + colaCliente.size();
+        return "Caja [numeroCaja=" + numeroCaja + ", estaAbierta=" + estaAbierta + "]";
     }
 
 

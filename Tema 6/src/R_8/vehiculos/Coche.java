@@ -1,4 +1,4 @@
-package R_8;
+package R_8.vehiculos;
 
 public class Coche extends Vehiculo {
     // Crea el Tipo de Combustible como enumerado
