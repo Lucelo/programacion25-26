@@ -1,3 +1,5 @@
 public enum TRaza {
-    SAIYAN, NAMEKIANO, ANDROIDE
+
+    ANDROIDE, NAMEKIANO, SAIYAN
+
 }
