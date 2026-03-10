@@ -1,0 +1,79 @@
+Examen sobre conceptos básicos de orientación a objetos. Aquí se tratan los siguientes
+resultados de aprendizaje:
+● RA 6. Escribe programas que manipulen información seleccionando y
+utilizando tipos avanzados de datos.
+En concreto, se evaluarán los criterios de evaluación:
+RA 6)
+b) Se han reconocido las librerías de clases relacionadas con tipos de datos
+avanzados.
+c) Se han utilizado listas para almacenar y procesar información.
+d) Se han utilizado iteradores para recorrer los elementos de las listas.
+e) Se han reconocido las características y ventajas de cada una de las colecciones
+de datos disponibles.
+f) Se han creado clases y métodos genéricos.
+Entrega UN ÚNICO fichero comprimido en formato zip que contenga el proyecto de eclipse,
+con el nombre: apellidos_nombre_examen_colecciones.zip.
+Ejercicio 1.
+Queremos realizar una pequeña aplicación de colección de cromos de fútbol.
+Existen dos tipos de cromos, los que representan a jugadores y los que representan
+escudos. Cada cromo (independientemente de su tipo) tiene un identificador único
+alfanumérico (aclaración, cada cromo diferente; es decir, el jugador Busquets tendrá un
+identificador único, que será el mismo en todos los cromos de Busquets).
+Además:
+● Los cromos de escudos tienen:
+○ El nombre del equipo
+○ El año de fundación del equipo
+○ Número de jugadores
+Programación 2021/22. Examen colecciones
+● Los cromos de jugadores tienen:
+○ Nombre del jugador
+○ Equipo en el que juega
+○ Altura del jugador, en centímetros
+Nuestra aplicación debe gestionar un mazo de cromos, así como la posibilidad de realizar
+otras operaciones:
+● Añadir un nuevo cromo. Para ello necesitamos conocer cuántos cromos iguales
+tenemos, para facilitar el intercambio de cromos y poder completar nuestra
+colección. Es decir, si tenemos el cromo del escudo del Real Betis dos veces,
+necesitaremos conocer dicho dato.
+● Intercambiar un cromo por otro. Si el cromo que intercambiamos (el nuestro) solo lo
+tenemos una vez, debe desaparecer del mazo.
+● Mezclar con otro mazo.
+● Contar cuántos cromos diferentes tenemos, de cualquier tipo.
+● Devolver aquellos cromos (sin importar la cantidad que tengamos) de un equipo en
+concreto, sean jugadores o el escudo.
+● Calcular la altura media de los jugadores que tengamos de un equipo dado. Por
+ejemplo, altura media de los jugadores del Real Madrid. Si tenemos 3 cromos de
+jugadores (sin contar repetidos), calcularemos la altura media de dichos jugadores.
+● Devolver una lista de los cromos, sin importar el orden.
+● Devolver una lista de cromos ordenados. La ordenación será la siguiente:
+1. Por tipo. Los cromos de escudos irán primero
+2. Dentro del mismo tipo, por orden alfabético según el nombre.
+● Extra: Buscar aquellos equipos de los que tengamos todos los jugadores más el
+escudo. Devuelve una lista con sus nombres.
+Ten en cuenta:
+● Supón que el identificador de cada cromo se pasará como primer parámetro en la
+llamada a su constructor. En un juego real, dichos identificadores vendrían dados de
+fábrica.
+● Supón que dos cromos son iguales si su identificador es igual, sin importar los otros
+campos.
+Programación 2021/22. Examen colecciones
+● Piensa qué necesitas realizar para poder comparar dos cromos.
+● Piensa que mezclar dos mazos es como añadir uno a uno todos los cromos del
+nuevo mazo, teniendo en cuenta el número de unidades de cada cromo.
+● Si en algún momento encuentras que un método devuelve un objeto de tipo
+OptionalDouble* tienes dos opciones:
+○ Llama al método getAsDouble() para obtener su valor en double.
+○ Llama al método orElse(Double.NaN) para evitar que se lance una excepción
+en casos en los que el resultado pueda estar vacío.
+● Piensa de qué forma podemos recorrer todos los cromos: los métodos de los que
+disponemos para obtener estructuras iterables.
+Se valorará:
+1. La correcta resolución del problema.
+2. Que la aplicación no reporte errores.
+3. La correcta elección de la/s estructura/s necesarias
+4. El correcto manejo de excepciones
+* El tipo OptionalDouble se usa para indicar que puede devolver un double o puede no
+haber valor de vuelta. En este caso, si estamos 100% seguros que el valor será un double
+llamaremos al método getAsDouble. Sin embargo, si no estamos seguros, podemos llamar
+a orElse(Double.NaN), en cuyo caso, si el valor fuera vacío, devolverá la constante NaN
+(Not a Number) de la clase Double.

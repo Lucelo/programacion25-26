@@ -1,0 +1,82 @@
+Examen Estructuras Complejas de Almacenamiento
+Queremos desarrollar parte de un pequeño juego relacionado con el mundo de Dragon Ball.
+La idea es poder programar un esbozo de la parte de la aplicación relacionada con los
+combates de los personajes.
+Cada personaje tiene un nombre, una raza (humano, saiyan, namekiano, androide u otro), un
+nivel de vida (que puede llegar como máximo a un determinado valor, único para cada
+personaje), un nivel de ki (que, igual que la vida, puede llegar como máximo a un valor único
+por cada personaje) y una serie de ataques.
+De los ataques necesitamos conocer:
+● su nombre
+● el ki necesario para poder ejecutarlo (mayor que 0)
+● el nivel de perfección del ataque (numérico del 1 al 3)
+● el daño que provoca dicho ataque. (mayor que 0)
+En esta versión del juego, estamos explorando una rama en la que cada ataque es único si
+coinciden su nombre, su nivel y su daño. Además, los ataques se “olvidan” una vez
+ejecutados.
+Tu labor es completar las clases pasadas: atributos, constructores, métodos que consideres
+oportunos y los métodos que se piden a continuación:
+Clase Ataque:
+● Clase completa (0.5 puntos)
+Clase Personaje:
+● Clase completa (0.5 puntos)
+Clase Juego:
+● Debe poder agregar personajes, pero sin duplicarlos. Se considera que dos
+personajes son iguales si su nombre y su raza son las mismas. En el caso de
+duplicados se deberá avisar. (0.25 puntos)
+● Debe poder buscar un personaje dado un nombre y una raza. (0.5 puntos)
+● Mostrar por pantalla cuál es el personaje (o los personajes) que más ataques
+conoce. Se debe mostrar el personaje y el número de ataques que conoce. (2
+puntos).
+● Mostrar por pantalla un listado de todos los ataques, sin duplicar:
+○ Ordenados por nombre. (0.25 puntos)
+○ Ordenados por daño de mayor a menor. (0.25 puntos)
+○ Cada uno de los anteriores en un método distinto.
+IES Padre José Miravent.
+Módulo: Programación 24/25
+● Dados dos personajes, p1 y p2, determinar qué ataque de p1 hace más daño a p2,
+teniendo en cuenta las características actuales de p1. Si dos ataques hacen el
+mismo daño devolver cualquiera de los dos. (1 punto)
+● Atacar. Debe aceptar dos personajes, p1 y p2, y el nombre del ataque a realizar. (2
+puntos)
+○ Si el ataque no está en la lista de p1 deberá mostrarse un error por pantalla.
+○ Si p1 no puede lanzar este ataque, aunque lo tenga en su lista, deberá
+también mostrarse un error por pantalla.
+○ Si p1 tiene varios ataques con el mismo nombre, se deberá elegir el que más
+daño cause dentro de las posibilidades del jugador.
+○ Se deberá mostrar la vida restante de p2 al finalizar el ataque. Si resulta que
+el ataque lo mata, también deberá mostrarse este dato por pantalla. No hay
+que hacer nada especial con p2. Para este caso especial, puedes escribir por
+pantalla desde las clases del modelo
+○ Un personaje “muerto” no puede atacar, ni se puede atacar a un personaje
+muerto.
+○ El ataque, si se ha podido realizar, se deberá eliminar de los ataques
+disponibles de p1.
+● Sin usar flujos, eliminar los ataques de todos los personajes que tengan un nivel
+(referido al ataque) menor que una cantidad pasada por parámetro. (0.75 puntos)
+● Devuelve un mapa que contenga, por cada raza, un listado de los personajes
+existentes, indistintamente de si están vivos o muertos. (1 punto)
+Comenta todo el código:
+● Comentarios en formato javadoc con la explicación de cada método (hasta 0.5
+puntos)
+● Comentarios explicativos allí donde consideres que es necesaria una explicación
+(hasta 0.5 puntos)
+Debes seleccionar correctamente el tipo de colección allí donde sea necesario.
+Ten en cuenta que:
+● Un personaje puede tener más de una vez el mismo ataque.
+● Hay operaciones que requieren comprobar y/o modificar los atributos de los
+personajes.
+● Tan sólo la clase juego debería imprimir por pantalla.
+● Supón que todos los datos numéricos con los que trabajamos son de tipo entero.
+● Puedes modificar el orden de cualquier lista si lo necesitas.
+IES Padre José Miravent.
+Módulo: Programación 24/25
+● Considera crear métodos auxiliares en las clases Personaje y Ataque para facilitarte
+la vida.
+Se valorará (y podría penalizarse el no hacerlo):
+● Organización y claridad del código
+● Correcta indentación
+● Elección correcta de los nombres de variables y métodos
+Entrega: comprime la carpeta del proyecto (o en su defecto la carpeta donde esté todo el
+código) en un archivo .zip y súbelo a la tarea de Moodle Centros. Se penalizarán con 0.25
+las entregas que no cumplan este requisito.

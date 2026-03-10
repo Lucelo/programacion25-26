@@ -1,3 +1,5 @@
+package R_2025;
+
 public class Ataque {
 
     public String energyBlast;

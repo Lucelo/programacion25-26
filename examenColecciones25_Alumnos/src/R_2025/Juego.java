@@ -1,21 +1,27 @@
+package R_2025;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class Juego {
-
+    ArrayList<Personaje> Personajes = new ArrayList<>();
 
     public static void main(String[] args) {
+
+
         try {
             Juego juego = new Juego();
+
 
             // Crear personajes
             crearPersonajes(juego);
 
             // Llamada al método que muestra los personajes con más ataques
-            System.out.println("Personaje(s) que conocen más ataques:");
+            System.out.println("R_2025.Personaje(s) que conocen más ataques:");
             juego.personajeConMasAtaques();
             System.out.println();
-            System.out.println("Personaje(s) con el ataque más poderoso:");
+            System.out.println("R_2025.Personaje(s) con el ataque más poderoso:");
             juego.personajeConAtaqueMasPoderoso();
             System.out.println();
             System.out.println("Ataques ordenados por nombre");
@@ -66,6 +72,7 @@ public class Juego {
 
 
     public static void crearPersonajes(Juego juego) throws DBException {
+
         Personaje goku = new Personaje("Goku", TRaza.SAIYAN, 100, 100, 100, 10);
         Personaje vegeta = new Personaje("Vegeta", TRaza.SAIYAN, 90, 20, 90, 25);
         Personaje gohan = new Personaje("Gohan", TRaza.SAIYAN, 80, 15, 80, 70);
@@ -120,9 +127,26 @@ public class Juego {
         juego.agregarPersonaje(gohan);
         juego.agregarPersonaje(piccolo);
         juego.agregarPersonaje(android18);
+
+
     }
 
     public Personaje buscarPersonaje(String nombre, TRaza raza) throws DBException {
+
+        for (int i = 0; i < Personajes.size(); i++) {
+            Personaje p = Personajes.get(i);
+
+            if (p.getNombre().equals(nombre) && p.getRaza() == raza) {
+                System.out.println("El personaje existe");
+
+                return p;
+            }
+
+
+        }
+
+        System.out.println("El personaje no existe");
+
 
         return null;
     }
@@ -132,6 +156,14 @@ public class Juego {
     }
 
     public void agregarPersonaje(Personaje personaje) throws DBException {
+
+        if (Personajes.contains(personaje)) {
+
+            throw new DBException("Ya existe");
+
+        }
+
+        Personajes.add(personaje);
 
     }
 
