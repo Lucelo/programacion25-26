@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 
-import exceptions.MazoException;
-
 public class Principal {
 
     public static String REAL_MADRID = "Real Madrid";

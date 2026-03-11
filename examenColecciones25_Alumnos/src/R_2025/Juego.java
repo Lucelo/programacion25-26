@@ -7,7 +7,7 @@ import java.util.Map;
 public class Juego {
     ArrayList<Personaje> Personajes = new ArrayList<>();
 
-    public static void main(String[] args) {
+     static void main(String[] args) {
 
 
         try {
@@ -57,8 +57,11 @@ public class Juego {
             juego.todosLosAtaquesOrdenadosNombre();
 
             System.out.println();
+            
             System.out.println("Todos los personajes mostrador por raza:");
+            
             Map<TRaza, List<Personaje>> mapa = juego.devuelveMapaRazas();
+            
             mapa.entrySet().forEach(e -> {
                 System.out.printf("Personajes de la raza %s:\n", e.getKey());
                 e.getValue().forEach(p -> System.out.printf("\t%s\n", p.getNombre()));
@@ -133,20 +136,15 @@ public class Juego {
 
     public Personaje buscarPersonaje(String nombre, TRaza raza) throws DBException {
 
-        for (int i = 0; i < Personajes.size(); i++) {
-            Personaje p = Personajes.get(i);
+        for (Personaje p : Personajes) {
 
-            if (p.getNombre().equals(nombre) && p.getRaza() == raza) {
-                System.out.println("El personaje existe");
+            if (p.getNombre().equalsIgnoreCase(nombre) && p.getRaza() == raza) {
 
                 return p;
+
             }
 
-
         }
-
-        System.out.println("El personaje no existe");
-
 
         return null;
     }
@@ -172,6 +170,8 @@ public class Juego {
     }
 
     public void todosLosAtaquesOrdenadosNombre() {
+
+
 
     }
 

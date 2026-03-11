@@ -11,7 +11,7 @@ de datos disponibles.
 f) Se han creado clases y métodos genéricos.
 Entrega UN ÚNICO fichero que contenga el proyecto de eclipse, con el nombre:
 apellidos_nombre_examen_colecciones.zip. Empaqueta cada ejercicio en un paquete
-diferente: ejercicio1 y ejercicio2.
+diferente: R_2021.ejercicio1 y R_2021.ejercicio2.
 Ejercicio 1.
 Se desea realizar una aplicación sobre de una plataforma para ver películas online que
 llamaremos NetPlease. Cada película tiene un título, un tema, y una lista de opiniones

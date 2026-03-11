@@ -1,5 +1,7 @@
 package R_2025;
 
+import java.util.ArrayList;
+
 public class Personaje {
 
 
@@ -13,13 +15,16 @@ public class Personaje {
     private int KiMax;
     private int kiActual;
 
-    public Personaje(String nombre, TRaza raza, int vidaMax, int vidaActual, int KiMax, int kiActual) {
+    ArrayList<Ataque> ataques;
+
+    public Personaje(String nombre, TRaza raza, int vidaMax, int vidaActual, int kiMax, int kiActual) {
         this.nombre = nombre;
         this.raza = raza;
         this.vidaMax = vidaMax;
         this.vidaActual = vidaActual;
-        this.KiMax = KiMax;
+        this.KiMax = kiMax;
         this.kiActual = kiActual;
+        ataques = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -70,7 +75,24 @@ public class Personaje {
         this.kiActual = kiActual;
     }
 
-    public void addAtaque(Ataque Ataque) {
+    public ArrayList<Ataque> getAtaques() {
+        return ataques;
+    }
+
+    public void setAtaques(ArrayList<Ataque> ataques) {
+        this.ataques = ataques;
+    }
+
+    public void addAtaque(Ataque ataque) throws DBException {
+
+        if (ataques.contains(ataque)) {
+
+            throw new DBException("Ya existe el mismo ataque");
+
+        }
+
+        ataques.add(ataque);
+
     }
 
 
