@@ -240,11 +240,12 @@ public class Juego {
 
     public void todosLosAtaquesOrdenadosDamage() {
 
-        TodosAtaques.sort(Comparator.comparingInt(Ataque::getDañoQueProvoca));
+        TodosAtaques.sort(Comparator.comparingInt(Ataque::getDañoQueProvoca).reversed());
 
-        for (int i = TodosAtaques.size() - 1; i >= 0; i--) {
+        for (int i = 0; i < TodosAtaques.size(); i++) {
             System.out.print(TodosAtaques.get(i).getNombre());
             System.out.println(" -> " + TodosAtaques.get(i).getDañoQueProvoca());
+
         }
 
     }
