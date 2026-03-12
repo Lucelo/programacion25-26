@@ -75,7 +75,6 @@ public class Juego {
         }
     }
 
-
     public static void crearPersonajes(Juego juego) throws DBException {
 
         Personaje goku = new Personaje("Goku", TRaza.SAIYAN, 100, 100, 100, 10);
@@ -251,14 +250,19 @@ public class Juego {
     }
 
     private void listaAtaques() {
+
+        TodosAtaques.clear();
+
         for (int i = 0; i < Personajes.size(); i++) {
             TodosAtaques.addAll(Personajes.get(i).getAtaques());
         }
+
     }
 
     public Ataque ataqueMasDañino(Personaje p1, Personaje p2) throws DBException {
 
-        for (int i = 0; i < p1.ataques.size(); i++) {
+        for (int i = 0; i < p1.getAtaques().size(); i++) {
+
 
 
         }
@@ -277,7 +281,7 @@ public class Juego {
 
             for (int j = personaje.getAtaques().size() - 1; j >= 0; j--) {
 
-                if (personaje.getAtaques().get(j).getNivelDePerfección() <= nivel) {
+                if (personaje.getAtaques().get(j).getNivelDePerfección() < nivel) {
 
                     personaje.ataques.remove(j);
 
