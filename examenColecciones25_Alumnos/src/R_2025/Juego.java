@@ -1,13 +1,15 @@
 package R_2025;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
 public class Juego {
     ArrayList<Personaje> Personajes = new ArrayList<>();
+    ArrayList<Ataque> TodosAtaques = new ArrayList<>();
 
-     static void main(String[] args) {
+    static void main(String[] args) {
 
 
         try {
@@ -18,10 +20,10 @@ public class Juego {
             crearPersonajes(juego);
 
             // Llamada al método que muestra los personajes con más ataques
-            System.out.println("R_2025.Personaje(s) que conocen más ataques:");
+            System.out.println("Personaje(s) que conocen más ataques:");
             juego.personajeConMasAtaques();
             System.out.println();
-            System.out.println("R_2025.Personaje(s) con el ataque más poderoso:");
+            System.out.println("Personaje(s) con el ataque más poderoso:");
             juego.personajeConAtaqueMasPoderoso();
             System.out.println();
             System.out.println("Ataques ordenados por nombre");
@@ -57,11 +59,11 @@ public class Juego {
             juego.todosLosAtaquesOrdenadosNombre();
 
             System.out.println();
-            
+
             System.out.println("Todos los personajes mostrador por raza:");
-            
+
             Map<TRaza, List<Personaje>> mapa = juego.devuelveMapaRazas();
-            
+
             mapa.entrySet().forEach(e -> {
                 System.out.printf("Personajes de la raza %s:\n", e.getKey());
                 e.getValue().forEach(p -> System.out.printf("\t%s\n", p.getNombre()));
@@ -131,6 +133,9 @@ public class Juego {
         juego.agregarPersonaje(piccolo);
         juego.agregarPersonaje(android18);
 
+        // Agregar los ataques
+        juego.listaAtaques();
+
 
     }
 
@@ -151,6 +156,34 @@ public class Juego {
 
     private void personajeConAtaqueMasPoderoso() {
 
+        int ataqueMasFuerte = 0;
+
+        Personaje perAtaquefuerte = null;
+
+        Ataque nomAtaque = null;
+
+        for (Personaje personaje : Personajes) {
+
+            for (int j = 0; j < personaje.getAtaques().size(); j++) {
+
+                if (personaje.getAtaques().get(j).getDañoQueProvoca() > ataqueMasFuerte) {
+
+                    perAtaquefuerte = personaje;
+
+                    nomAtaque = personaje.getAtaques().get(j);
+
+                    ataqueMasFuerte = personaje.getAtaques().get(j).getDañoQueProvoca();
+
+                }
+
+            }
+
+        }
+
+        System.out.println("El personaje con el ataque mas fuerte seria " + perAtaquefuerte.getNombre());
+        System.out.println("Nombre: " + nomAtaque.getNombre());
+        System.out.println("Daño: " + ataqueMasFuerte);
+
     }
 
     public void agregarPersonaje(Personaje personaje) throws DBException {
@@ -167,19 +200,69 @@ public class Juego {
 
     public void personajeConMasAtaques() throws DBException {
 
+        int maxAtaques = 0;
+
+        for (Personaje personaje : Personajes) {
+
+            if (personaje.getAtaques().size() > maxAtaques) {
+
+                maxAtaques = personaje.getAtaques().size();
+
+            }
+
+        }
+
+        System.out.println("Los personajes com mas ataques serian");
+
+        for (int j = 0; j < Personajes.size(); j++) {
+
+            if (Personajes.get(j).getAtaques().size() == maxAtaques) {
+
+                System.out.println(Personajes.get(j).getNombre() + " -> " + Personajes.get(j).getAtaques().size());
+
+            }
+
+        }
+
     }
 
     public void todosLosAtaquesOrdenadosNombre() {
 
+        TodosAtaques.sort((ataque1, ataque2) -> ataque1.getNombre().compareToIgnoreCase(ataque2.getNombre()));
+
+        for (int i = 0; i < TodosAtaques.size(); i++) {
+
+            System.out.println(TodosAtaques.get(i).getNombre());
+
+        }
 
 
     }
 
     public void todosLosAtaquesOrdenadosDamage() {
 
+        TodosAtaques.sort(Comparator.comparingInt(Ataque::getDañoQueProvoca));
+
+        for (int i = TodosAtaques.size() - 1; i >= 0; i--) {
+            System.out.print(TodosAtaques.get(i).getNombre());
+            System.out.println(" -> " + TodosAtaques.get(i).getDañoQueProvoca());
+        }
+
+    }
+
+    private void listaAtaques() {
+        for (int i = 0; i < Personajes.size(); i++) {
+            TodosAtaques.addAll(Personajes.get(i).getAtaques());
+        }
     }
 
     public Ataque ataqueMasDañino(Personaje p1, Personaje p2) throws DBException {
+
+        for (int i = 0; i < p1.ataques.size(); i++) {
+
+
+        }
+
 
         return null;
     }
@@ -189,6 +272,21 @@ public class Juego {
     }
 
     public void eliminarAtaquesInferioresANivel(int nivel) {
+
+        for (Personaje personaje : Personajes) {
+
+            for (int j = personaje.getAtaques().size() - 1; j >= 0; j--) {
+
+                if (personaje.getAtaques().get(j).getNivelDePerfección() <= nivel) {
+
+                    personaje.ataques.remove(j);
+
+                }
+
+            }
+
+        }
+
 
     }
 
