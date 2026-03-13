@@ -71,8 +71,11 @@ public class Juego {
 
 
         } catch (DBException e) {
+
             System.out.println(e.getMessage());
+
         }
+
     }
 
     public static void crearPersonajes(Juego juego) throws DBException {
@@ -231,7 +234,7 @@ public class Juego {
 
         for (int i = 0; i < TodosAtaques.size(); i++) {
 
-            System.out.println(TodosAtaques.get(i).getNombre());
+            System.out.println(TodosAtaques.get(i).getNombre() + TodosAtaques.get(i).getNivelDePerfección());
 
         }
 
@@ -265,7 +268,6 @@ public class Juego {
         for (int i = 0; i < p1.getAtaques().size(); i++) {
 
 
-
         }
 
 
@@ -283,6 +285,8 @@ public class Juego {
             for (int j = personaje.getAtaques().size() - 1; j >= 0; j--) {
 
                 if (personaje.getAtaques().get(j).getNivelDePerfección() < nivel) {
+
+                    System.out.println("Se elimino " + personaje.getAtaques().get(j).getNombre());
 
                     personaje.ataques.remove(j);
 
