@@ -1,0 +1,189 @@
+Examen sobre conceptos básicos de orientación a objetos. Aquí se tratan los
+siguientes resultados de aprendizaje:
+RA 6. Escribe programas que manipulen información seleccionando y utilizando
+tipos avanzados de datos.
+En concreto, se evaluarán los criterios de evaluación:
+RA 6)
+b) Se han reconocido las librerías de clases relacionadas con tipos de datos
+avanzados.
+c) Se han utilizado listas para almacenar y procesar información.
+d) Se han utilizado iteradores para recorrer los elementos de las listas.
+e) Se han reconocido las características y ventajas de cada una de las
+colecciones de datos disponibles.
+f) Se han creado clases y métodos genéricos.
+Entrega UN ÚNICO fichero comprimido en formato zip que contenga:
+● En caso de utilizar Eclipse, el proyecto de eclipse, con el nombre:
+apellidos_nombre_examen_colecciones.zip.
+● En caso de utilizar otro IDE, la carpeta src comprimida en zip, con el mismo
+nombre que el caso anterior.
+Ejercicio 1. 10 puntos. Desarrolla una aplicación en la que se gestionen equipos y
+jugadores.
+De cada equipo necesitamos conocer:
+● Su nombre
+● Los jugadores que lo componen
+De cada jugador necesitamos conocer:
+● El nombre
+● Su fecha de nacimiento
+● Su demarcación (portero, defensa, centrocampista o delantero)
+● Su país de nacimiento
+Los equipos estarán organizados en una liga. De la misma, necesitaremos conocer:
+● El nombre de la misma
+● El listado de equipos que la forman
+Programación. Curso 2022/23
+Además, en la liga, debes crear métodos que permitan:
+● Añadir un nuevo equipo a la liga. Si el equipo que se va a añadir no
+contiene jugadores o ya forma parte de la liga, deberá lanzarse una
+excepción.
+● Eliminar un equipo de la liga. Si el equipo que se desea eliminar no se
+encuentra en la liga, deberá lanzarse una excepción.
+● Unir dos equipos. Se deberá comprobar primero que ambos equipos
+pertenecen a la liga. Si no, deberá lanzarse una excepción. Este método debe
+añadir todos los jugadores del segundo equipo al primero.
+● Mostrar los jugadores que dos equipos tienen en común. Se deberá
+comprobar primero que ambos equipos pertenecen a la liga. Si no, deberá
+lanzarse una excepción. Se deberá devolver una lista con los jugadores que
+ambos equipos tienen en común.
+● Calcular la media de edad de todos los jugadores de la liga. Se deberá
+calcular la media de edad de todos los jugadores de todos los equipos. Para
+ello, se recomienda crear el método todosLosJugadores(), que devuelve un
+conjunto con todos los jugadores de la misma.
+Para calcular la edad de un jugador, puedes utilizar la clase Period del
+paquete java.time. Aquí tienes un ejemplo:
+LocalDate fechaActual = LocalDate.now();
+Period periodo = Period.between(fechaNacimiento,
+fechaActual);
+int edad = periodo.getYears();
+En el caso de que no haya jugadores en la liga, se deberá lanzar una
+excepción informando.
+● Devolver un listado de los jugadores ordenados por fecha de nacimiento
+(de más mayor a más joven).
+● Devolver un listado de los jugadores ordenados por nombre del jugador.
+Ten en cuenta que:
+● Se proporcionan las clases básicas.
+● Se considera que dos jugadores son iguales si su nombre y su fecha de
+nacimiento son iguales.
+● Se considera que dos equipos son iguales si se llaman igual.
+● La salida que se espera de ejecutar el archivo principal es la siguiente:
+Real Betis Balompi�:
+Bermudi�o: 24/08/1985. DELANTERO (Brasil)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Programación. Curso 2022/23
+Santana: 22/06/1970. PORTERO (Espa�a)
+La Redondela Football Club:
+Mart�nez: 28/04/1983. PORTERO (Uruguay)
+Castro: 20/12/1994. DEFENSA (Venezuela)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Hern�ndez: 14/07/1987. CENTROCAMPISTA (Chile)
+Gonz�lez: 01/09/1995. DELANTERO (Per�)
+Isla United:
+Ram�rez: 12/05/1993. CENTROCAMPISTA (Ecuador)
+Flores: 06/10/1989. DELANTERO (Bolivia)
+Ruiz: 18/01/1981. PORTERO (Paraguay)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Real Betis Balompi�:
+Bermudi�o: 24/08/1985. DELANTERO (Brasil)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Santana: 22/06/1970. PORTERO (Espa�a)
+No hay jugadores en la liga
+##########
+##########
+No puedes a�adir un equipo vac�o
+Bienvenidos a LaLiga Miravent
+Equipos:
+Real Betis Balompi�:
+Bermudi�o: 24/08/1985. DELANTERO (Brasil)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Santana: 22/06/1970. PORTERO (Espa�a)
+La Redondela Football Club:
+Mart�nez: 28/04/1983. PORTERO (Uruguay)
+Castro: 20/12/1994. DEFENSA (Venezuela)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Hern�ndez: 14/07/1987. CENTROCAMPISTA (Chile)
+Gonz�lez: 01/09/1995. DELANTERO (Per�)
+Isla United:
+Ram�rez: 12/05/1993. CENTROCAMPISTA (Ecuador)
+Flores: 06/10/1989. DELANTERO (Bolivia)
+Ruiz: 18/01/1981. PORTERO (Paraguay)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Programación. Curso 2022/23
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Borrame FC:
+Bermudi�o: 24/08/1985. CENTROCAMPISTA (Brasil)
+Garc�a: 10/03/1990. PORTERO (Argentina)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Santana: 22/06/1970. DEFENSA (Espa�a)
+##############
+El equipo que buscas no juega en esta liga
+##########
+Bienvenidos a LaLiga Miravent
+Equipos:
+Real Betis Balompi�:
+Bermudi�o: 24/08/1985. DELANTERO (Brasil)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Santana: 22/06/1970. PORTERO (Espa�a)
+La Redondela Football Club:
+Mart�nez: 28/04/1983. PORTERO (Uruguay)
+Castro: 20/12/1994. DEFENSA (Venezuela)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Hern�ndez: 14/07/1987. CENTROCAMPISTA (Chile)
+Gonz�lez: 01/09/1995. DELANTERO (Per�)
+Isla United:
+Ram�rez: 12/05/1993. CENTROCAMPISTA (Ecuador)
+Flores: 06/10/1989. DELANTERO (Bolivia)
+Ruiz: 18/01/1981. PORTERO (Paraguay)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+############
+Visualicemos ahora los jugadores en com�n de los equipos 1 y 3
+Perez: 08/02/1992. DEFENSA (M�xico)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+############
+Visualicemos ahora la uni�n de los equipos 6 y 2
+FC Sin liga:
+Mart�nez: 28/04/1983. PORTERO (Uruguay)
+Castro: 20/12/1994. DEFENSA (Venezuela)
+Bermudi�o: 24/08/1985. DELANTERO (Brasil)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Programación. Curso 2022/23
+Hern�ndez: 14/07/1987. CENTROCAMPISTA (Chile)
+Gonz�lez: 01/09/1995. DELANTERO (Per�)
+############
+Jugadores ordenados por edad
+Santana: 22/06/1970. PORTERO (Espa�a)
+Ruiz: 18/01/1981. PORTERO (Paraguay)
+Mart�nez: 28/04/1983. PORTERO (Uruguay)
+Bermudi�o: 24/08/1985. DELANTERO (Brasil)
+Hern�ndez: 14/07/1987. CENTROCAMPISTA (Chile)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Flores: 06/10/1989. DELANTERO (Bolivia)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Ram�rez: 12/05/1993. CENTROCAMPISTA (Ecuador)
+Castro: 20/12/1994. DEFENSA (Venezuela)
+Gonz�lez: 01/09/1995. DELANTERO (Per�)
+############
+Jugadores ordenados por nombre
+Bermudi�o: 24/08/1985. DELANTERO (Brasil)
+Castro: 20/12/1994. DEFENSA (Venezuela)
+Flores: 06/10/1989. DELANTERO (Bolivia)
+Garc�a: 10/03/1990. DEFENSA (Argentina)
+Gonz�lez: 01/09/1995. DELANTERO (Per�)
+Hern�ndez: 14/07/1987. CENTROCAMPISTA (Chile)
+Lopez: 15/11/1988. CENTROCAMPISTA (Colombia)
+Mart�nez: 28/04/1983. PORTERO (Uruguay)
+Perez: 08/02/1992. DEFENSA (M�xico)
+Ram�rez: 12/05/1993. CENTROCAMPISTA (Ecuador)
+Ruiz: 18/01/1981. PORTERO (Paraguay)
+Santana: 22/06/1970. PORTERO (Espa�a)
+############
+Media de edad de la liga: 35,00

@@ -2,7 +2,7 @@ package R_5;
 
 import java.util.ArrayList;
 
-public class EntradaDiccionario {
+public class EntradaDiccionario implements Comparable<EntradaDiccionario> {
 
     //Atributos
     private String palabra;
@@ -67,9 +67,19 @@ public class EntradaDiccionario {
         return palabra + " con significados: " + cadena.toString();
     }
 
+    @Override
+    public int compareTo(EntradaDiccionario o) {
+        return this.palabra.compareTo(o.palabra);
+    }
 
     public void annadirSignificado(String significado) {
 
+
+        if (this.significados.contains(significado)) {
+            //Excepcion
+        }
+
+        this.significados.add(significado);
     }
 
 }

@@ -1,0 +1,72 @@
+Examen sobre Colecciones y tipos de datos avanzados. Este examen trata el RA 6: Escribe
+programas que manipulen información seleccionando y utilizando tipos avanzados de
+datos.
+En concreto, se evaluarán los criterios de evaluación:
+b) Se han reconocido las librerías de clases relacionadas con tipos de datos
+avanzados.
+c) Se han utilizado listas para almacenar y procesar información.
+d) Se han utilizado iteradores para recorrer los elementos de las listas.
+e) Se han reconocido las características y ventajas de cada una de las colecciones
+de datos disponibles.
+f) Se han creado clases y métodos genéricos.
+Entrega UN ÚNICO fichero que contenga el proyecto de eclipse, con el nombre:
+apellidos_nombre_examen_colecciones.zip. Empaqueta cada ejercicio en un paquete
+diferente: R_2021.ejercicio1 y R_2021.ejercicio2.
+Ejercicio 1.
+Se desea realizar una aplicación sobre de una plataforma para ver películas online que
+llamaremos NetPlease. Cada película tiene un título, un tema, y una lista de opiniones
+dadas por los usuarios que la han visto, así como un conjunto de actores que participan en
+la película.
+Las películas se van a organizar en un HashMap por temas, de forma que por el nombre del
+tema (por ejemplo “COMEDIA”, “DRAMA”, “ACCIÓN”) se obtengan todas las películas de
+ese tema.
+Se ha optado por tener organizadas las películas de un tema como un LinkedList. Las
+opiniones se almacenarán en un ArrayList. Los actores se almacenan en un HashSet.
+Se proporciona un material de clases creadas. Haz los cambios que necesites al paquete
+que viene preestablecido. Se pide realizar los siguientes cambios:
+Programación 2020/21. Examen de colecciones
+Clase PeliculasDeUnTema
+● 0.75 puntos. Modificar el método addPelicula: Debe modificarse para que no
+admita películas repetidas y que se compruebe que el año de la película es igual o
+inferior al actual. Si se produce algún error se lanzará la excepción
+NetPleaseException.
+● 0.75 puntos. Programar el método borrarLasPeliculasDeUnAño. Borrará de la lista
+las películas de ese año. Lanzará la excepción si no hay ninguna película de ese
+año.
+● 0.75 puntos. Programar el método addOpinionAPelícula: Se añadirá una opinión
+a una película indicada. Si no se encuentra la película saltará la excepción
+NetPleaseException.
+● 1 punto. Programar el método
+listadoDePeliculasOrdenadasPorMediaDeOpiniones. Se obtendrá un listado con
+los datos de las películas de ese tema ordenadas de mayor a menor por la media de
+opiniones. Si una película no tiene aparecerá con opinión 0 al final de la lista.
+Programar y usar el método mediaDeOpiniones() de la clase Película.
+● 0.75 puntos. Programar el método listaDePeliculasDondeIntervieneUnActor. Se
+obtendrá un List de Películas donde interviene un actor.
+Clase NetPlease
+● 0.75 puntos. Programar el método borrarPeliculaDeUnTema: Si no existe el tema o
+la película saltará la excepción. Programar y hacer uso del método borrar de la clase
+PeliculasDeUnTema.
+● 0.25 puntos. Programar el método temaDePelicula: Devolverá el tema de la
+película indicada o null si no se encuentra la película.
+NOTA: Puedes crear todos los métodos en todas las clases que consideres oportuno
+RESPONDER EN EL CÓDIGO DE LA CLASE PELÍCULA:
+2 puntos. ¿Crees que la elección de un LinkedList de Películas, un ArrayList de Opiniones
+y un HashSet de actores es la adecuada? Justifica con argumentos la respuesta.
+Ejercicio 2.
+1.5 puntos. Se dispone de una clase génerica ListaGenerica. Realizar un método que
+devuelva una nueva lista genérica formada todos los elementos de la lista original hasta
+encontrar el elemento buscado. Si no se encuentra el elementoBuscado debe devolver null.
+Programación 2020/21. Examen de colecciones
+public ListaGenerica<T> listaHastaElemento( T elementoBuscado)
+Ejemplo:
+Lista original:
+A → B → C → D → E → F
+Elemento buscado: D
+Lista resultado:
+A → B → C → D
+1.5 puntos. Realiza ahora las modificaciones oportunas para crear otro método donde
+devuelvas en una nueva lista aquellos elementos que sean menores que el elemento
+pasado como parámetro, sin incluir el propio elemento. Deberá devolver null si no hay
+elementos menores.
+public ListaGenerica<T> elementosMenores( T elementoReferencia)

@@ -1,65 +1,150 @@
 package R_1;
 
-import java.util.HashSet;
+import java.util.*;
 
 public class Equipo {
+	private String nombreEquipo;
+	private HashSet<Alumno> conjuntoAlumnos;
 
-    private String equipo;
+	public Equipo(String nombre) {
 
-    private HashSet<Alumno> conjuntoAlumnos;
+		setNombreEquipo(nombre);
+		conjuntoAlumnos = new HashSet<Alumno>();
+	}
 
+	public String getNombreEquipo() {
+		return nombreEquipo;
+	}
 
-    public Equipo(String equipo) {
-        getEquipo(equipo);
-        conjuntoAlumnos = new HashSet<Alumno>();
-    }
+	public void setNombreEquipo(String nombreEquipo) {
+		this.nombreEquipo = nombreEquipo;
+	}
 
-    public String getEquipo() {
-        return equipo;
-    }
+	public void insertarAlumno(Alumno nuevoAlumno) throws EquipoException {
 
-    public void setEquipo(String equipo) {
-        this.equipo = equipo;
-    }
+		boolean insertado;
 
-    public HashSet<Alumno> getConjuntoAlumnos() {
-        return conjuntoAlumnos;
-    }
+		insertado=conjuntoAlumnos.add(nuevoAlumno);
+		if ( ! insertado)
+			throw new EquipoException("No se puede insertar el alumno");
+	}
 
-    public void setConjuntoAlumnos(HashSet<Alumno> conjuntoAlumnos) {
-        this.conjuntoAlumnos = conjuntoAlumnos;
-    }
+	public void borrarAlumno(Alumno alumnoABorrar) throws EquipoException {
 
-    public void insertarAlumno(Alumno nuevoAlumno) {
-        for (int i = 0; i < conjuntoAlumnos; i++) {
-            if (conjuntoAlumnos[i] == null) {
-                conjuntoAlumnos[i] = nuevoAlumno;
-            }
-        }
+		if (!conjuntoAlumnos.contains(alumnoABorrar))
+			throw new EquipoException("No se puede borrar. Ese alumno no está en el equipo");
+		conjuntoAlumnos.remove(alumnoABorrar);
+	}
 
-    }
+	/**
+	 * Devuelve una cadena con el listado de los Alumnos
+	 * 
+	 * @return Cadena con el listado de Alumnos
+	 */
+	public String listadoDeAlumnos() {
+		StringBuilder cadena = new StringBuilder(conjuntoAlumnos.size() * 20);
 
-    public void borrarAlumno(Alumno cualquiera) {
+		for (Alumno a : conjuntoAlumnos) {
 
-        for (int i = 0; i < conjuntoAlumnos.length; i++) {
-            if (conjuntoAlumnos[i] == cualquiera) {
-                conjuntoAlumnos[i] = null;
-            }
-        }
+			cadena.append(a + "\n");
+		}
+		return cadena.toString();
+	}
+	
 
-    }
+	
+	public Alumno buscarAlumno(Alumno alumnoBuscado){
+		
+		Alumno alumnoEncontrado=null;
+		boolean encontrado =false;
+		Alumno alumno;
+		
+		Iterator<Alumno> iterator= conjuntoAlumnos.iterator();
+		while(iterator.hasNext() && !encontrado){
+			
+			alumno=iterator.next();
+			if(alumno.equals(alumnoBuscado)){
+				alumnoEncontrado=alumno;
+				encontrado=true;
+			}		
+		}
+		return alumnoEncontrado;
+	}
 
-    public Equipo fusionDeEquipos(Equipo equipo2, String s) {
+	/**
+	 * Une mi equipo con otro, devolviendo el nuevo equipo creado
+	 * 
+	 * @param otro
+	 *            Otro equipo que se va a unir
+	 * @param nombre
+	 *            Nombre del nuevo equipo
+	 * @return nuevo equipo resultado de unir los dos anteriores
+	 */
+	public Equipo fusionDeEquipos(Equipo otro, String nombre) {
+		Equipo nuevoEquipo;
 
+		nuevoEquipo = new Equipo(nombre);
 
-        return equipo2;
-    }
+		for (Alumno a : this.conjuntoAlumnos) {
+			
+			try {
+				nuevoEquipo.insertarAlumno(a);
+			} catch (EquipoException e) {
+				// Si se produce esta excepción es porque 
+				// el elemento está repetido.
+				// Si se repite el elemento, se pasa al siguiente
+			}
+		}
+		for (Alumno a : otro.conjuntoAlumnos) {
+			try {
+				nuevoEquipo.insertarAlumno(a);
+			} catch (EquipoException e) {
+				// Si se produce esta excepción es porque 
+				// el elemento está repetido.
+				// Si se repite el elemento, se pasa al siguiente
+			}
+		}
 
-    public Equipo intersecionDeEquipos(Equipo equipo2, String s) {
+		return nuevoEquipo;
 
+	}
 
-        return equipo2;
-    }
+	/**
+	 * Crea un nuevo equipo con los elementos que están en los dos equipos (this
+	 * y otro)
+	 * 
+	 * @param otro
+	 *            Otro equipo
+	 * @param nombre
+	 *            Nombre del nuevo equipo intersección
+	 * @return Equipo resultado de la intersección
+	 */
+	public Equipo intersecionDeEquipos(Equipo otro, String nombre) {
+		Equipo nuevoEquipo;
+
+		nuevoEquipo = new Equipo(nombre);
+
+		for (Alumno a : this.conjuntoAlumnos) {
+
+			if (otro.conjuntoAlumnos.contains(a)) {
+
+				try {
+					nuevoEquipo.insertarAlumno(a);
+				} catch (EquipoException e) {
+					// Esta excepción nunca se a va dar
+					// Hay que tratarla porque lo obliga la sintaxis de Java
+				}
+			}
+		}
+
+		return nuevoEquipo;
+
+	}
+
+	@Override
+	public String toString() {
+		return "Nombre Equipo: " + nombreEquipo + 
+				"\nAlumnos:\n" + listadoDeAlumnos();
+	}
 
 }
-

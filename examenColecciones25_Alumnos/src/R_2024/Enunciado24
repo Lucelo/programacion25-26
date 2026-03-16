@@ -1,0 +1,61 @@
+Examen sobre conceptos básicos de orientación a objetos. Aquí se tratan los
+siguientes resultados de aprendizaje:
+RA 6. Escribe programas que manipulen información seleccionando y utilizando
+tipos avanzados de datos.
+En concreto, se evaluarán los criterios de evaluación:
+RA 6)
+b) Se han reconocido las librerías de clases relacionadas con tipos de datos
+avanzados.
+c) Se han utilizado listas para almacenar y procesar información.
+d) Se han utilizado iteradores para recorrer los elementos de las listas.
+e) Se han reconocido las características y ventajas de cada una de las
+colecciones de datos disponibles.
+f) Se han creado clases y métodos genéricos.
+Entrega UN ÚNICO fichero comprimido en formato zip que contenga el proyecto de
+IntelliJ exportado como de costumbre.
+Ejercicio único. 10 puntos. Queremos desarrollar una aplicación que gestione el
+inventario de una tienda online de productos.
+Para simplificar, de cada producto queremos conocer:
+● marca
+● modelo
+● precio
+● descripción
+● fecha de incorporación a la aplicación (los productos nuevos se añadirán con
+la fecha actual)
+● stock
+Los productos están organizados en categorías. De las categorías tan sólo nos
+interesa su nombre. No puede haber dos categorías con el mismo nombre. En cada
+categoría no podrá haber dos productos iguales*, aunque un producto podrá estar
+en más de una categoría.
+* Se considera que dos productos son iguales si tienen la misma marca y modelo.
+Se dispone de una clase Tienda que gestionará el stock. Se pide completar los
+métodos:
+Programación. Curso 2023/24
+● addCategoria (0.5 puntos): Añade una nueva categoría. En caso de que
+exista, lanza una excepción
+● addProducto (1 punto): Añade un producto a una lista de categorías. Se
+añadirá a aquellas categorías en las que todavía no exista. En aquellas donde
+ya exista, no se hará nada. Si alguna de las categorías pasadas no existe, se
+debe lanzar una excepción sin meter el producto en ninguna de las demás
+categorías donde pueda existir.
+● categoriasConProductosSinStock (1 punto): Devuelve un conjunto con
+aquellas categorías que contienen algún producto sin stock. Si no hay
+categorías, el conjunto estará vacío.
+● categoriasDeProducto (1 punto): Devuelve un conjunto con las categorías a
+las que pertenece un producto determinado.
+● getTodosLosProductosOrdenadosPorPrecio (1.4 puntos): Devuelve un
+listado con todos los productos de la tienda (sin repetir) ordenados por precio
+de mayor a menor.
+● eliminaProducto (0.8 puntos): Elimina un producto de todas las categorías
+donde aparezca.
+● productosUltimoAnno (1.5 puntos): Devuelve un conjunto con aquellos
+productos que han sido añadido en el último año (a partir de la fecha actual)
+No debes modificar la declaración de ninguno de los métodos de las clases
+propuestas.
+Añade todos los métodos que necesites en las clases Producto y Categoría.
+Además se puntuará:
+● Comentarios del código (de calidad y justificando el código escrito): hasta 1
+punto
+● Código necesario y no entregado: hasta 0.6 puntos
+● Claridad, adecuación a estándares y calidad del código: hasta 1 punto
+● Entrega correcta: hasta 0.2 puntos

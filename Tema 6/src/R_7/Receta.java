@@ -1,9 +1,10 @@
 package R_7;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 
-public class Receta {
+public class Receta implements Comparable<Receta> {
     private String nombreReceta;
     private int minutosDePreparacion;
     private HashSet<Ingrediente> ingredientes;
@@ -37,20 +38,73 @@ public class Receta {
 
     public void annadirIngrediente(Ingrediente ingredienteNuevo) {
 
+        boolean esta = false;
+        Ingrediente ingredienteDeLaColeccion;
+        int nuevaCantidad;
+        Iterator<Ingrediente> iterador = ingredientes.iterator();
+
+        while (iterador.hasNext() && esta == false) {
+
+            ingredienteDeLaColeccion = iterador.next();
+            if (ingredienteNuevo.equals(ingredienteDeLaColeccion)) {
+
+                nuevaCantidad = ingredienteNuevo.getCantidad() + ingredienteDeLaColeccion.getCantidad();
+                ingredienteDeLaColeccion.setCantidad(nuevaCantidad);
+                esta = true;
+            }
+        }
+
+        if (esta == false) {
+
+            ingredientes.add(ingredienteNuevo);
+        }
+
     }
 
     public boolean necesitaIngrediente(String nombreIngrediente) {
 
-
+        Ingrediente ingredientePatron = new Ingrediente(nombreIngrediente);
+        return ingredientes.contains(ingredientePatron);
     }
 
     public void borrarIngrediente(Ingrediente ingredienteABorrar) throws RecetaException {
 
+        String paso;
+        if (!ingredientes.contains(ingredienteABorrar)) {
+            throw new RecetaException("ERROR. No se encuentra dicho ingrediente,as� que no se puede borrar.");
+        }
+
+        // Borrar el ingrediente
+        ingredientes.remove(ingredienteABorrar);
+
+        // Borrar todos los pasos que nombran a ese ingrediente
+
+        Iterator<String> it = pasos.iterator();
+        while (it.hasNext()) {
+            paso = it.next();
+
+            if (paso.contains(ingredienteABorrar.getNombreIngrediente())) {
+                it.remove();
+            }
+
+        }
+
+
     }
 
+    // A -> B -> C ->  D
+    // 0    1    2    3
 
     public void annadirPasoDetrasDe(String pasoNuevo, String pasoExistente) throws RecetaException {
 
+        int indice;
+
+        indice = pasos.indexOf(pasoExistente);
+        if (indice == -1) {
+            throw new RecetaException("No se encuentra el paso " + pasoExistente);
+        }
+
+        pasos.add(indice + 1, pasoNuevo);
     }
 
     @Override
@@ -78,5 +132,9 @@ public class Receta {
         return true;
     }
 
+    @Override
+    public int compareTo(Receta otra) {
+        return this.getNombreReceta().compareTo(otra.getNombreReceta());
+    }
 
 }
