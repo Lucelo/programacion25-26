@@ -32,8 +32,7 @@ puntos).
 ○ Ordenados por nombre. (0.25 puntos)
 ○ Ordenados por daño de mayor a menor. (0.25 puntos)
 ○ Cada uno de los anteriores en un método distinto.
-IES Padre José Miravent.
-Módulo: Programación 24/25
+
 ● Dados dos personajes, p1 y p2, determinar qué ataque de p1 hace más daño a p2,
 teniendo en cuenta las características actuales de p1. Si dos ataques hacen el
 mismo daño devolver cualquiera de los dos. (1 punto)
@@ -69,8 +68,7 @@ personajes.
 ● Tan sólo la clase juego debería imprimir por pantalla.
 ● Supón que todos los datos numéricos con los que trabajamos son de tipo entero.
 ● Puedes modificar el orden de cualquier lista si lo necesitas.
-IES Padre José Miravent.
-Módulo: Programación 24/25
+
 ● Considera crear métodos auxiliares en las clases Personaje y Ataque para facilitarte
 la vida.
 Se valorará (y podría penalizarse el no hacerlo):

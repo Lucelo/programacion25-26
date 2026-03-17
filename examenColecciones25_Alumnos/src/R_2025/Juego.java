@@ -1,20 +1,15 @@
 package R_2025;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Juego {
     ArrayList<Personaje> Personajes = new ArrayList<>();
     ArrayList<Ataque> TodosAtaques = new ArrayList<>();
 
-    static void main(String[] args) {
-
+    public static void main(String[] args) {
 
         try {
             Juego juego = new Juego();
-
 
             // Crear personajes
             crearPersonajes(juego);
@@ -62,12 +57,8 @@ public class Juego {
 
             System.out.println("Todos los personajes mostrador por raza:");
 
-            Map<TRaza, List<Personaje>> mapa = juego.devuelveMapaRazas();
+            Map<TRaza, List<Personaje>> mapa = new HashMap<>();
 
-            mapa.entrySet().forEach(e -> {
-                System.out.printf("Personajes de la raza %s:\n", e.getKey());
-                e.getValue().forEach(p -> System.out.printf("\t%s\n", p.getNombre()));
-            });
 
 
         } catch (DBException e) {
@@ -77,6 +68,8 @@ public class Juego {
         }
 
     }
+    
+
 
     public static void crearPersonajes(Juego juego) throws DBException {
 
@@ -257,25 +250,41 @@ public class Juego {
 
         TodosAtaques.clear();
 
-        for (int i = 0; i < Personajes.size(); i++) {
-            TodosAtaques.addAll(Personajes.get(i).getAtaques());
+        for (Personaje personaje : Personajes) {
+            TodosAtaques.addAll(personaje.getAtaques());
         }
 
     }
 
     public Ataque ataqueMasDañino(Personaje p1, Personaje p2) throws DBException {
 
-        for (int i = 0; i < p1.getAtaques().size(); i++) {
 
-
-        }
 
 
         return null;
     }
 
     public void atacar(Personaje p1, Personaje p2, String ataque) throws DBException {
+        if (p1.getVidaActual() <= 0){
+            throw new DBException("No puedes atacar con un personaje muerto");
+        }
 
+        if (p2.getVidaActual() <= 0){
+            throw new DBException("No puedes atacar a un personaje muerto");
+        }
+
+        try {
+            p1.atacar(p2, ataque);
+            if (p2.getVidaActual() == 0){
+                System.out.printf("%s ha muerto debido al ataque\n", p2.getNombre());
+            }
+            else{
+                System.out.printf("%s tiene %d puntos de vida tras el ataque", p2.getNombre(), p2.getVidaActual());
+            }
+        }
+        catch (DBException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public void eliminarAtaquesInferioresANivel(int nivel) {
@@ -301,7 +310,12 @@ public class Juego {
 
     public Map<TRaza, List<Personaje>> devuelveMapaRazas() {
 
-        return Map.of();
+        Map<TRaza, List<Personaje>> mapaPersonajes = new HashMap<>();
+        for(TRaza tRaza: TRaza.values()){
+            mapaPersonajes.put(tRaza, this.personajes.stream().filter(p -> p.getRaza() == tRaza).toList());
+        }
+
+        return mapaPersonajes;
     }
 
 }

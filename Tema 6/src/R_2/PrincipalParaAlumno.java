@@ -1,4 +1,3 @@
-package R_2;
 
 public class PrincipalParaAlumno {
 

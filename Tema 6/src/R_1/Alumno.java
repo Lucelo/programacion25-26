@@ -1,4 +1,3 @@
-package R_1;
 
 public class Alumno {
 

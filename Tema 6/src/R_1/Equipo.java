@@ -1,5 +1,3 @@
-package R_1;
-
 import java.util.*;
 
 public class Equipo {
