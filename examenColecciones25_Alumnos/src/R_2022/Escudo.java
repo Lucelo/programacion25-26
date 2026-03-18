@@ -1,18 +1,30 @@
-package R_2022;
 
-public class Escudo {
+public class Escudo extends Cromo {
+	private int fundacion, numeroJugadores;
+	
+	
+	public Escudo(int id, String nombre, int fundacion, int numeroJugadores) {
+		super(id, nombre);
+		this.fundacion = fundacion;
+		this.numeroJugadores = numeroJugadores;
+	}
 
-    private int id;
 
-    private String afiliado;
+	/**
+	 * @return the fundacion
+	 */
+	public int getFundacion() {
+		return fundacion;
+	}
 
-    private int año;
-    private int XXX;
 
-    public Escudo(int id, String afiliado, int año, int XXX) {
-        this.id = id;
-        this.afiliado = afiliado;
-        this.año = año;
-        this.XXX = XXX;
-    }
+	/**
+	 * @return the numeroJugadores
+	 */
+	public int getNumeroJugadores() {
+		return numeroJugadores;
+	}
+	
+	
+	
 }

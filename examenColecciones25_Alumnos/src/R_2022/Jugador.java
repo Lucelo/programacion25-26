@@ -1,19 +1,30 @@
-package R_2022;
 
-public class Jugador {
+public class Jugador extends Cromo {
+	
+	private String equipo;
+	private int altura;
+	
+	public Jugador(int id, String nombre, String equipo, int altura) {
+		super(id, nombre);
+		this.equipo = equipo;
+		this.altura = altura;
+	}
 
-    private int id;
+	
 
-    private String nombre;
+	/**
+	 * @return the equipo
+	 */
+	public String getEquipo() {
+		return equipo;
+	}
 
-    private String afiliado;
+	/**
+	 * @return the altura
+	 */
+	public int getAltura() {
+		return altura;
+	}
 
-    private int poder;
-
-    public Jugador(int id, String nombre, String afiliado, int poder) {
-        this.id = id;
-        this.nombre = nombre;
-        this.afiliado = afiliado;
-        this.poder = poder;
-    }
+	
 }

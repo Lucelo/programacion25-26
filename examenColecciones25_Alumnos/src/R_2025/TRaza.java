@@ -1,7 +1,5 @@
 package R_2025;
 
 public enum TRaza {
-
-    ANDROIDE, NAMEKIANO, SAIYAN
-
+    HUMANO, SAIYAN, NAMEKIANO, ANDROIDE, OTRO
 }
