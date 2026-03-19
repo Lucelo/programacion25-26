@@ -1,4 +1,4 @@
-package R_2021.ejercicio1;
+package colecciones.ejercicio1;
 
 public class Principal {
 
@@ -13,6 +13,10 @@ public class Principal {
 			netPlease.annadirTema("DRAMA");
 			
 			netPlease.addPelicula("COMEDIA", new Pelicula("BAJO EL MISMO TECHO", 2019));
+			netPlease.addPelicula("COMEDIA", new Pelicula("Matrix", 2010));
+			netPlease.addPelicula("COMEDIA", new Pelicula("Matrix 2", 2010));
+			
+			netPlease.listadoDeUnTema("COMEDIA");
 			
 			
 			

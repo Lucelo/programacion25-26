@@ -1,4 +1,4 @@
-package R_2021.ejercicio1;
+package colecciones.ejercicio1;
 
 public class NetPleaseException extends Exception {
 
