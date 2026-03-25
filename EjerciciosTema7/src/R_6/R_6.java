@@ -16,25 +16,26 @@ public class R_6 {
         String dire = sc.nextLine();
 
         Files.list(Path.of("./src/R_6/" + dire))
-                        .forEach(path -> {
-                            if (Files.isRegularFile(path)) {
-                                System.out.print(path.getFileName());
+                .forEach(path -> {
+                    if (Files.isRegularFile(path)) {
 
-                                try {
-                                    System.out.println(" "+Files.size(path)/1024  + " KB ");
+                        try {
 
-                                } catch (IOException e) {
-                                    throw new RuntimeException(e);
-                                }
+                            System.out.println(path.getFileName() + " " + Files.size(path) / 1024 + " KB ");
 
+                        } catch (IOException e) {
 
-                            } else {
-                                System.out.println(path.getFileName());
-                            }
-                        });
+                            throw new RuntimeException(e);
 
+                        }
 
+                    } else {
 
+                        System.out.println(path.getFileName());
+
+                    }
+
+                });
 
     }
 
