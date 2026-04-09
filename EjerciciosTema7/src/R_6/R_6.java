@@ -21,7 +21,7 @@ public class R_6 {
 
                         try {
 
-                            System.out.println(path.getFileName() + " " + Files.size(path) / 1024 + " KB ");
+                            System.out.println(path.getFileName() + " " + Files.size(path)/1024 + " KB ");
 
                         } catch (IOException e) {
 
