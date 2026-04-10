@@ -1,0 +1,17 @@
+[
+  {
+    "nombre": "Antonio",
+    "curso": "1A",
+    "notaMedia": 3.0
+  },
+  {
+    "nombre": "Lucia",
+    "curso": "4B",
+    "notaMedia": 5.6
+  },
+  {
+    "nombre": "Victor",
+    "curso": "3C",
+    "notaMedia": 7.1
+  }
+]
