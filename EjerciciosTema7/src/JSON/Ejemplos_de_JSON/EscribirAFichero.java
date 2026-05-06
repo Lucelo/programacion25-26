@@ -8,27 +8,26 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class EscribirAFichero {
-	public static void main(String[] args) {
-		Path ficheroSalida = Paths.get("./ejemplos_de_clase/java_nio/ficheroAEscribir.txt");
-		
-		String text = "Esto es una cadena de prueba con tíldes mal puestas y eñes.";
-		try {
-			// Escribe al fichero. Si no existe se creará. Si tiene contenido, se truncará.
-			Files.write(ficheroSalida, text.getBytes(StandardCharsets.UTF_8),
-			        StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+    public static void main(String[] args) {
+        Path ficheroSalida = Paths.get("./ejemplos_de_clase/java_nio/ficheroAEscribir.txt");
+
+        String text = "Esto es una cadena de prueba con tíldes mal puestas y eñes.";
+        try {
+            // Escribe al fichero. Si no existe se creará. Si tiene contenido, se truncará.
+            Files.write(ficheroSalida, text.getBytes(StandardCharsets.UTF_8),
+                    StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
 			
 			/*
 			 * La línea anterior truncará el fichero si existe. Para añadir el texto al archivo:
 			 * Files.write(ficheroSalida, text.getBytes(StandardCharsets.UTF_8),
 			        StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 			 */
-			
-		} 
-		catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 }
 
 

@@ -3,7 +3,6 @@ package Boletin_1.R_6;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Scanner;
 
 public class R_6 {
 
@@ -35,6 +34,6 @@ public class R_6 {
                 });
     }
 
-    }
+}
 
 

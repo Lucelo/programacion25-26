@@ -13,13 +13,12 @@ public class Ejemplo1 {
             System.out.println("Si, contiene el patrón");
             System.out.println(m.start());
             System.out.println(m.end());
-        }
-        else
+        } else
             System.out.println("No, no contiene el patrón");
 
         String[] partes = a.split("[,.]");
         System.out.println(partes.length);
-        for (String par: partes){
+        for (String par : partes) {
             System.out.println(par);
         }
     }

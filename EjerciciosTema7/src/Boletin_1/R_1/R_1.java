@@ -7,7 +7,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-
 public class R_1 {
     void main() {
 
@@ -15,7 +14,7 @@ public class R_1 {
 
         try (FileReader fr = new FileReader(f); BufferedReader br = new BufferedReader(fr)) {
 
-            System.out.println ("El contenido dentro de leeme tiene " + br.lines().count() + " lineas ");
+            System.out.println("El contenido dentro de leeme tiene " + br.lines().count() + " lineas ");
 
         } catch (IOException e) {
             System.out.println(e.getMessage());

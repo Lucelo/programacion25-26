@@ -34,9 +34,17 @@ public class Persona2 {
     }
 
     // Setters (opcionales para este ejercicio, pero buena práctica)
-    public void setNombre(String nombre) { this.nombre = nombre; }
-    public void setDni(String dni) { this.dni = dni; }
-    public void setTelefono(String telefono) { this.telefono = telefono; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;

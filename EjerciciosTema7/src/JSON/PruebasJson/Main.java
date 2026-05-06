@@ -2,12 +2,10 @@ package JSON.PruebasJson;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import java.io.FileWriter;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

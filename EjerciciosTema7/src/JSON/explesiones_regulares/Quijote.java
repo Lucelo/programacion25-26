@@ -18,12 +18,12 @@ public class Quijote {
         Pattern p2 = Pattern.compile("(\\b\\p{L})(\\p{L}*\\d*\\b)");
         Pattern p3 = Pattern.compile("\\p{L}+");
 
-        try(BufferedReader br = new BufferedReader(new FileReader(f));
-        PrintWriter pw = new PrintWriter(f2)){
+        try (BufferedReader br = new BufferedReader(new FileReader(f));
+             PrintWriter pw = new PrintWriter(f2)) {
             String linea;
-            while ((linea = br.readLine()) != null){
+            while ((linea = br.readLine()) != null) {
                 Matcher m = p.matcher(linea);
-                if(m.results().count() > 15){
+                if (m.results().count() > 15) {
                     System.out.println(linea);
                 }
             }
