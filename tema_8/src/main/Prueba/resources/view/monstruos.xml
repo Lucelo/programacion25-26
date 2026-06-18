@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.Principal.MonstruoController">
+
+    <TextField fx:id="txtBuscar" promptText="Buscar monstruo"/>
+
+    <TableView fx:id="tabla">
+        <columns>
+            <TableColumn fx:id="colId" text="ID"/>
+            <TableColumn fx:id="colNombre" text="Nombre"/>
+            <TableColumn fx:id="colNivel" text="Nivel"/>
+            <TableColumn fx:id="colTipo" text="Tipo"/>
+        </columns>
+    </TableView>
+
+    <Button text="Buscar" onAction="#buscar"/>
+    <Button text="Añadir" onAction="#insertar"/>
+    <Button text="Modificar" onAction="#actualizar"/>
+    <Button text="Eliminar" onAction="#eliminar"/>
+
+</VBox>

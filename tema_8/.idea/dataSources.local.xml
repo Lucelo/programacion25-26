@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-261.23567.138">
-    <data-source name="mysqlsampledatabase.sql" uuid="cc97e641-00cc-49af-ab18-ffe1009ce621">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" />
+    <data-source name="Monstruos@localhost" uuid="11d0bfce-388a-4d21-804e-169713468557">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="1234" />
       <secret-storage>master_key</secret-storage>
-      <auth-provider>no-auth</auth-provider>
-      <schema-mapping />
-    </data-source>
-    <data-source name="@localhost" uuid="3ec0ed4a-728d-4aff-a777-1c4f67a1539d">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" />
-      <secret-storage>master_key</secret-storage>
-      <schema-mapping />
+      <user-name>root</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
+      <before>
+        <task id="RunConfigurationTask" enabled="true" run__configuration__name="Main" run__configuration__type="Application" />
+        <task id="LaunchBrowser.Before.Run" />
+      </before>
+      <session-templates>
+        <template id="dbf1f252-2437-4f53-9180-2229abed8c84" name="Template" auth-provider="user-pass" />
+      </session-templates>
     </data-source>
   </component>
 </project>

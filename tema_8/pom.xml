@@ -20,5 +20,18 @@
             <artifactId>mariadb-java-client</artifactId>
             <version>3.3.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>26.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>26.0.1</version>
+        </dependency>
+
     </dependencies>
 </project>

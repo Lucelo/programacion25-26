@@ -80,7 +80,7 @@ private static avión[] aviones() {
 private static void capacidadActual(avión[] aviones) {
 
     //Avión 1
-    aviones[0].capacidadActual = 22;
+    aviones[0].capacidadActual(22);
     //Avión 2
     aviones[1].capacidadActual = 30;
     // Avión 3

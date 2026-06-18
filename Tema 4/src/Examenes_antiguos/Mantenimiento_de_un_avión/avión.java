@@ -1,6 +1,8 @@
 package Mantenimiento_de_un_avión;
 
 
+import java.time.LocalDate;
+
 public class avión {
 
     private String marca;
@@ -8,11 +10,6 @@ public class avión {
     private int consumo; // litros por km
     private int capacidadMaxima;
     private int capacidadActual;
-    String marca;
-    String modelo;
-    int consumo; // litros por km
-    int capacidadMaxima;
-    int capacidadActual;
 
     registro[] registroDeRevisiones;
 
@@ -85,6 +82,7 @@ public class avión {
         if (ultima == null) return false;
         if (!ultima.estado) return false;
         if (LocalDate.now().isAfter(ultima.periodoValido)) return false;
+
     public avión(String marca, String modelo, int consumo, int capacidadMaxima){
             this.marca = marca;
             this.modelo = modelo;

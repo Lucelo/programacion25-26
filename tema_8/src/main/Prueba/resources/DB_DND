@@ -1,0 +1,9 @@
+CREATE DATABASE Monstruos;
+USE dnd;
+
+CREATE TABLE monstruos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100),
+    nivel INT,
+    tipo VARCHAR(50)
+);
