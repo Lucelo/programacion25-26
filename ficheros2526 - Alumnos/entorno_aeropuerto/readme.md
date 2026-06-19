@@ -1,0 +1,1 @@
+Contenido irrelevante para la auditoría.

@@ -1,0 +1,65 @@
+{
+  "totalIncidencias": 10,
+  "incidencias": [
+    {
+      "codigoVuelo": "IB1111",
+      "fecha": "09/09/2025",
+      "hora": "01:27:30",
+      "descripcion": "Error en sistema de navegación inercial"
+    },
+    {
+      "codigoVuelo": "UX4455",
+      "fecha": "14/08/2025",
+      "hora": "07:16:09",
+      "descripcion": "Problema de combustible detectado durante inspección"
+    },
+    {
+      "codigoVuelo": "FR4310",
+      "fecha": "22/02/2025",
+      "hora": "21:45:58",
+      "descripcion": "Despresurización detectada en vuelo"
+    },
+    {
+      "codigoVuelo": "VY8877",
+      "fecha": "19/07/2025",
+      "hora": "12:34:27",
+      "descripcion": "Fallo en radar meteorológico"
+    },
+    {
+      "codigoVuelo": "FR992",
+      "fecha": "20/05/2025",
+      "hora": "03:48:15",
+      "descripcion": "Impacto de ave durante maniobra de aproximación"
+    },
+    {
+      "codigoVuelo": "IB3412",
+      "fecha": "12/11/2025",
+      "hora": "19:30:15",
+      "descripcion": "Aterrizaje abortado por presencia de aves en pista"
+    },
+    {
+      "codigoVuelo": "UX7001",
+      "fecha": "07/06/2025",
+      "hora": "23:13:33",
+      "descripcion": "Activación de protocolo de emergencia técnica"
+    },
+    {
+      "codigoVuelo": "VY2145",
+      "fecha": "18/03/2025",
+      "hora": "04:40:06",
+      "descripcion": "Fallo en radar meteorológico"
+    },
+    {
+      "codigoVuelo": "IB9999",
+      "fecha": "11/01/2025",
+      "hora": "09:17:15",
+      "descripcion": "Fallo en tren de aterrizaje principal"
+    },
+    {
+      "codigoVuelo": "EZ3210",
+      "fecha": "02/04/2025",
+      "hora": "17:26:52",
+      "descripcion": "Incidencia con puerta de embarque automática"
+    }
+  ]
+}
